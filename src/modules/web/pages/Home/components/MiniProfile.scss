@@ -1,0 +1,122 @@
+.mini-profile {
+    overflow: hidden;
+    display: block;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(139, 139, 139, 0.2);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-left: -5px;
+    margin-right: -5px;
+    min-height: 370px;
+    text-decoration: none !important;
+    position: relative;
+  
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+  
+    .save-button {
+        padding: 7px 7px 4px;
+        background-color: #ffffff9f;
+        border-radius: 50%;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+  
+    .save,
+    .delete {
+        font-size: 1.2rem;
+        color: #222;
+    }
+  
+    img {
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        height: 150px;
+        object-fit: cover;
+    }
+  
+    .seller_name {
+        width: 100%;
+        padding: 0.4rem 1rem 0.3rem;
+        margin-top: -0.4rem;
+        background: #21c0fc;
+        color: #fff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        // position: relative;
+    }
+  
+    &-text {
+        padding: 0.5rem 0.8rem;
+        height: min-content;
+
+        .work {
+            font-size: 14px !important;
+            // height: 50px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1A222A;
+
+        }
+    
+        .rating-review {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+    
+            .rating {
+                span {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    
+        .review {
+            font-size: 0.8rem;
+        }
+    
+        // hr {
+        //     border: 0.2px solid #c5c5c5;
+        //     margin: 1rem 0;
+        // }
+    
+        .pricing{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: max-content;
+            .starting_from_caption {
+                justify-self: start;
+                font-size: 12px !important;
+                color: #999;
+                color: #1A222A78;
+    
+            }
+        
+            .starting_from_main {
+                font-weight: bold;
+                color: #FD8825;
+                padding-top: 20px;
+                padding-left: 10px;
+            }
+        }
+        
+    }
+  
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+        .compare-icon {
+            width: 50px;
+            color: #484848;
+        }
+    }
+}
+  

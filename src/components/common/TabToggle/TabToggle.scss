@@ -1,0 +1,36 @@
+.seller-buyer-toggle,
+.tab {
+  border-bottom: 1px solid #999;
+
+  ul {
+    padding: 1rem 0;
+
+    li {
+      display: inline;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s ease all;
+
+      &.active {
+        border-bottom: 4px solid #222;
+        padding-bottom: 1.1rem;
+        font-weight: bold;
+      }
+
+      &.inactive {
+        color: #999;
+      }
+
+      &:not(.active):hover {
+        background-color: #e5e5e5;
+        border-bottom: 4px solid #989898;
+        padding-bottom: 1.1rem;
+
+        a {
+          color: #222;
+        }
+      }
+    }
+  }
+}

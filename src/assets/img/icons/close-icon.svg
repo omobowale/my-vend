@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Omni-bar---states-Copy-2" transform="translate(-389.000000, -20.000000)" fill="#7C7C7C">
+            <g id="Sidebar" transform="translate(-10.000000, -10.000000)">
+                <path d="M403.8,34.8 L403.8,29.2 C403.8,28.5372583 404.337258,28 405,28 C405.662742,28 406.2,28.5372583 406.2,29.2 L406.2,34.8 L411.8,34.8 C412.462742,34.8 413,35.3372583 413,36 C413,36.6627417 412.462742,37.2 411.8,37.2 L406.2,37.2 L406.2,42.8 C406.2,43.4627417 405.662742,44 405,44 C404.337258,44 403.8,43.4627417 403.8,42.8 L403.8,37.2 L398.2,37.2 C397.537258,37.2 397,36.6627417 397,36 C397,35.3372583 397.537258,34.8 398.2,34.8 L403.8,34.8 Z" id="Combined-Shape" transform="translate(405.000000, 36.000000) rotate(-45.000000) translate(-405.000000, -36.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,6 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/scss/main.scss';
+import 'react-toastify/dist/ReactToastify.css';
+// import 'react-datepicker/dist/react-datepicker.css';
+
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(

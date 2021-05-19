@@ -1,0 +1,65 @@
+.fancy-radio {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 5px;
+
+  .check-container {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+    .main-label {
+      margin-bottom: 0.5rem;
+    }
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .radio-mark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background: #eee;
+      border-radius: 50%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: none;
+        top: 6px;
+        left: 6px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+      }
+    }
+  }
+
+  &.checked {
+    border-color: #83bc23;
+
+    .radio-mark {
+      background: #83bc23;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &:hover {
+    input ~ .radio-mark {
+      background: #ccc;
+    }
+  }
+}

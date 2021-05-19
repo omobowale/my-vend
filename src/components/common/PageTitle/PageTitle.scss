@@ -1,0 +1,31 @@
+.new-page-title {
+  width: 100%;
+  background: #fff;
+  padding: 1rem 0rem;
+  border-bottom: 1px solid #ddd;
+  z-index: 11;
+
+  @media screen and (min-width: 990px) {
+    padding: 2rem;
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+    &.capitalize {
+      text-transform: capitalize;
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 1.3rem;
+    }
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    font-weight: 400;
+  }
+}

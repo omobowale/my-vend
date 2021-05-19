@@ -1,0 +1,60 @@
+.currency-converter {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  background-color: #f1f1f1;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding: 0;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    display: inline-block;
+    background-color: #ddd;
+    clip-path: polygon(0 0, 97.2% 0, 100% 50%, 97.2% 100%, 0 100%, 0 50%);
+  }
+
+  li {
+    display: inline-flex;
+  }
+
+  .currency {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem 3rem 1.1rem;
+    // font-weight: 500;
+    border-right: 1px solid #ddd;
+    clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%, 20% 50%);
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+
+    img {
+      width: 20px;
+      height: 10px;
+      object-fit: cover;
+      margin-right: 1rem;
+    }
+
+    &:not(.active) {
+      cursor: pointer;
+      margin-left: -1.95rem;
+    }
+
+    &:hover {
+      background-color: darken(#f1f1f1, 5%);
+    }
+
+    &.active {
+      background-color: #aeaeae;
+      color: #fff;
+      padding: 1.1rem 3rem 1.15rem 1.5rem;
+      font-weight: 500;
+
+      clip-path: polygon(0 0, 80% 0, 100% 50%, 80% 100%, 0 100%, 0 50%);
+    }
+  }
+}

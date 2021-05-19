@@ -1,0 +1,29 @@
+.login-btn {
+    background: linear-gradient(90deg, #F05C40 15.81%, #FD8825 95.18%);
+    color: #fff !important;
+    font-weight: 700 !important;
+}
+.auth-desc {
+    font-size: 13px;
+    span {
+        color: #F05C40;
+        font-size: 13px;
+    }
+}
+
+.auth-desc {
+    font-size: 13px;
+    span {
+        color: #F05C40;
+        font-size: 13px;
+    }
+}
+
+span.auth-nav-link {
+    color: #F05C40;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover {
+        color: #FD8825;
+    }
+}
