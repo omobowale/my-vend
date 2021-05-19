@@ -107,65 +107,6 @@ const HomeTopSelling = () => {
                             </div>
                         </div>
 
-                        <div className="stack-item">
-                            <img src={img3} />
-                            <div className="mini-profile-text">
-                                <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                <div className="mini-profile-bottom">
-                                    <div className="pricing">
-                                        <p className="starting_from_caption">from</p>
-                                        <p className="starting_from_main">
-                                        2,000
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="stack-item">
-                            <img src={img3} />
-                            <div className="mini-profile-text">
-                                <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                <div className="mini-profile-bottom">
-                                    <div className="pricing">
-                                        <p className="starting_from_caption">from</p>
-                                        <p className="starting_from_main">
-                                        2,000
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        
-                        <div className="stack-item">
-                            <img src={img3} />
-                            <div className="mini-profile-text">
-                                <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                <div className="mini-profile-bottom">
-                                    <div className="pricing">
-                                        <p className="starting_from_caption">from</p>
-                                        <p className="starting_from_main">
-                                        2,000
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="stack-item">
-                            <img src={img3} />
-                            <div className="mini-profile-text">
-                                <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                <div className="mini-profile-bottom">
-                                    <div className="pricing">
-                                        <p className="starting_from_caption">from</p>
-                                        <p className="starting_from_main">
-                                        2,000
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div> 
                 <div className="stack-item ">
