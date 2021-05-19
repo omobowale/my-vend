@@ -69,7 +69,7 @@ function LgHeader({
 
     const renderSidebar = () => {
         return (
-            <Sidebar closeSidebar={hideSidebar} signup={signup} />
+            <Sidebar closeSidebar={hideSidebar} openAuthPage={openAuthPage} signup={signup} />
         );
     };
 

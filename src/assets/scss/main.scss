@@ -1471,32 +1471,36 @@ a.links-more {
 
     &-flex {
         color: #fff;
-
-        .nav-sm {
-            position: absolute;
-            top: 0;
-            left: 0;
-            font-size: 1.8rem;
-            height: 60px;
-            overflow: hidden;
-            padding: 0.8rem 1rem;
-        }
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        // .nav-sm {
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     font-size: 1.8rem;
+        //     height: 60px;
+        //     overflow: hidden;
+        //     padding: 0.8rem 1rem;
+        // }
 
         .logo-sm {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            // position: absolute;
+            // left: 50%;
+            // transform: translateX(-50%);
+            height: 30px;
+
         }
 
-        .mobile-search {
-            position: absolute;
-            top: 0;
-            right: 0;
-            padding-top: 1rem;
-            font-size: 1.3rem;
-            width: 40px;
-            height: 40px;
-        }
+        // .mobile-search {
+        //     position: absolute;
+        //     top: 0;
+        //     right: 0;
+        //     padding-top: 1rem;
+        //     font-size: 1.3rem;
+        //     width: 40px;
+        //     height: 40px;
+        // }
     }
 
     &-container {

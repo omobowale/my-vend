@@ -69,8 +69,6 @@ function Header({
             />
         ) : (
             <SmHeader
-            buyer={buyer}
-            seller={seller}
             openAuthPage={openAuthPage}
             application={application}
             authenticated={authenticated}

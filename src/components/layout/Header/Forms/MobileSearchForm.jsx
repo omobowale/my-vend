@@ -27,7 +27,7 @@ const MobileSearchForm = ({ toggleSearchMode }) => {
 
   return (
     <form onSubmit={submitForm} autoComplete="off">
-      <div className="search-mobile">
+      {/* <div className="search-mobile">
         <input
           type="text"
           placeholder="Search for anything"
@@ -44,6 +44,28 @@ const MobileSearchForm = ({ toggleSearchMode }) => {
             toggleSearchMode={toggleSearchMode}
           />
         ) : null}
+      </div> */}
+        <div className="search-field">
+          <input
+              type="text"
+              value={value}
+              placeholder="Search here for materials , supliers and contractors"
+              onChange={handleChange}
+              // onFocus={changeToSearchMode}
+              // onBlur={changeToNormalMode}
+              onInput={inputHandler}
+              list="suggestions"
+          />
+          <div className="search-icon">
+              <FontAwesomeIcon icon={faSearch} className="icon" />
+          </div>
+          {suggestions.length > 0 ? (
+              <AutoComplete
+                  suggestions={suggestions}
+                  elementClass="header-suggestions"
+                  clearSearchQuery={clearSearchQuery}
+              />
+          ) : null}
       </div>
     </form>
   );
