@@ -83,14 +83,7 @@ function LgHeader({
         <header className={`header ${mode}`}>
             <div className="header-top">
                 <div className="container clearfix">
-                    {/* <a
-                    title="nav"
-                    href="#0"
-                    onClick={showSidebar}
-                    className="nav-trigger visible-sm"
-                    >
-                    <FontAwesomeIcon icon={faBars} size="lg" />
-                    </a> */}
+                    
                     <Link to={'/'} className="logo mr-5">
                         <img
                             src={logo}

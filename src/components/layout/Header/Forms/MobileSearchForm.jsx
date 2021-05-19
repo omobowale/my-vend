@@ -26,26 +26,8 @@ const MobileSearchForm = ({ toggleSearchMode }) => {
   const clearSearchQuery = () => setValue('');
 
   return (
-    <form onSubmit={submitForm} autoComplete="off">
-      {/* <div className="search-mobile">
-        <input
-          type="text"
-          placeholder="Search for anything"
-          value={value}
-          onChange={handleChange}
-          onInput={inputHandler}
-        />
-        <FontAwesomeIcon icon={faSearch} />
-        {suggestions.length > 0 ? (
-          <AutoComplete
-            suggestions={suggestions}
-            elementClass="header-suggestions"
-            clearSearchQuery={clearSearchQuery}
-            toggleSearchMode={toggleSearchMode}
-          />
-        ) : null}
-      </div> */}
-        <div className="search-field">
+    <form onSubmit={submitForm} className="search-mobile" autoComplete="off">
+        <div className="search-form">
           <input
               type="text"
               value={value}

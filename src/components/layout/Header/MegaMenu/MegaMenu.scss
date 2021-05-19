@@ -3,6 +3,7 @@
     background-color: #fff;
     padding: 0 !important;
     flex-direction: row;
+    border-radius: 10px;
     .category-list-menu {
         display: flex;
         height: 100%;
@@ -25,12 +26,29 @@
                     width: 100%;
                     max-width: 300px !important;
                     margin: 0;
+                    margin-bottom: 5px;
+                    color: #1A222A;
                     &.active{
-                        background: #C4C4C4;
+                        background: #C4C4C456;
                     }
                     &:hover{ 
                         color: #F05C40;
                     }
+                   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 15px;
+                    img{
+                        margin-left: 5px;
+                        height: 30px;
+                        width: 30px;
+                        object-fit: scale-down;
+                    }
+                    span {
+                        padding-left: 15px;
+                    }
+                    
                 }
             }
         }
@@ -76,9 +94,30 @@
                         &.active{
                             color: #1A222A;
                             font-size: 15px;
+                            a{
+                                color: #1A222A;
+                                
+                            }
                         }
                         &:hover{ 
                             color: #F05C40;
+                        }
+
+                        a{
+                            color: #1A222A;
+                            background: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 15px;
+                            img{
+                                height: 30px;
+                                width: 30px;
+                                object-fit: scale-down;
+                            }
+                            span {
+                                padding-left: 15px;
+                            }
                         }
                     }
                 }

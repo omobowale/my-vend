@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getProductCategoryList } from '../../../../modules/web/service'
 
 import './MegaMenu.scss'
@@ -55,7 +56,9 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
                     <ul>
                         {categories.map( category => {
                             return (
-                                <li key={category.id} onClick={() => selectCategory(category)} className={`m-t-three ${category.id == activeCategory.id ? 'active' : ''}`} > {category.name} </li>
+                                <li key={category.id} onClick={() => selectCategory(category)} className={`m-t-three ${category.id == activeCategory.id ? 'active' : ''}`} > 
+                                    <img src={category.image} />  <span>{category.name}</span>
+                                </li>
                             )
                         })}
                     </ul>
