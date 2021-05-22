@@ -61,7 +61,7 @@ const HomeFeatured = ({products}) => {
                 </div>
                 <div className="col-lg-9 stack-items row">
 
-                    <div className="stack-item horizontal col-sm-6 col-md-6 col-lg-6">
+                    <div className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6">
                         <div className="stack-content">
                             <img src={img3} />
                             <div className="mini-profile-text">
@@ -78,7 +78,7 @@ const HomeFeatured = ({products}) => {
                         </div>
                     </div>
 
-                    <div className="stack-item horizontal col-sm-6 col-md-6 col-lg-6">
+                    <div className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6">
                         <div className="stack-content">
                             <img src={img3} />
                             <div className="mini-profile-text">
@@ -95,7 +95,7 @@ const HomeFeatured = ({products}) => {
                         </div>
                     </div>
     
-                    <div className="stack-item horizontal col-sm-6 col-md-4 col-lg-4">
+                    <div className="stack-item horizontal col-6 col-sm-6 col-md-4 col-lg-4">
                         <div className="stack-content">
                             <img src={img3} />
                             <div className="mini-profile-text">
@@ -112,7 +112,7 @@ const HomeFeatured = ({products}) => {
                         </div>
                     </div>
 
-                    <div className="stack-item horizontal col-sm-6 col-md-4 col-lg-4">
+                    <div className="stack-item horizontal col-6 col-sm-6 col-md-4 col-lg-4">
                         <div className="stack-content">
                             <img src={img3} />
                             <div className="mini-profile-text">
@@ -128,7 +128,7 @@ const HomeFeatured = ({products}) => {
                             </div>
                         </div>
                     </div>
-                    <div className="stack-item horizontal col-sm-6 col-md-4 col-lg-4">
+                    <div className="stack-item horizontal col-6 col-sm-6 col-md-4 col-lg-4">
                         <div className="stack-content">
                             <img src={img3} />
                             <div className="mini-profile-text">

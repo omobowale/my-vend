@@ -15,7 +15,7 @@ const HomeTopSelling = () => {
                 <div className="section--title">Top Selling Products</div>
             </section>
             <section className="home_featured_items">
-                <div className="stack-row-items">
+                <div className="stack-row-items row col-9">
                     <div className="stack-items">
                         <div className="stack-item">
                             <div className="stack-content">
@@ -120,7 +120,7 @@ const HomeTopSelling = () => {
                         </div>
                     </div>
                 </div> 
-                <div className="stack-item ">
+                <div className="stack-item row col-3">
                     
                 </div>     
             </section>
