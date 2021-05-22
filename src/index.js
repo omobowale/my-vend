@@ -1,3 +1,5 @@
+// require("./bootstrap");
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -8,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // import 'react-datepicker/dist/react-datepicker.css';
 
 import reportWebVitals from './reportWebVitals';
+require("./bootstrap");
 
 ReactDOM.render(
   <React.StrictMode>

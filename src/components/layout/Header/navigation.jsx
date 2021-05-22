@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
-
+import rqs from '../../../assets/img/common/Vector-RQS.png'
 const Navigation = ({ signup, openAuthPage }) => {
     const location = useLocation();
     return (
@@ -9,11 +9,11 @@ const Navigation = ({ signup, openAuthPage }) => {
             <ul>
                 <span className="other_links pull-left visible-lg">
                     <li className="m-t-three ">
-                        <Link to="/">Request Quantity Survey</Link>
+                        <Link to="/"> <span><img src={rqs}/> </span> <span>Request Quantity Survey </span></Link>
                     </li>
                     <li className="m-t-three">
                         <Link to="/">
-                            Construction Consultation
+                        <span><img src={rqs}/> </span> <span> Construction Consultation </span>
                         </Link>
                     </li>
                 </span>

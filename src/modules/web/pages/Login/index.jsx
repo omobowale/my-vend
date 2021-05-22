@@ -60,7 +60,7 @@ class Page extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        
+
         const {email, password} = this.state;
         const { errors } = this.validator;
 
@@ -103,13 +103,13 @@ class Page extends Component{
     render(){
         const {email, password, errors} = this.state;
         return (
-            <div>
+            <>
 
                 <h2 className='auth-page-title'>Sign In</h2>
 
                 <div className='auth-desc'>Not a member yet? <span className="auth-nav-link" onClick={() => this.props.openAuthPage('signup')}>Create account here </span></div>
                 <Form email={email} password={password} errors={errors} handleChange={this.onChange} handleSubmit={this.handleSubmit} />
-            </div>
+            </>
         )
     }
 }

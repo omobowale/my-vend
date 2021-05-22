@@ -11,7 +11,7 @@ import TransparentSpinner from '../../../../components/common/Spinner/Transparen
 
 import {getFeaturedProducts} from '../../service'
 import './auth.scss';
-import authBanner from '../../../../assets/img/auth-banner.png'
+import authBanner from '../../../../assets/img/common/auth-banner.png'
 import logo from '../../../../assets/img/logo/Logo1.png'
 import Login from '../Login';
 import SignUp from '../SignUp';

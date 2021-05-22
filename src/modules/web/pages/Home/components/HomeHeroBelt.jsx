@@ -8,7 +8,7 @@ const HomeHeroBelt = () => {
     return (
         <section className="home_hero_belt">
             <div className="home_hero_belt-flex">
-                <div className="home_hero_item">
+                <div className="home_hero_item col-sm-6">
                     <div className="home_hero_item-icon">
                         <FontAwesomeIcon icon={faClock} className="icon" />
                     </div>
@@ -17,7 +17,7 @@ const HomeHeroBelt = () => {
                         ALWAYS AVAILABLE
                     </div>
                 </div>
-                <div className="home_hero_item">
+                <div className="home_hero_item col-sm-6">
                     <div className="home_hero_item-icon">
                         <FontAwesomeIcon icon={faTag} className="icon" />
                     </div>
@@ -26,7 +26,7 @@ const HomeHeroBelt = () => {
                         Save some momey
                     </div>
                 </div>
-                <div className="home_hero_item">
+                <div className="home_hero_item col-sm-6">
                     <div className="home_hero_item-icon">
                         <FontAwesomeIcon icon={faTag} className="icon" />
                     </div>
@@ -35,7 +35,7 @@ const HomeHeroBelt = () => {
                         Feedbacks
                     </div>
                 </div>
-                <div className="home_hero_item">
+                <div className="home_hero_item col-sm-6">
                     <div className="home_hero_item-icon">
                         <FontAwesomeIcon icon={faTag} className="icon" />
                     </div>
@@ -44,7 +44,7 @@ const HomeHeroBelt = () => {
                         Different Suppliers
                     </div>
                 </div>
-                <div className="home_hero_item">
+                <div className="home_hero_item col-sm-6">
                     <div className="home_hero_item-icon">
                         <FontAwesomeIcon icon={faTag} className="icon" />
                     </div>

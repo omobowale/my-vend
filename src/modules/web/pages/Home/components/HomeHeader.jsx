@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import shortid from 'shortid';
 import home1 from '../../../../../assets/img/logo/2671.png'
 import home2 from '../../../../../assets/img/logo/47861.png'
 import HomeCarousel from './HomeCarousel';
@@ -7,7 +8,7 @@ const HomeHeader = () => {
 
     const carousels = () => {
         return [
-            <div className="top-container">
+            <div className="top-container" key={shortid.generate()}>
                 <div className="img-background">
                     <img
                         src={home1}
@@ -33,7 +34,7 @@ const HomeHeader = () => {
                 </div>
             </div>
             ,
-            <div className="top-container">
+            <div className="top-container" key={shortid.generate()}>
                 <div className="img-background">
                     <img
                         src={home2}

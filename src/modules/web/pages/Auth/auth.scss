@@ -46,6 +46,9 @@
         font-size: 20px;
         font-weight: 700;
       }
+      @media screen and (min-width: 220px) and (max-width: 989px){
+        // justify-content: center;
+      }
     }
   }
   &-banner {
@@ -56,6 +59,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    @media screen and (min-width: 220px) and (max-width: 989px){
+      display: hidden;
+      width: 0px;
+      img {
+        display: contents;
+        width: 0px;
+      }
     }
     .close-butn {
       position: absolute;

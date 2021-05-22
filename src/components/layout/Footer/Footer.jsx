@@ -141,8 +141,8 @@ function Footer(props) {
                             <p>(c) 2021</p>
                         </div>
                     </div>
-                    <div className="footer-links-container">
-                        <ul>
+                    <div className="footer-links-container ">
+                        <ul className="col-xs-6">
                             <li className="links-head">INFORMATION</li>
                             {informationLinked.map((item) => (
                                 <li key={shortid.generate()}>
@@ -152,7 +152,7 @@ function Footer(props) {
                                 </li>
                             ))}
                         </ul>
-                        <ul>
+                        <ul className="col-xs-6">
                             <li className="links-head">CATEGORIES</li>
                             {categoriesLinks.map(({ title, href, external }) => {
                                 return (
@@ -177,7 +177,7 @@ function Footer(props) {
                                 );
                             })}
                         </ul>
-                        <ul>
+                        <ul className="col-xs-6">
                             <li className="links-head">MY ACCOUNT</li>
                             {myAccountLinks.map(({ title, href }) => (
                                 <li key={shortid.generate()}>
@@ -192,7 +192,7 @@ function Footer(props) {
                                 </li>
                             ))}
                         </ul>
-                        <ul>
+                        <ul className="col-xs-6">
                             <li className="links-head">GET IN TOUCH</li>
                             {connectLinks.map(({ title, icon }) => (
                                 <li key={shortid.generate()}>

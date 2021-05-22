@@ -105,13 +105,13 @@ class Page extends Component{
     render(){
         const {email, role, password, errors} = this.state;
         return (
-            <div>
+            <>
 
                 <h2 className='auth-page-title'>Create account</h2>
 
                 <div className='auth-desc'>Already member? <span className="auth-nav-link" onClick={() => this.props.openAuthPage('login')}>Sign in </span></div>
                 <Form email={email} role={role} password={password} errors={errors} handleChange={this.onChange} handleSubmit={this.handleSubmit} />
-            </div>
+            </>
         )
     }
 }

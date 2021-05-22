@@ -38,10 +38,10 @@ function Price({
 Price.propTypes = {
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   decimal: PropTypes.bool,
-  serious: PropTypes.bool,
-  conversions: PropTypes.object.isRequired,
+  // serious: PropTypes.bool,
+  // conversions: PropTypes.object.isRequired,
   priceCurrencyId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  noConversion: PropTypes.bool,
+  // noConversion: PropTypes.bool,
 };
 
 Price.defaultProps = {
@@ -54,8 +54,8 @@ Price.defaultProps = {
 const mapStateToProps = (state) => {
   return {
     currency: state.web.selectedCurrency,
-    seriousCurrency: state.buyer.currency,
-    conversions: state.web.netConversions.othersToCurrency,
+    // seriousCurrency: state.buyer.currency,
+    // conversions: state.web.netConversions.othersToCurrency,
   };
 };
 

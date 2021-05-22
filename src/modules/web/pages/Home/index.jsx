@@ -14,11 +14,11 @@ function Home({ dispatch, featuredProducts }) {
     console.log('fed', featuredProducts)
     useEffect(() => {
         
-          dispatch(getFeaturedProducts({}));
+        dispatch(getFeaturedProducts({})).catch(err => err);
     
-      }, [
+    }, [
         dispatch,
-      ]);
+    ]);
 
     return (
         <>
@@ -28,7 +28,7 @@ function Home({ dispatch, featuredProducts }) {
                 <HomeHeader />
                 <div className="container home_content">
                     <HomeHeroBelt />
-                    <HomeFeatured products={[]} />
+                    <HomeFeatured products={featuredProducts} />
                     <HomeMiddleBelt />
                     <HomeBanner />
                     <HomeTopSelling products={[]} />
