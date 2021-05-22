@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faSearch, faTimes, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch, faTimes, faTimesCircle, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from './sidebar/sidebar';
 import MobileSearchForm from './Forms/MobileSearchForm';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/logo/logo.png'
-import MegaMenu from './MegaMenu/MegaMenu';
+import MegaMenu from './sidebar/MegaMenu';
 import BottomNavigation from './BottomNavigation';
 
 function SmBottomNavigator({
@@ -77,14 +77,28 @@ function SmBottomNavigator({
 
             <div className={`sidebar ${sidebar}`}>
                 <div className="side-content">
-                    <FontAwesomeIcon
-                    icon={faTimes}
-                    size="lg"
-                    onClick={hideSidebar}
-                    className="close"
-                    />
-
-                    <nav className="sidebar-nav">{renderSidebar()}</nav>
+                    <div className="close-sidebar">
+                        <span>close </span>
+                        <span> 
+                            <FontAwesomeIcon
+                            icon={faTimesCircle}
+                            // size="lg"
+                            onClick={hideSidebar}
+                            // className="close"
+                            />
+                        </span>
+                    </div>
+                    
+                    <div className="sidebar-header">
+                            
+                        <li className="nav-item" onClick={hideSidebar}>
+                            <Link to="/">Enterprise App</Link>
+                        </li>
+                        <li className="nav-item" onClick={hideSidebar}>
+                            <Link to="/"> About Cutstruct </Link>
+                        </li>
+                    </div>
+                    <nav className="sidebar-nav"><MegaMenu /></nav>
                 </div>
             </div>
         </>

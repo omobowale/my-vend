@@ -13,13 +13,6 @@ function Sidebar({ closeSidebar, openAuthPage }) {
               Construction Consultation
           </Link>
       </li>
-      <li className="nav-item" onClick={closeSidebar}>
-          <a href="javascript: false"
-              onClick={() => openAuthPage('login')}
-          >
-              Sign in
-          </a>
-      </li>
     </Fragment>
   );
 }
