@@ -3,10 +3,6 @@
     // text-decoration: none !important;
     // position: relative;
   
-    @media screen and (min-width: 220px) and (max-width: 579px) {
-        padding: 10px 5px !important;
-    }
-
     &:not(:last-child) {
         margin-right: 2rem;
     }
@@ -32,10 +28,6 @@
         border-top-right-radius: 5px;
         height: 150px;
         object-fit: scale-down;
-        @media screen and (min-width: 220px) and (max-width: 579px) {
-            // max-width: 180px;
-            // max-height: 120px;
-        }
     }
   
     .seller_name {
@@ -56,9 +48,6 @@
         font-weight: 700;
         margin-bottom: 5px;
         // text-align: center;
-        @media screen and (min-width: 220px) and (max-width: 579px) {
-            font-size: 8px !important;
-        }
     }
 
     &-text {
@@ -71,9 +60,6 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: #1A222A;
-            @media screen and (min-width: 220px) and (max-width: 579px) {
-                font-size: 11px !important;
-            }
 
         }
     
@@ -94,6 +80,11 @@
             font-size: 0.8rem;
         }
     
+        // hr {
+        //     border: 0.2px solid #c5c5c5;
+        //     margin: 1rem 0;
+        // }
+    
         .pricing{
             display: flex;
             justify-content: space-between;
@@ -104,9 +95,7 @@
                 font-size: 12px !important;
                 color: #999;
                 color: #1A222A78;
-                @media screen and (min-width: 220px) and (max-width: 579px) {
-                    font-size: 8px !important;
-                }
+    
             }
         
             .starting_from_main {
@@ -115,11 +104,9 @@
                 color: #FD8825;
                 padding-top: 20px;
                 padding-left: 10px;
-                @media screen and (min-width: 220px) and (max-width: 579px) {
-                    font-size: 12px !important;
-                }
             }
         }
+        
     }
   
     &-bottom {

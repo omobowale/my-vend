@@ -1,6 +1,21 @@
 import * as API from "../../utils/api";
 import * as actions from "./store/actions";
 
+export function getProducts(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = "product" ;
+            API.getReq(url,
+                (res => {
+                    dispatch(actions.productList(res));
+                    resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
 export function getFeaturedProducts(params) {
     return dispatch =>
         new Promise((resolve, reject) => {

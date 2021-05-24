@@ -3,6 +3,7 @@ import * as actionTypes from './actionTypes';
 import * as stores from './stores';
 
 const initialState = {
+    products: [],
     featuredProducts: [],
     currencies : [],
     categories : [],
@@ -17,6 +18,8 @@ const initialState = {
 
 const reducer = (state = initialState, { type, payload = null }) => {
     switch (type) {
+        case actionTypes.PRODUCT_LIST :
+            return stores.storeProductList(state, payload);
         case actionTypes.FEATURED_PRODUCTS :
             return stores.storeFeaturedProducts(state, payload);
         case actionTypes.CURRENCY_LIST :

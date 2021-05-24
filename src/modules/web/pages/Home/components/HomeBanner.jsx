@@ -6,10 +6,14 @@ import img17 from '../../../../../assets/img/logo/image 17.png'
 
 const HomeBanner = () => {
     return (
-        <section className="home_banner">
-            <img src={img17} />
-            <img src={img16} />
-            <img src={img15} />
+        <section className="home_banner row">
+            <div className="col-12 col-md-6 col-lg-6 img-container">
+                <img src={img17} />
+                <img src={img16} />
+            </div>
+            <div className="col-12 col-md-6 col-lg-6 img-container">
+                <img src={img15} />
+            </div>
         </section>
     )
 

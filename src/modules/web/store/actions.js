@@ -1,5 +1,12 @@
 import * as actionTypes from './actionTypes';
 
+export const productList = (payload) => {
+    return {
+        type: actionTypes.PRODUCT_LIST,
+        payload,
+    };
+};
+
 export const featuredProducts = (payload) => {
     return {
         type: actionTypes.FEATURED_PRODUCTS,

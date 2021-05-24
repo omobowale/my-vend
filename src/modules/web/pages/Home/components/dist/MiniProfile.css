@@ -1,0 +1,114 @@
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .stack-content {
+    padding: 10px 5px !important;
+  }
+}
+.stack-content:not(:last-child) {
+  margin-right: 2rem;
+}
+.stack-content .save-button {
+  padding: 7px 7px 4px;
+  background-color: #ffffff9f;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.stack-content .save,
+.stack-content .delete {
+  font-size: 1.2rem;
+  color: #222;
+}
+.stack-content img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 150px;
+  object-fit: scale-down;
+}
+.stack-content .seller_name {
+  width: 100%;
+  padding: 0.4rem 1rem 0.3rem;
+  margin-top: -0.4rem;
+  background: #21c0fc;
+  color: #fff;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.stack-content-tag {
+  color: #1A222A70;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .stack-content-tag {
+    font-size: 8px !important;
+  }
+}
+.stack-content-text {
+  padding: 0.5rem 0.8rem;
+  height: min-content;
+}
+.stack-content-text .work {
+  font-size: 14px !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1A222A;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .stack-content-text .work {
+    font-size: 11px !important;
+  }
+}
+.stack-content-text .rating-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.stack-content-text .rating-review .rating span {
+  font-size: 0.9rem;
+}
+.stack-content-text .review {
+  font-size: 0.8rem;
+}
+.stack-content-text .pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: max-content;
+}
+.stack-content-text .pricing .starting_from_caption {
+  justify-self: start;
+  font-size: 12px !important;
+  color: #999;
+  color: #1A222A78;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .stack-content-text .pricing .starting_from_caption {
+    font-size: 8px !important;
+  }
+}
+.stack-content-text .pricing .starting_from_main {
+  font-weight: 900;
+  font-size: 17px;
+  color: #FD8825;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .stack-content-text .pricing .starting_from_main {
+    font-size: 12px !important;
+  }
+}
+.stack-content-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stack-content-bottom .compare-icon {
+  width: 50px;
+  color: #484848;
+}

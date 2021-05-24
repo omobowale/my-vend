@@ -1,5 +1,11 @@
 import HTTP from "../../../utils/Http";
 
+export function storeProductList(state, payload) {
+    return Object.assign({}, state, { 
+        products : payload,
+    });
+}
+
 export function storeFeaturedProducts(state, payload) {
     return Object.assign({}, state, { 
         featuredProducts : payload,

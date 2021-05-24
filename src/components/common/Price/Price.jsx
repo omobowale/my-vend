@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { numberWithCommas } from '../../../utils/transfomer';
+import Transformer from '../../../utils/Transformer';
 
 function Price({
   price,
@@ -16,7 +16,8 @@ function Price({
   noConversion = false,
 }) {
   const buyingCurrency = serious ? seriousCurrency : currency;
-  const conversionRate = conversions[buyingCurrency.id][priceCurrencyId];
+  // const conversionRate = conversions[buyingCurrency.id][priceCurrencyId];
+  const conversionRate = {};
 
   const calculateCurrency = () => {
     const convertedPrice = noConversion
@@ -24,14 +25,14 @@ function Price({
       : price * conversionRate.net_rate;
 
     // console.log(buyingCurrency.id, priceCurrencyId, conversionRate.net_rate);
-
+console.log('converted',convertedPrice)
     return decimal ? convertedPrice.toFixed(2) : Math.ceil(convertedPrice);
   };
 
   return (
     <span className={`currency-price ${className}`}>{`${
       !noSymbol ? buyingCurrency?.symbol : ''
-    } ${numberWithCommas(calculateCurrency())}`}</span>
+    }${Transformer.numberWithCommas(calculateCurrency())}`}</span>
   );
 }
 
@@ -53,7 +54,7 @@ Price.defaultProps = {
 
 const mapStateToProps = (state) => {
   return {
-    currency: state.web.selectedCurrency,
+    // currency: state.web.selectedCurrency,
     // seriousCurrency: state.buyer.currency,
     // conversions: state.web.netConversions.othersToCurrency,
   };
