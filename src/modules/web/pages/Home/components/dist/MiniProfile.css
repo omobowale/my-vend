@@ -6,9 +6,6 @@
     padding: 10px 5px !important;
   }
 }
-.stack-content:not(:last-child) {
-  margin-right: 2rem;
-}
 .stack-content .save-button {
   padding: 7px 7px 4px;
   background-color: #ffffff9f;

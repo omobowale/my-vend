@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faAngleLeft} from '@fortawesome/free-solid-svg-icons';
 import { getProductCategoryList } from '../../../../modules/web/service'
 
 import './MegaMenu.scss'
@@ -52,9 +54,16 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
     if(activeCategory && activeCategory.name){
         return (
             <div className={'container sm-mega-menu'}>
-                
-                <div className="sub-category-section">
-                    <h2 className='mega-title'>{activeCategory.name}</h2>  
+                <div className={`sub-category-section ${activeCategory.name && 'show'} `}>
+                    {/* <h2 className='mega-title'>{activeCategory.name}</h2>   */}
+                    <div onClick={() => selectCategory({})}  className="prev-menu">
+                        <span> 
+                            <FontAwesomeIcon
+                            icon={faAngleLeft}
+                            />
+                        </span>
+                        <span>All Categories </span>
+                    </div>
                     <div className="sub-category-menu">
                         
                         {subCategories.map( sub => renderMenu(sub, sub.subArray))}
@@ -69,7 +78,7 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
     return (
         
         <div className={'container sm-mega-menu'}>
-            <div className="category-list-menu">
+            <div className={`category-list-menu ${!activeCategory.name && 'show'}`}>
                 <h5 className='nav-title'>Categories</h5>
                 <nav className="navigation ">
                     <ul>

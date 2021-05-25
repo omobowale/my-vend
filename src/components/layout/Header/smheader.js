@@ -23,36 +23,8 @@ function SmHeader({
 }) {
     const [sidebar, setSidebar] = useState('');
     const [searchMode, setSearchMode] = useState('');
-    const [mouseOverButton, setMouseOverButton] = useState(false);
-    const [mouseOverMenu, setMouseOverMenu] = useState(false);
     const [activeMenu, setActiveMenu] = useState('product');
 
-    const mouseOverMegaMenu = (menu) => {
-        setMouseOverMenu(true);
-    }
-
-    const mouseOverMenuButton = (menu) => {
-        setMouseOverButton(true);
-        setActiveMenu(menu)
-    }
-
-    const mouseLeaveMenuButton = () => {
-        setMouseOverButton(false);
-    }
-
-    const mouseLeaveMegaMenu = () => {
-        setMouseOverMenu(false);
-    }
-
-    const showSidebar = () => setSidebar('show');
-
-    const hideSidebar = () => setSidebar('');
-
-    const renderSidebar = () => {
-        return (
-            <Sidebar openAuthPage={openAuthPage} closeSidebar={hideSidebar} signup={signup} />
-        );
-    };
 
     const toggleSearchMode = () =>
         setSearchMode(searchMode === 'reveal' ? '' : 'reveal');
@@ -105,23 +77,10 @@ function SmHeader({
                 <div className="header-flex">
                     <MobileSearchForm toggleSearchMode={toggleSearchMode} />
                 </div>
-                <div className={`sidebar ${sidebar}`}>
-                    <div className="side-content">
-                        <FontAwesomeIcon
-                        icon={faTimes}
-                        size="lg"
-                        onClick={hideSidebar}
-                        className="close"
-                        />
-
-                        <nav className="sidebar-nav">{renderSidebar()}</nav>
-                    </div>
-                </div>
             </div>
             <div className="header-bottom">
                 <div className="container clearfix">
-                    <SmBottomNavigation  openAuthPage={openAuthPage} 
-                        mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} />
+                    <SmBottomNavigation  openAuthPage={openAuthPage} />
                 </div>
 
             </div>

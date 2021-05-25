@@ -7,10 +7,6 @@
     @media screen and (min-width: 220px) and (max-width: 579px) {
         padding: 10px 5px !important;
     }
-
-    &:not(:last-child) {
-        margin-right: 2rem;
-    }
   
     .save-button {
         padding: 7px 7px 4px;

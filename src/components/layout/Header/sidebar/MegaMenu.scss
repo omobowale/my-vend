@@ -12,7 +12,13 @@
         width: auto;
         max-width: 300px;
         padding-bottom: 35px;
-
+        left: -800vw;
+        // opacity: 0.95;
+        position: relative;
+        transition: 1.9s ease all;
+        &.show {
+            left: 0;
+        }
         nav{
             padding-top: 10px;
             width: 100%;
@@ -58,22 +64,38 @@
         // background-color: black;
         height: 100%;
         flex: 1;
-        padding: 35px 15px;
+        position: relative;
+        // padding: 35px 15px;
         display: flex;
         flex-direction: column;
+        right: -800vw;
+        // opacity: 0.95;
+        transition: 1.9s ease all;
+
+        &.show {
+            right: unset;
+        }
         .mega-title {
             margin-bottom: 10px;
             font-size: 25px;
             font-weight: 700;
         }
-
+        .prev-menu {
+            display: flex;
+            cursor: pointer;
+            color:  #F05C40;
+            span {
+                padding: 2px 5px;
+            }
+        }
         .sub-category-menu {
             display: flex;
             flex: 1 1;
             position: relative;
-            min-width: 400px;
+            min-width: 200px;
             overflow-x: hidden;
             overflow-wrap: anywhere;
+            
             nav{
                 padding: 15px 15px 15px 0px;
                 float: none;

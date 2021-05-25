@@ -13,6 +13,12 @@
   width: auto;
   max-width: 300px;
   padding-bottom: 35px;
+  left: -800vw;
+  position: relative;
+  transition: 1.9s ease all;
+}
+.sm-mega-menu .category-list-menu.show {
+  left: 0;
 }
 .sm-mega-menu .category-list-menu nav {
   padding-top: 10px;
@@ -54,20 +60,33 @@
 .sm-mega-menu .sub-category-section {
   height: 100%;
   flex: 1;
-  padding: 35px 15px;
+  position: relative;
   display: flex;
   flex-direction: column;
+  right: -800vw;
+  transition: 1.9s ease all;
+}
+.sm-mega-menu .sub-category-section.show {
+  right: unset;
 }
 .sm-mega-menu .sub-category-section .mega-title {
   margin-bottom: 10px;
   font-size: 25px;
   font-weight: 700;
 }
+.sm-mega-menu .sub-category-section .prev-menu {
+  display: flex;
+  cursor: pointer;
+  color: #F05C40;
+}
+.sm-mega-menu .sub-category-section .prev-menu span {
+  padding: 2px 5px;
+}
 .sm-mega-menu .sub-category-section .sub-category-menu {
   display: flex;
   flex: 1 1;
   position: relative;
-  min-width: 400px;
+  min-width: 200px;
   overflow-x: hidden;
   overflow-wrap: anywhere;
 }

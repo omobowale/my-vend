@@ -77,14 +77,11 @@ function SmBottomNavigator({
 
             <div className={`sidebar ${sidebar}`}>
                 <div className="side-content">
-                    <div className="close-sidebar">
+                    <div className="close-sidebar" onClick={hideSidebar}>
                         <span>close </span>
                         <span> 
                             <FontAwesomeIcon
                             icon={faTimesCircle}
-                            // size="lg"
-                            onClick={hideSidebar}
-                            // className="close"
                             />
                         </span>
                     </div>
