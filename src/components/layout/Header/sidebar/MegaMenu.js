@@ -49,7 +49,25 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
         return () => {_isMounted = false; };
     });
 
+    if(activeCategory && activeCategory.name){
+        return (
+            <div className={'container sm-mega-menu'}>
+                
+                <div className="sub-category-section">
+                    <h2 className='mega-title'>{activeCategory.name}</h2>  
+                    <div className="sub-category-menu">
+                        
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                
+                    </div>
+
+                </div>
+            </div>
+        )
+    }
+
     return (
+        
         <div className={'container sm-mega-menu'}>
             <div className="category-list-menu">
                 <h5 className='nav-title'>Categories</h5>
@@ -64,15 +82,6 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
                         })}
                     </ul>
                 </nav>
-            </div>
-            <div className="sub-category-section">
-                <h2 className='mega-title'>{activeCategory.name}</h2>  
-                <div className="sub-category-menu">
-                    
-                    {subCategories.map( sub => renderMenu(sub, sub.subArray))}
-            
-                </div>
-
             </div>
         </div>
     );

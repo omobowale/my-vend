@@ -2169,16 +2169,25 @@ main{
         color: #1A222A78;
         overflow-x: hidden;
         height: auto;
+        .left-container{
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+        }
         .img-container{
           display: flex;
           flex-direction: row;
           align-items: center;
           color: #1A222A78;
-          overflow-x: hidden;
-          height: 238px;
+          overflow: hidden;
+          max-height: 230px;
+          @media #{$mobile-view} {
+            max-height: 140px;
+          }
           img{
-            height: 230px;
-            object-fit: scale-down;
+            // height: 230px;
+            height: auto;
+            object-fit: contain;
           }
         }
       }
