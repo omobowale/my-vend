@@ -8,22 +8,32 @@
 .vendor-section{
     // position: absolute;
     background-color: #fff;
-    width: 100%;
+    // width: 100%;
     min-height: 200px;
     padding: 0;
     position: relative;
     top: -30px;
-    z-index: 10;
+    z-index: 2;
+    // display: flex;
+    // flex: 1;
+    // overflow-x: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    // margin: 0px;
+    overflow-x: auto;
+
     @media screen and (min-width: 220px) and (max-width: 579px) {
         position: relative;
         padding: 5px 5px;
         background-color: transparent;
         background-color: #EBFAFF;
-        top: 0px;
-        
+        top: 0px;   
     }
     .col{
         padding: 0;
+        width: auto;
+        max-width: none;
     }
     .vendor-items {
         display: flex;
@@ -38,9 +48,11 @@
             display: flex;
             flex-direction: column;
             padding: 0px !important;
+            min-width: 183px;
             width: 183px;
             height: 150px;
             @media screen and (min-width: 220px) and (max-width: 579px) {
+                min-width: 133px;
                 width: 133px;
                 height: 108px;
             }
@@ -75,44 +87,53 @@
 .livevend-app-section {
     background-color: #F0F0F0;
     position: relative;
-    padding-top: 120px;
-    top: -100px;
+    .clear-shift{ 
+        width: 100%;
+        background-color: black;
+        background-color: #F0F0F0;
+        height: 300px;
+        position: absolute;
+        top: -120px;
+    }
+    .livevend-app-section-content {
+        background-color: #F0F0F0;
+        position: relative;
+    }
     .container {
 
         div.img-background {
             z-index: 0;
-            right: 0;
             display: flex;
-            position: absolute;
             align-items: center;
+            height: 450px;
             justify-content: flex-end;
-            height: 900px;
-            img.full-screen {
+            img.livevend-app {
               z-index: 0;
-              position: relative;
-              right: 0px;
-              
+              position: relative; 
+              right: -80px;
+              top: 60px;
+              object-fit: contain;
+              max-height: 450px;
             }
-
+            img.livevend-project-app {
+                object-fit: contain;
+                z-index: 2;
+                top: 30px;
+                position: relative;
+                max-height: 450px;
+            }
             @media  screen and (min-width: 220px) and (max-width: 579px) {
-              height: 380px;
-              width: 100%;
-              img {
-                object-fit: scale-down;
-                height: 380px;
-          
-              }
+              display: none;
             }
         }
   
         div.right-container{
             position: relative;
             height: 100%;
-            z-index: 1;
             align-items: center;
-            padding-left: 50px;
             display: flex;
-            padding-left: 100px;
+            flex: 1;
+            padding: 15px;
         }
     
     
@@ -140,7 +161,6 @@
         }
     
         .app-section--text {
-          margin-bottom: 2rem;
           text-align: left;
           max-width: 500px;
           

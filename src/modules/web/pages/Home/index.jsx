@@ -15,6 +15,8 @@ import dangote from '../../../../assets/img/common/dangote.png'
 import bua from '../../../../assets/img/common/bua.png'
 import appstore from '../../../../assets/img/common/app-store.png'
 import googlestore from '../../../../assets/img/common/google-store.png'
+import livevend from '../../../../assets/img/common/live-vend-app.png'
+import livevendproject from '../../../../assets/img/common/live-vend-project-app.png'
 import { Link } from 'react-router-dom';
 
 function Home({ dispatch, featuredProducts, products }) {
@@ -62,6 +64,36 @@ function Home({ dispatch, featuredProducts, products }) {
                                     <img src={dangote} />
                                 </div>
                             </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
 
                         </div>
                         
@@ -72,6 +104,38 @@ function Home({ dispatch, featuredProducts, products }) {
                                     <img src={bua} />
                                 </div>
                             </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
+
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={dangote} />
+                                </div>
+                            </div>
+                            <div className="vendor-item">
+                                <div className="vendor-content">
+                                    <img src={bua} />
+                                </div>
+                            </div>
+
 
                         </div>
                     
@@ -79,13 +143,20 @@ function Home({ dispatch, featuredProducts, products }) {
 
                 </div>
                 <div className="livevend-app-section">
+                    <div className="clear-shift"></div>
+                    <div className="livevend-app-section-content">
                     <div className="container">
                         <div className="img-background">
-                            {/* <img
-                                src={home1}
+                            <img
+                                src={livevend}
                                 alt="a freelancer"
-                                className={`full-screen  `}
-                            /> */}
+                                className="livevend-app"
+                            />
+                            <img
+                                src={livevendproject}
+                                alt="a freelancer"
+                                className="livevend-project-app"
+                            />
                         </div>
                         <div className="right-container">
                             
@@ -114,8 +185,27 @@ function Home({ dispatch, featuredProducts, products }) {
                             
                         </div>
                     </div>
+                    </div>
                 </div>
-                <div  className="bg-theme-secondary p-3"> Subscribe to our newsletter</div>
+                <div  className="bg-theme-secondary p-5 subscription-section">
+                    <div className="container">
+                        <div className="row m-0">
+
+                            <div className="col-md-4">
+                                <h3 className="h5 mt-3 text-w-800">Subscribe To Our Newsletter</h3>
+                                <p className="mt-3 p-2">We have been transforming ideas and visions into award winning projects</p>
+
+                            </div>
+                            <div className="col-md-5">
+
+                                <p>Yes, I want to receive news and offers related to PriceRunner's product range, competitions and recommendations via email. I can withdraw my consent at any time. Read more in our Privacy Policy.</p>
+                            </div>
+                            <div className="col-md-3">
+
+                            </div>
+                        </div>
+                    </div> 
+                </div>
             </main>
         </>
     );

@@ -1,11 +1,13 @@
 .vendor-section {
   background-color: #fff;
-  width: 100%;
   min-height: 200px;
   padding: 0;
   position: relative;
   top: -30px;
-  z-index: 10;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
 }
 @media screen and (min-width: 220px) and (max-width: 579px) {
   .vendor-section {
@@ -18,6 +20,8 @@
 }
 .vendor-section .col {
   padding: 0;
+  width: auto;
+  max-width: none;
 }
 .vendor-section .vendor-items {
   display: flex;
@@ -32,11 +36,13 @@
   display: flex;
   flex-direction: column;
   padding: 0px !important;
+  min-width: 183px;
   width: 183px;
   height: 150px;
 }
 @media screen and (min-width: 220px) and (max-width: 579px) {
   .vendor-section .vendor-items .vendor-item {
+    min-width: 133px;
     width: 133px;
     height: 108px;
   }
@@ -73,41 +79,53 @@
 .livevend-app-section {
   background-color: #F0F0F0;
   position: relative;
-  padding-top: 120px;
-  top: -100px;
+}
+.livevend-app-section .clear-shift {
+  width: 100%;
+  background-color: black;
+  background-color: #F0F0F0;
+  height: 300px;
+  position: absolute;
+  top: -120px;
+}
+.livevend-app-section .livevend-app-section-content {
+  background-color: #F0F0F0;
+  position: relative;
 }
 .livevend-app-section .container div.img-background {
   z-index: 0;
-  right: 0;
   display: flex;
-  position: absolute;
   align-items: center;
+  height: 450px;
   justify-content: flex-end;
-  height: 900px;
 }
-.livevend-app-section .container div.img-background img.full-screen {
+.livevend-app-section .container div.img-background img.livevend-app {
   z-index: 0;
   position: relative;
-  right: 0px;
+  right: -80px;
+  top: 60px;
+  object-fit: contain;
+  max-height: 450px;
+}
+.livevend-app-section .container div.img-background img.livevend-project-app {
+  object-fit: contain;
+  z-index: 2;
+  top: 30px;
+  position: relative;
+  max-height: 450px;
 }
 @media screen and (min-width: 220px) and (max-width: 579px) {
   .livevend-app-section .container div.img-background {
-    height: 380px;
-    width: 100%;
-  }
-  .livevend-app-section .container div.img-background img {
-    object-fit: scale-down;
-    height: 380px;
+    display: none;
   }
 }
 .livevend-app-section .container div.right-container {
   position: relative;
   height: 100%;
-  z-index: 1;
   align-items: center;
-  padding-left: 50px;
   display: flex;
-  padding-left: 100px;
+  flex: 1;
+  padding: 15px;
 }
 @media screen and (min-width: 990px) {
   .livevend-app-section .container {
@@ -122,7 +140,6 @@
   }
 }
 .livevend-app-section .container .app-section--text {
-  margin-bottom: 2rem;
   text-align: left;
   max-width: 500px;
 }
