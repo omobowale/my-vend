@@ -150,11 +150,11 @@ const HomeFeatured = ({products=[]}) => {
 
 
                     {products.map( (product) => (
-                        <ProductMiniProfile className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6" key={shortid.generate()} product={product} />
+                        <ProductMiniProfile className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6" key={shortid.generate()} product={product} showSaveIcon={true} />
                     ))}
 
                     {featured.map( (product) => (
-                        <ProductMiniProfile className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6" key={shortid.generate()} product={product} />
+                        <ProductMiniProfile className="stack-item horizontal col-6 col-sm-6 col-md-6 col-lg-6" key={shortid.generate()} product={product} showSaveIcon={true} />
                     ))}
 
                 </div>      
