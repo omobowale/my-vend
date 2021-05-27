@@ -7,7 +7,7 @@ import { getProductCategoryList } from '../../../../modules/web/service'
 
 import './MegaMenu.scss'
 
-function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMenu }) {
+function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, mouseOverMegaMenu }) {
     let _isMounted = false;
     const [activeCategory, setActiveCategory] = useState({});
     const [subCategories, setSubCategories] = useState([]);
@@ -65,9 +65,12 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
                         <span>All Categories </span>
                     </div>
                     <div className="sub-category-menu">
-                        
+    
                         {subCategories.map( sub => renderMenu(sub, sub.subArray))}
-                
+            
+                        <div className="pt-5">
+                            <Link className="category-link" onClick={() => closeMegaMenu()} to={`/category/${activeCategory.slug}`} >Show all Sub-categories in {activeCategory.name}</Link>
+                        </div>
                     </div>
 
                 </div>

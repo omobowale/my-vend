@@ -5,7 +5,7 @@ import { getProductCategoryList } from '../../../../modules/web/service'
 
 import './MegaMenu.scss'
 
-function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMenu }) {
+function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, mouseOverMegaMenu }) {
     let _isMounted = false;
     const [activeCategory, setActiveCategory] = useState({});
     const [subCategories, setSubCategories] = useState([]);
@@ -26,7 +26,7 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
 
     const renderMenu = useCallback((subCat={}, brands=[]) => {
         return (
-            <nav className="navigation ">
+            <nav className="navigation col-3">
                 <ul>
                     <li key={subCat.id} className="active"> {subCat.name} </li>
                     {brands.map( brand => {
@@ -67,9 +67,25 @@ function MegaMenu({ dispatch, categories=[], mouseLeaveMegaMenu, mouseOverMegaMe
             <div className="sub-category-section">
                 <h2 className='mega-title'>{activeCategory.name}</h2>  
                 <div className="sub-category-menu">
-                    
-                    {subCategories.map( sub => renderMenu(sub, sub.subArray))}
-            
+                    <div className="nav-section row m-0">
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+
+                        <div className="col-12 pt-4">
+                            {activeCategory.name && <Link className="category-link" onClick={() => closeMegaMenu() } to={`/category/${activeCategory.slug}`} >Show all Sub-categories in {activeCategory.name}</Link> }
+                        </div>
+                    </div>
+                    <div className="advert-section">
+                    </div>
                 </div>
 
             </div>

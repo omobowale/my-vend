@@ -95,7 +95,7 @@ function SmBottomNavigator({
                             <Link to="/"> About Cutstruct </Link>
                         </li>
                     </div>
-                    <nav className="sidebar-nav"><MegaMenu /></nav>
+                    <nav className="sidebar-nav"><MegaMenu closeMegaMenu={hideSidebar} /></nav>
                 </div>
             </div>
         </>

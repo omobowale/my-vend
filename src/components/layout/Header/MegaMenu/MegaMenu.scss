@@ -4,6 +4,9 @@
     padding: 0 !important;
     flex-direction: row;
     border-radius: 10px;
+    @media (min-width: 1200px) {
+        max-width: 1426px !important;
+    }
     .category-list-menu {
         display: flex;
         height: 100%;
@@ -71,9 +74,22 @@
             display: flex;
             flex: 1 1;
             position: relative;
-            min-width: 400px;
+            min-width: 723px;
             overflow-x: hidden;
             overflow-wrap: anywhere;
+            .advert-section {
+                width: 270px;
+                border: 1px solid black;
+            }
+            .nav-section {
+                flex: 1; 
+            }
+
+            .category-link{
+                font-size: 13px;
+                font-weight: 700;
+                color: #F05C40;
+            }
             nav{
                 padding: 15px 15px 15px 0px;
                 float: none;

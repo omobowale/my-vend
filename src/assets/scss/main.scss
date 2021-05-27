@@ -1126,7 +1126,8 @@ a.links-more {
       z-index: 0;
       background-color: #00000072;  
       div.mega-menu{
-        height: 400px;
+        // height: 400px;
+        height: 723px;
         -webkit-animation-name: call_panel_transition; /* Safari 4.0 - 8.0 */
         -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
         animation-name: call_panel_transition;
@@ -1682,6 +1683,8 @@ a.links-more {
           display: flex;
           flex-direction: column;
           height: 100vh;
+          position: relative;
+          overflow: hidden;
         }
         .close-sidebar {
             position: absolute;
@@ -1739,6 +1742,8 @@ a.links-more {
             padding: 15px;
             background-color: #ffffff;
             flex: 1;
+            position: relative;
+            overflow: hidden;
             .nav-title {
               font-size: 25px;
               font-weight: 700;
@@ -1789,7 +1794,7 @@ main{
 
     &.page {
         height: calc(100% - 350px);
-        margin-top: 105px;
+        margin-top: 110px;
 
         @media #{$tablet-view} {
           margin-top: 190px;
@@ -1842,6 +1847,23 @@ main{
     .text-w-900 {
       font-weight: 900;
     }
+    .breadcrumb {
+      background-color: #ffffff;
+
+    }
+
+
+    .breadcrumb-item {
+      font-weight: 700;
+      // The separator between breadcrumbs (by default, a forward-slash: "/")
+      color: #1A222A80;
+      + .breadcrumb-item {
+        &::before {
+          content: ">";
+        }
+      }
+    }
+
     /*Home Page */
     .home_top {
       // padding: 3rem 1rem 2rem;

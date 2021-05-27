@@ -1,0 +1,328 @@
+.section--title {
+  font-size: 25px;
+  font-weight: 700;
+  color: #1A222Aa1;
+  padding: 15px;
+}
+.section--title span {
+  font-size: 25px;
+  font-weight: 700;
+  color: #FD8825;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .section--title {
+    font-size: 20px;
+  }
+  .section--title span {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 580px) and (max-width: 989px) {
+  .section--title {
+    font-size: 20px;
+  }
+  .section--title span {
+    font-size: 20px;
+  }
+}
+
+.page-content {
+  z-index: 3;
+  position: relative;
+  background-color: #fff;
+}
+
+.sub-category-menu {
+  display: flex;
+  flex: 1 1;
+  position: relative;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
+}
+.sub-category-menu .advert-banner-section {
+  width: 270px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .sub-category-menu .advert-banner-section {
+    display: none;
+  }
+}
+.sub-category-menu .stack-item {
+  min-width: 150px;
+}
+.sub-category-menu .stack-item .stack-content {
+  display: flex;
+  flex-direction: column;
+}
+.sub-category-menu .stack-item .stack-content-img {
+  background: #04066209;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.sub-category-menu .stack-item .stack-content-img img {
+  position: relative;
+}
+.sub-category-menu .stack-item .stack-content-text {
+  position: relative;
+  padding-top: 15px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.popular-products-content {
+  padding: 15px;
+}
+.popular-products-content .stack-items {
+  display: flex;
+  flex-direction: row;
+}
+.popular-products-content .stack-items .stack-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0px !important;
+  margin-right: 10px;
+}
+.popular-products-content .stack-items .stack-item .stack-content {
+  position: relative;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: black 0px 8px 10px, black 8px 0px 10px;
+  box-shadow: 0px 1px 7px 1px #666066;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .popular-products-content .stack-items .stack-item .stack-content {
+    padding: 10px 5px !important;
+  }
+}
+.popular-products-content .stack-items .stack-item .stack-content .save-button {
+  padding: 7px 7px 4px;
+  background-color: #ffffff9f;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.popular-products-content .stack-items .stack-item .stack-content .save,
+.popular-products-content .stack-items .stack-item .stack-content .delete {
+  font-size: 1.2rem;
+  color: #222;
+}
+.popular-products-content .stack-items .stack-item .stack-content-img {
+  background: #04066209;
+  height: 157px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.popular-products-content .stack-items .stack-item .stack-content-img img {
+  position: relative;
+}
+.popular-products-content .stack-items .stack-item .stack-content-tag {
+  color: #1A222A70;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .popular-products-content .stack-items .stack-item .stack-content-tag {
+    font-size: 8px !important;
+  }
+}
+.popular-products-content .stack-items .stack-item .stack-content-text {
+  padding: 0.5rem 0.8rem;
+  height: min-content;
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .work {
+  font-size: 14px !important;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #1A222A;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .popular-products-content .stack-items .stack-item .stack-content-text .work {
+    font-size: 11px !important;
+  }
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .rating-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .rating-review .rating span {
+  font-size: 0.9rem;
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .review {
+  font-size: 0.8rem;
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: max-content;
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .pricing .starting_from_caption {
+  justify-self: start;
+  font-size: 12px !important;
+  color: #999;
+  color: #1A222A78;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .popular-products-content .stack-items .stack-item .stack-content-text .pricing .starting_from_caption {
+    font-size: 8px !important;
+  }
+}
+.popular-products-content .stack-items .stack-item .stack-content-text .pricing .starting_from_main {
+  font-weight: 900;
+  font-size: 17px;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .popular-products-content .stack-items .stack-item .stack-content-text .pricing .starting_from_main {
+    font-size: 12px !important;
+  }
+}
+.popular-products-content .stack-items .stack-item .stack-content-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popular-products-content .stack-items .stack-item .stack-content-bottom .compare-icon {
+  width: 50px;
+  color: #484848;
+}
+
+.livevend-app-section {
+  background-color: #F0F0F0;
+  position: relative;
+}
+.livevend-app-section .clear-shift {
+  width: 100%;
+  background-color: black;
+  background-color: #F0F0F0;
+  background-color: #ffffff;
+  height: 300px;
+  position: absolute;
+  top: -120px;
+}
+.livevend-app-section .livevend-app-section-content {
+  background-color: #F0F0F0;
+  position: relative;
+}
+.livevend-app-section .container div.img-background {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  height: 450px;
+  justify-content: flex-end;
+}
+.livevend-app-section .container div.img-background img.livevend-app {
+  z-index: 0;
+  position: relative;
+  right: -80px;
+  top: 60px;
+  object-fit: contain;
+  max-height: 450px;
+}
+.livevend-app-section .container div.img-background img.livevend-project-app {
+  object-fit: contain;
+  z-index: 2;
+  top: 30px;
+  position: relative;
+  max-height: 450px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .livevend-app-section .container div.img-background {
+    display: none;
+  }
+}
+.livevend-app-section .container div.right-container {
+  position: relative;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 15px;
+}
+@media screen and (min-width: 990px) {
+  .livevend-app-section .container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .livevend-app-section .container-left img {
+    position: absolute;
+    right: 15%;
+    bottom: 0;
+  }
+}
+.livevend-app-section .container .app-section--text {
+  text-align: left;
+  max-width: 500px;
+}
+.livevend-app-section .container .app-section--text-main {
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+.livevend-app-section .container .app-section--text-main span {
+  font-size: 50px;
+  font-weight: 400;
+}
+@media screen and (min-width: 990px) {
+  .livevend-app-section .container .app-section--text-main {
+    font-size: 70px;
+    line-height: 80px;
+  }
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .livevend-app-section .container .app-section--text-main {
+    font-size: 30px;
+    max-width: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 45px;
+  }
+  .livevend-app-section .container .app-section--text-main span {
+    font-size: 30px;
+    font-weight: 400;
+  }
+}
+.livevend-app-section .container .app-section--text-sub {
+  font-size: 15px;
+  line-height: 22.13px;
+  font-weight: 500;
+  color: #1A222A89;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .livevend-app-section .container .app-section--text-sub {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+.livevend-app-section .container .app-section--text-stores {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+.livevend-app-section .container .app-section--text-stores a img {
+  max-height: 50px;
+  object-fit: contain;
+}

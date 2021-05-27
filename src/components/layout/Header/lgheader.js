@@ -42,20 +42,34 @@ function LgHeader({
     }
 
     const mouseOverMegaMenu = (menu) => {
-        setMouseOverMenu(true);
+        // setMouseOverMenu(true);
     }
 
     const mouseOverMenuButton = (menu) => {
-        setMouseOverButton(true);
+        // setMouseOverButton(true);
         setActiveMenu(menu)
     }
 
     const mouseLeaveMenuButton = () => {
-        setMouseOverButton(false);
+        // setMouseOverButton(false);
     }
 
     const mouseLeaveMegaMenu = () => {
-        setMouseOverMenu(false);
+        // setMouseOverMenu(false);
+    }
+
+    const toggleMegaMenuStatus = (menu) => {
+        if(activeMenu == menu && mouseOverButton){
+            setMouseOverButton(false);
+            setActiveMenu(menu);
+        }else{
+            setMouseOverButton(true);
+            setActiveMenu(menu)
+        }
+    }
+
+    const closeMegaMenu = () => {
+        setMouseOverButton(false);    
     }
 
 
@@ -109,7 +123,7 @@ function LgHeader({
             <div className="header-bottom">
                 <div className="container clearfix">
                     <BottomNavigation  openAuthPage={openAuthPage} 
-                        mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} />
+                        mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} toggleMegaMenuStatus={toggleMegaMenuStatus} />
                 </div>
                 <div
                     className={
@@ -118,7 +132,7 @@ function LgHeader({
                             : "hide-megamenu-container"
                     }
                 >
-                    <MegaMenu mouseLeaveMegaMenu={mouseLeaveMegaMenu} mouseOverMegaMenu={mouseOverMegaMenu} />
+                    <MegaMenu mouseLeaveMegaMenu={mouseLeaveMegaMenu} mouseOverMegaMenu={mouseOverMegaMenu} closeMegaMenu={closeMegaMenu} />
                 </div>
 
             </div>

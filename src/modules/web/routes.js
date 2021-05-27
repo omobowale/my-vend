@@ -1,13 +1,20 @@
 import { lazy } from 'react';
 const Home = lazy(() => import('./pages/Home'));
+const Category = lazy(() => import('./pages/Category'));
 const NotFound = lazy(() => import('./pages/Notfound/NotFound'));
 
 
 export default [
-  {
-    path: '/',
-    component: Home,
-    exact: true,
-    auth: false,
-  }
+    {
+        path: '/',
+        component: Home,
+        exact: true,
+        auth: false,
+    },
+    {
+        path: '/category/:name',
+        component: Category,
+        exact: true,
+        auth: false,
+    }
 ];

@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
-const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuButton }) => {
+const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuButton, toggleMegaMenuStatus }) => {
     const location = useLocation();
     return (
         <>
             <nav className="navigation left">
                 <ul>
-                    <li className="m-t-three "  onMouseEnter={ () => mouseOverMenuButton('product') } onMouseLeave={ () => mouseLeaveMenuButton() }>
-                        <Link to="/">Products</Link>
+                    <li className="m-t-three "  onMouseEnter={ () => mouseOverMenuButton('product') } onMouseLeave={ () => mouseLeaveMenuButton() } onClick={ () => toggleMegaMenuStatus('product') } >
+                        <a href="javascript: false" >Products</a>
                     </li>
                     <li className="m-t-three">
                         <Link to="/">
