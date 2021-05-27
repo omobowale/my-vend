@@ -55,7 +55,7 @@ function SmBottomNavigator({
                 <ul>
                     <li>
                     
-                        <a title="nav" href="#0" className="nav-sm">
+                        <a title="nav" href="javascript: false" className="nav-sm">
                             <FontAwesomeIcon
                             icon={faBars}
                             size="lg"

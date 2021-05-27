@@ -48,7 +48,7 @@ class SearchForm extends Component {
         return (
         <Fragment>
             <form
-                className="home_top--search--form"
+                className="search-form"
                 onSubmit={this.onSubmit}
                 autoComplete="off"
                 >

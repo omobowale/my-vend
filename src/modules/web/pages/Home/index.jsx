@@ -15,6 +15,7 @@ import dangote from '../../../../assets/img/common/dangote.png'
 import bua from '../../../../assets/img/common/bua.png'
 import { Link } from 'react-router-dom';
 import LiveVendApp from './components/LiveVendApp';
+import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 
 function Home({ dispatch, featuredProducts, products }) {
     console.log('fed', products)
@@ -140,25 +141,8 @@ function Home({ dispatch, featuredProducts, products }) {
 
                 </div>
                 <LiveVendApp />
-                <div  className="bg-theme-secondary p-5 subscription-section">
-                    <div className="container">
-                        <div className="row m-0">
 
-                            <div className="col-md-4">
-                                <h3 className="h5 mt-3 text-w-800">Subscribe To Our Newsletter</h3>
-                                <p className="mt-3 p-2">We have been transforming ideas and visions into award winning projects</p>
-
-                            </div>
-                            <div className="col-md-5">
-
-                                <p>Yes, I want to receive news and offers related to PriceRunner's product range, competitions and recommendations via email. I can withdraw my consent at any time. Read more in our Privacy Policy.</p>
-                            </div>
-                            <div className="col-md-3">
-
-                            </div>
-                        </div>
-                    </div> 
-                </div>
+                <SubscriptionSection />
             </main>
         </>
     );

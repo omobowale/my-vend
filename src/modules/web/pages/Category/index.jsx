@@ -8,6 +8,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SubCategoryList from './components/SubCategoryList';
 import LiveVendApp from './components/LiveVendApp';
 import PopularProducts from './components/PopularProduct';
+import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 
 function Page({ dispatch, category={} }) {
     
@@ -30,6 +31,7 @@ function Page({ dispatch, category={} }) {
                     <PopularProducts />
                 </div>
                 <LiveVendApp />
+                <SubscriptionSection />
             </main>
         </>
     );
