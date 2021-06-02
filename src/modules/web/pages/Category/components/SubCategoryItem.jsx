@@ -15,11 +15,11 @@ const SubCategoryItem = ({cat={}, subCat={}, className=''}) => {
             <Link className="stack-content" to={`/category/${cat.slug}/${subCat.slug}`} >
                 
                 <div className="stack-content-img">
-                    <img className="img-fluid" src={cat.image} />
+                    <img className="img-fluid" src={subCat.image} />
                 </div>
                 <div className="stack-content-text">
                     
-                    <h4 className="work"> {cat.name} </h4>
+                    <h4 className="work"> {subCat.name} </h4>
                     
                 </div>
             </Link>
