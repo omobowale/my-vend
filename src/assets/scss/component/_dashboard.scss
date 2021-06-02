@@ -1,0 +1,126 @@
+.user-pane {
+	border: 1px solid $grey-border;
+	border-radius: 3px;
+	background: #fafafa;
+	font-weight: bold;
+	width: 340px;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5{
+		margin: 0;
+		padding: 0;
+	}
+	h4{
+		font-size: 14px;
+		font-weight: bold;
+		color: $scrollbar-background;
+	}
+
+	.user-pane-top{
+		padding: 15px;
+		background: $white;
+	}
+	.user-row{
+		display: flex;
+		justify-content: flex-start;
+		// align-items: center;
+
+		.avatar{
+			margin-right: 13px;
+
+			img{
+				width: 62px;
+				height: 62px;
+			}
+		}
+		.user-info{
+			h3{
+				font-size: 18px;
+			    font-weight: bold;
+			    color: $h3-bold;
+			    margin-bottom: 5px;
+			}
+			h5{
+				font-size: 14px;
+			    font-weight: bold;
+			    color: #9b9b9b;
+			    margin-bottom: 7px;
+
+			    a{
+			    	margin-left: 3px;
+				    color: $tera-blue;
+				    font-size: 12px;
+			    }
+			}
+		}
+	}
+	.user-pane-bottom{
+		background: #fafafa;
+
+		.user-row{
+		    margin-bottom: 0;
+		    border-top: 1px solid #ddd;
+		    border-bottom: transparent;
+		    padding: 12px 20px;
+
+		    &.inline-row{
+		    	h4{
+		    		display: inline;
+		    		span{
+		    			color: $tera-green;
+		    		}
+		    	}
+		    	.btn.open-giftcard{
+		    		color: white;
+				    background-color: $tera-blue;
+				    margin-left: 10px;
+				    padding: 0 10px;
+		    	}
+		    	.btn.open-giftcard:hover{
+		    		background: darken($tera-blue, 10%)
+		    	}
+		    }
+		    &.row-list.second{
+		    	padding-top: 15px;
+			    padding-bottom: 15px;
+			    display: flex;
+			    flex-direction: column;
+
+			    h4{
+			    	width: 100%;
+			    	display: block;
+			    	color: $h3-bold;
+				    padding-bottom: 10px;
+			    }
+			    ul li{
+			    	padding: 5px 2px;
+				    color: $scrollbar-background;
+
+				    span{
+				    	float: right;
+				    	color: $h3-bold;
+				    }
+			    }
+		    }
+		    &.row-list{
+		    	h4{
+		    		font-size: 14px;
+				    font-weight: bold;
+				    padding-bottom: 5px;
+				    border-bottom: 1px solid $grey-border;
+		    	}
+
+		    	ul li{
+		    		color: #484848;
+				    font-size: 14px;
+				    padding: 7px 2px;
+				    border-bottom: 1px solid #ddd;
+				    overflow: auto;
+		    	}
+		    }
+		}
+	}
+
+}

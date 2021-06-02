@@ -6,6 +6,7 @@ import sug from '../../../../../assets/img/common/Suggested.png'
 import './MiniProfile.scss';
 import ProductMiniProfile from './ProductMiniProfile';
 import DealCountDown from './DealCountDown';
+import { renderRating } from '../../../../../utils/rating';
 
 const HomeTopSelling = ({products=[]}) => {
     return (
@@ -18,14 +19,20 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.map( (product) => (
-                                <ProductMiniProfile product={product} />
+                                <ProductMiniProfile showRating={true} product={product} />
                             ))}
                             
                             <div className="stack-item">
                                 <div className="stack-content">
+                                    <div className="rating-review">
+                                        <div className="rating">
+                                            {renderRating(4, false)}
+                                        </div>
+                                    </div>
                                     <img src={img3} />
                                     <div className="stack-content-text">
                                         <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
+                                    
                                         <div className="stack-content-bottom">
                                             <div className="pricing">
                                                 <p className="starting_from_caption">from</p>
@@ -40,6 +47,11 @@ const HomeTopSelling = ({products=[]}) => {
 
                             <div className="stack-item">
                                 <div className="stack-content">
+                                    <div className="rating-review">
+                                        <div className="rating">
+                                            {renderRating(4, false)}
+                                        </div>
+                                    </div>
                                     <img src={img3} />
                                     <div className="stack-content-text">
                                         <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>

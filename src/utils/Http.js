@@ -3,7 +3,7 @@ import axios from "axios";
 import shortid from "shortid";
 import store from "../store/index";
 
-const API_URL ='http://livevend-api.us-east-2.elasticbeanstalk.com/';
+const API_URL ='http://api.livevend.com:8080/';
 
 
 axios.defaults.baseURL = API_URL;

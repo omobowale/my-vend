@@ -23,6 +23,29 @@
         color: #222;
     }
   
+    .rating-review {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .rating {
+            span {
+                font-size: 0.9rem;
+            }
+            svg{
+                margin-right: 10px; 
+            }
+        }
+    }
+
+    .review {
+        font-size: 11px;
+        color: #1A222Ab2;
+        font-weight: 700;
+        padding: 5px;
+    }
+
     img {
         width: 100%;
         border-top-left-radius: 5px;
@@ -72,23 +95,6 @@
                 font-size: 11px !important;
             }
 
-        }
-    
-        .rating-review {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-    
-            .rating {
-                span {
-                    font-size: 0.9rem;
-                }
-            }
-        }
-    
-        .review {
-            font-size: 0.8rem;
         }
     
         .pricing{

@@ -1,0 +1,67 @@
+
+main.page.off-white {
+    border-bottom: 1px solid #ddd;
+}
+
+main{
+
+    &.page {
+        height: calc(100% - 350px);
+        margin-top: 110px;
+        @media #{$tablet-view} {
+          margin-top: 190px;
+        }      
+        @media #{$mobile-view} {
+          margin-top: 190px;
+        }      
+    }
+
+
+}
+
+.page {
+    min-height: 90vh;
+    width: 100%;
+    background: #fff;
+    margin-top: 55px;
+    position: relative;
+
+    h2 {
+        font-size: 15px;
+        margin-bottom: 1rem;
+    }
+      
+    &-title {
+        width: 100%;
+        background: #fff;
+        padding: 1rem 0rem;
+        border-top: 1px solid black;
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 1px 4px 0 rgba(0, 0, 0, 0.5);
+        z-index: 11;
+        text-transform: uppercase;
+    
+        @media screen and (min-width: 990px) {
+            padding: 2rem;
+        }
+  
+        h1 {
+            font-weight: 700;
+            font-size: 1.2rem;
+    
+            &.capitalize {
+                text-transform: capitalize;
+                font-size: 1.3rem;
+        
+                span {
+                    text-transform: uppercase;
+                }
+            }
+    
+            span {
+                text-transform: uppercase;
+            }
+        }
+    }
+  
+}

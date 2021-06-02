@@ -126,11 +126,12 @@ function LgHeader({
                         mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} toggleMegaMenuStatus={toggleMegaMenuStatus} />
                 </div>
                 <div
-                    className={
-                        mouseOverButton || mouseOverMenu
-                            ? "megamenu-container"
-                            : "hide-megamenu-container"
-                    }
+                    className={ `megamenu-container 
+                        ${mouseOverButton || mouseOverMenu
+                            ? "show-megamenu-container"
+                            : "hide-megamenu-container"}
+                    `}
+                    onClick={() => closeMegaMenu() }
                 >
                     <MegaMenu mouseLeaveMegaMenu={mouseLeaveMegaMenu} mouseOverMegaMenu={mouseOverMegaMenu} closeMegaMenu={closeMegaMenu} />
                 </div>

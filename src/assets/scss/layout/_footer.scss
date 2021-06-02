@@ -1,0 +1,150 @@
+.footer {
+    font-family: 'Airbnb Cereal App';
+
+    a:hover {
+        color: $theme-primary;
+    }
+    &-top,
+    &-bottom {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    &-top {
+        padding: 3rem 0;
+        // background: #fafafa;
+        background-color: $theme-header;
+        .footer-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @media #{$tablet-view} {
+                flex-direction: column;
+            }      
+            @media #{$mobile-view} {
+                flex-direction: column;
+            }      
+        }
+        .footer-copy-right-container {
+            display: flex;
+            flex-direction: column;
+            color: #ffffffb0;
+            justify-content: space-between;
+            padding-right: 15px;
+            img {
+                height: 50px;
+                object-fit: scale-down;
+            }
+            @media screen and (min-width: 990px) {
+                width: 25%;
+            }
+            
+            @media #{$tablet-view} {
+                margin-bottom: 15px;
+                .copy{
+                    display: hidden;
+                }
+            }      
+            @media #{$mobile-view} {
+                margin-bottom: 15px;
+                .copy{
+                    display: hidden;
+                }
+            }      
+            .copy{
+                margin-top: 15px;
+            }
+
+        }
+        .footer-links-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            @media screen and (min-width: 990px) {
+                display: flex;
+                justify-content: space-between;
+
+                ul {
+                    width: 25%;
+                }
+            }
+
+            li {
+                color: #ffffffb0;
+                line-height: 2.0;
+                font-size: 11px;
+                a {
+                    color: #ffffffb0;
+                }
+                p { 
+                    display: flex;
+                    justify-content: flex-start;
+                }
+                svg {
+                    opacity: 1;
+                    margin-right: 0.5rem;
+                }
+            }
+
+            .links-head {
+                font-weight: bold;
+                font-size: 12px;
+                color: #fff;
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    &-bottom {
+        // background: #f5f5f5;
+        background-color: $theme-header;
+
+        &-container {
+            // display: flex;
+            // justify-content: space-between;
+
+            @media screen and (min-width: 990px) {
+                display: flex;
+                justify-content: center;
+                ul {
+
+                }
+            }   
+            li {
+                display: inline-flex; 
+                padding: 5px;          
+            }
+            select {
+                height: 30px;
+                background: #f7f7f7;
+                border: 0.5px solid #c4c4c4;
+                width: 80px;
+                border-radius: 3px;
+                margin-right: 6rem;
+                font-size: 0.9rem;
+                font-weight: bold;
+                color: #222;
+                padding: 3px;
+            }
+
+            span {
+                color: #a19d9d;
+                color: $theme-secondary;
+                font-size: 0.9rem;
+                margin-left: auto;
+                display: block;
+                margin-top: 1rem;
+
+                @media screen and (min-width: 990px) {
+                    float: right;
+                }
+            }
+        }
+    }
+
+    &-logo {
+        width: 80px;
+        height: auto;
+    }
+}

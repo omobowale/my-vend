@@ -7,12 +7,12 @@ import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Price from '../../../../../components/common/Price/Price';
 
-const SubCategoryItem = ({cat={},  className=''}) => {
+const SubCategoryItem = ({cat={}, subCat={}, className=''}) => {
       
     return (
 
-        <Link className={`stack-item col-6 col-md-3 ${className}`}>
-            <Link className="stack-content">
+        <div className={`stack-item col-6 col-md-3 ${className}`}>
+            <Link className="stack-content" to={`/category/${cat.slug}/${subCat.slug}`} >
                 
                 <div className="stack-content-img">
                     <img className="img-fluid" src={cat.image} />
@@ -23,7 +23,7 @@ const SubCategoryItem = ({cat={},  className=''}) => {
                     
                 </div>
             </Link>
-        </Link>
+        </div>
     )
 
 }

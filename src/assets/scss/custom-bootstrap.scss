@@ -1,0 +1,54 @@
+
+//Tooltip
+
+.app-icon-btn {
+    //     height: 32px;
+    min-width: 32px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    color: #333;
+    cursor: pointer;
+
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-right: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    transition: 0.1s ease-in;
+}
+
+.app-icon-btn[disabled] {
+    cursor: not-allowed;
+    color: #dadfe3;
+    background-image: none;
+    background-color: #f3f5f7;
+}
+
+
+//Pointer
+
+
+
+
+a.links-more {
+    color: $theme-blue;
+    font-size: 0.9rem;
+}
+
+.section_title {
+    max-width: 99%;
+    margin: 0 auto 2rem;
+    &--text {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    &--divider {
+        width: 50px;
+        margin: 0.7rem auto;
+        border-bottom: 5px solid $theme-green;
+    }
+}
+
+/* COMPONENTS ENDS*/

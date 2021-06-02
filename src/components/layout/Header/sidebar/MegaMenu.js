@@ -26,11 +26,13 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
         
     });
 
-    const renderMenu = useCallback((subCat={}, brands=[]) => {
+    const renderMenu = useCallback((cat={}, subCat={}, brands=[]) => {
         return (
             <nav className="navigation ">
                 <ul>
-                    <li key={subCat.id} className="active"> {subCat.name} </li>
+                    <li key={subCat.id} className="active"> 
+                        <Link className="" onClick={() => closeMegaMenu()} to={`/category/${cat.slug}/${subCat.slug}`} >{subCat.name}</Link>
+                    </li>
                     {brands.map( brand => {
                         return (
                             <li key={brand.id} className=""> {brand.name} </li>
@@ -66,7 +68,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
                     </div>
                     <div className="sub-category-menu">
     
-                        {subCategories.map( sub => renderMenu(sub, sub.subArray))}
+                        {subCategories.map( sub => renderMenu(activeCategory, sub, sub.subArray))}
             
                         <div className="pt-5">
                             <Link className="category-link" onClick={() => closeMegaMenu()} to={`/category/${activeCategory.slug}`} >Show all Sub-categories in {activeCategory.name}</Link>

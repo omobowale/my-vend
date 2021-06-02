@@ -79,7 +79,11 @@
             overflow-wrap: anywhere;
             .advert-section {
                 width: 270px;
-                border: 1px solid black;
+                // border: 1px solid black;
+                .adv-img{
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
             }
             .nav-section {
                 flex: 1; 

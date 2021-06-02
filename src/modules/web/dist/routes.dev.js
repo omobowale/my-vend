@@ -23,6 +23,11 @@ var Category = (0, _react.lazy)(function () {
     return _interopRequireWildcard(require('./pages/Category'));
   });
 });
+var SubCategoryProductList = (0, _react.lazy)(function () {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('./pages/SubCategoryProductList'));
+  });
+});
 var NotFound = (0, _react.lazy)(function () {
   return Promise.resolve().then(function () {
     return _interopRequireWildcard(require('./pages/Notfound/NotFound'));
@@ -36,6 +41,11 @@ var _default = [{
 }, {
   path: '/category/:name',
   component: Category,
+  exact: true,
+  auth: false
+}, {
+  path: '/category/:categoryName/:name',
+  component: SubCategoryProductList,
   exact: true,
   auth: false
 }];

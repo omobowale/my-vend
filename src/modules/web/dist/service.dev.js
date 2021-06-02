@@ -8,6 +8,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.getProducts = getProducts;
 exports.getFeaturedProducts = getFeaturedProducts;
 exports.getProductCategoryList = getProductCategoryList;
+exports.getSubCategoryList = getSubCategoryList;
 
 var API = _interopRequireWildcard(require("../../utils/api"));
 
@@ -51,6 +52,19 @@ function getProductCategoryList(params) {
       var url = "category";
       API.getReq(url, function (res) {
         dispatch(actions.setCategoryList(res));
+        resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function getSubCategoryList(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "product/subcategory/".concat(params.subCategoryName);
+      API.getReq(url, function (res) {
         resolve(res);
       }, function (err) {
         return reject(err);

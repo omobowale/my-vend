@@ -1,0 +1,70 @@
+/* Slicky */
+.slicky {
+    .slick-slide {
+        padding-right: 20px;
+    }
+    .slick-list {
+        padding-right: -20px;
+    }
+    .slick-prev,
+    .slick-next {
+        &::before {
+            color: black;
+        }
+    }
+    .slick-dots {
+        bottom: 0;
+    }
+}
+/* Slicky */
+
+/* Swal */
+.swal {
+    .swal-overlay {
+        background-color: rgba(18, 18, 18, 0.4);
+    }
+
+    .swal-modal {
+        background-color: #fff;
+    }
+
+    .swal-title {
+        color: #333333 !important;
+    }
+
+    .swal-text {
+        font-size: 22px !important;
+        font-weight: 600 !important;
+        padding: 17px !important;
+        margin: 25px !important;
+        text-align: center !important;
+        color: #333333 !important;
+    }
+
+    .swal-button:not([disabled]):hover {
+        background: #fff !important;
+        color: #8dc441 !important;
+    }
+}
+/* Swal */
+
+/* Toasts */
+.toast {
+    &-success-container {
+        border-top: 2px solid #eafdc8;
+        border-top: 3px solid #02b875;
+        background: #ffffff !important;
+        color: #222;
+    }
+
+    &-error-container {
+        border-top: 3px solid #f05d5d;
+        background: #ffffff !important;
+        color: #222;
+    }
+}
+
+.Toastify__close-button {
+    color: #222 !important;
+}
+/*Toast*/

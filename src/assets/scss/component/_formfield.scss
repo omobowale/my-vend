@@ -1,0 +1,139 @@
+.form-control {
+    border-radius: 0.35rem;
+}
+
+.label-field.required::after {
+    content: '*';
+    position: relative;
+    top: 2px;
+    font-size: 14px;
+    color: #d72d30;
+    padding-left: 2px;
+    font-weight: 700;
+}
+
+
+//toggle switcher
+
+// Tweak these to change the style of the toggle
+$toggle-background-color-on: dodgerblue;
+$toggle-background-color-off: darkgray;
+$toggle-control-color: white;
+$toggle-width: 100px;
+$toggle-height: 50px;
+$toggle-gutter: 2px;
+$toggle-radius: 50%;
+$toggle-control-speed: 0.15s;
+$toggle-control-ease: ease-in;
+
+// These are our computed variables
+// change at your own risk.
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
+.toggle-control {
+    display: block;
+    position: relative;
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    input:checked ~ .control {
+        background-color: #8dc441;
+
+        &:after {
+            content: '✓';
+            color: #8dc441;
+            left: 19px;
+        }
+    }
+
+    .control {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 36px;
+        border-radius: $toggle-radius;
+        background-color: $toggle-background-color-off;
+        transition: background-color $toggle-control-speed $toggle-control-ease;
+
+        &:after {
+            content: '×';
+            position: absolute;
+            left: 2px;
+            top: 3px;
+            width: 14px;
+            height: 14px;
+            font-size: 11px;
+            line-height: 13px;
+            font-weight: 800;
+            padding-left: 2px;
+            color: darkgray;
+            background: white;
+            border-radius: 25px;
+            transition: left 0.15s ease-in;
+        }
+    }
+}
+
+.input input[type='date'],
+.input input[type='email'],
+.input input[type='number'],
+.input input[type='password'],
+.input input[type='text'],
+.input textarea {
+    width: 100%;
+    border: 0;
+    border: 1px solid #cfd7df;
+    margin: 5px 0 0;
+    border-radius: 4px;
+    padding: 4px 12px 5px;
+    resize: none;
+    background-color: #fff;
+    box-shadow: none;
+    min-height: 32px;
+}
+
+.label-field {
+    font-size: 12px;
+    color: #475867;
+    font-weight: 500;
+    margin-bottom: 0;
+    padding-bottom: 4px;
+    cursor: text;
+    display: inline-block;
+}
+
+.select {
+    .css-yk16xz-control:focus {
+        border-color: red !important;
+    }
+    .css-g1d714-ValueContainer {
+        padding: 0 8px !important;
+    }
+
+    .css-1wa3eu0-placeholder {
+        font-size: 13px !important;
+        font-family: inherit !important;
+        font-weight: normal !important;
+    }
+
+    .css-xb97g8:hover {
+        background-color: #cfd7df !important;
+        color: #000 !important;
+    }
+
+    .select__indicator-separator .css-1okebmr-indicatorSeparator {
+        width: 0 !important;
+    }
+}

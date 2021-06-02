@@ -17,8 +17,8 @@ const SubCategoryList = ({category={}}) => {
                     <div className="col">
                         <div className="stack-items row ">
                             
-                            {category.subArray && category.subArray.map( (cat) => (
-                                <CategoryItem key={shortid.generate()} cat={cat} />
+                            {category.subArray && category.subArray.map( (subCat) => (
+                                <CategoryItem key={shortid.generate()} cat={category} subCat={subCat} />
                             ))}
                         </div>
                     </div>

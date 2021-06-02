@@ -8,8 +8,9 @@ import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
 import './MiniProfile.scss';
 import Price from '../../../../../components/common/Price/Price';
+import { renderRating } from '../../../../../utils/rating';
 
-const ProductMiniProfile = ({product={}, showTag=true, showSaveIcon=false, saved, refreshAfterRemove = false, horizontal=false, className=''}) => {
+const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, horizontal=false, className=''}) => {
     const [selected, setSelected] = useState(false);
     const [profileSaved, setSaved] = useState(saved);
 
@@ -46,7 +47,13 @@ const ProductMiniProfile = ({product={}, showTag=true, showSaveIcon=false, saved
                         <FontAwesomeIcon icon={faTrashAlt} className="delete" />
                     </div>
                 ))}
-                
+                {showRating && 
+                    <div className="rating-review">
+                        <div className="rating">
+                            {renderRating(4, false)}
+                        </div>
+                    </div>
+                }
                 <img src={product.image && product.image[0]} />
                 <div className="stack-content-text">
                     {product.tag && product.tag.length > 0 && showTag && (

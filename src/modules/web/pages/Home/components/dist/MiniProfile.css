@@ -19,6 +19,23 @@
   font-size: 1.2rem;
   color: #222;
 }
+.stack-content .rating-review {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.stack-content .rating-review .rating span {
+  font-size: 0.9rem;
+}
+.stack-content .rating-review .rating svg {
+  margin-right: 10px;
+}
+.stack-content .review {
+  font-size: 11px;
+  color: #1A222Ab2;
+  font-weight: 700;
+  padding: 5px;
+}
 .stack-content img {
   width: 100%;
   border-top-left-radius: 5px;
@@ -61,18 +78,6 @@
   .stack-content-text .work {
     font-size: 11px !important;
   }
-}
-.stack-content-text .rating-review {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.stack-content-text .rating-review .rating span {
-  font-size: 0.9rem;
-}
-.stack-content-text .review {
-  font-size: 0.8rem;
 }
 .stack-content-text .pricing {
   display: flex;

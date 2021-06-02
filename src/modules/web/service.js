@@ -45,3 +45,17 @@ export function getProductCategoryList(params) {
                 }));
         });
 }
+
+export function getSubCategoryList(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `product/subcategory/${params.subCategoryName}` ;
+            API.getReq(url,
+                (res => {
+                    resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}

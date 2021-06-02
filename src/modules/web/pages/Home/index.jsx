@@ -10,7 +10,7 @@ import HomeSuggestion from './components/HomeSuggestion';
 
 import {getFeaturedProducts, getProducts} from '../../service'
 import HomeTopSelling from './components/HomeTopSelling';
-import './home.scss'
+import './index.scss'
 import dangote from '../../../../assets/img/common/dangote.png'
 import bua from '../../../../assets/img/common/bua.png'
 import { Link } from 'react-router-dom';
@@ -32,7 +32,7 @@ function Home({ dispatch, featuredProducts, products }) {
         <>
         
             <PageSeo />
-            <main className="page home">
+            <main className="page page-home">
                 <HomeHeader />
                 <div className="container home_content">
                     <HomeHeroBelt />
