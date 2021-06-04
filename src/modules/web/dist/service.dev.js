@@ -10,6 +10,8 @@ exports.getFeaturedProducts = getFeaturedProducts;
 exports.getProductCategoryList = getProductCategoryList;
 exports.getSubCategoryList = getSubCategoryList;
 exports.getCurrencyList = getCurrencyList;
+exports.getSuggestions = getSuggestions;
+exports.getProductSearch = getProductSearch;
 
 var API = _interopRequireWildcard(require("../../utils/api"));
 
@@ -81,6 +83,30 @@ function getCurrencyList(params) {
       var url = "currency";
       API.getReq(url, function (res) {
         dispatch(actions.setCurrencyList(res));
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function getSuggestions(params) {
+  return new Promise(function (resolve, reject) {
+    var url = "product/autosearch/".concat(params.query);
+    API.getReq(url, function (res) {
+      resolve(res);
+    }, function (err) {
+      return reject(err);
+    });
+  });
+}
+
+function getProductSearch(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "product/search/".concat(params.query);
+      API.getReq(url, function (res) {
+        resolve(res);
       }, function (err) {
         return reject(err);
       });

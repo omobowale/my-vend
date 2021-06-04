@@ -51,8 +51,8 @@ function SmBottomNavigator({
 
     return (
         <>
-            <nav className="navigation">
-                <ul>
+            <nav className="navigation nav-mobile">
+                <ul className="">
                     <li>
                     
                         <a title="nav" href="javascript: false" className="nav-sm">

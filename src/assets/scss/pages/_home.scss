@@ -780,37 +780,6 @@
             
             }
     
-            .stack-item {
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                padding: 0px !important;
-                // max-width: 380px;
-                
-                .stack-content {
-                    img {
-                    width: auto;
-                    // border-top-left-radius: 5px;
-                    // border-top-right-radius: 5px;
-                    max-height: 170px;
-                    // object-fit: contain;
-                    // object-fit: scale-down;
-                    }
-                    flex: 1; 
-                    margin-right: 5px;
-                    // margin-bottom: 5px;
-                    display: flex;
-                    flex-direction: column;
-                    background-color: #fff;
-                    padding: 15px;
-
-                    .currency-price-sub {
-                        font-size: 60%;
-                    }
-                }
-            }
-
-  
     
             .stack-item.horizontal {
                 position: relative;
@@ -848,7 +817,12 @@
                         .currency-price{
                             font-size: 100%;
                         }
-            
+                        
+                        .starting_from_main {
+                            @media #{$mobile-view} {
+                                font-size: 13px !important;
+                            }
+                        }
                     }
                     @media screen and (min-width: 720px) {
                         &-tag {

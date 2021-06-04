@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import queryString from 'query-string';
 import PageSeo from './components/PageSeo';
 import Breadcrumb from './components/BreadCrumb';
 import Filter from './components/Filter';
 import SmFilter from './components/SmFilter';
 import SortTotal from './components/SortTotal';
-import {getProducts, getSubCategoryList } from '../../service'
+import {getProducts, getProductSearch, getSubCategoryList } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
@@ -14,21 +15,19 @@ import RelatedProducts from './components/RelatedProduct';
 import ProductList from './components/ProductList';
 import _ from 'lodash';
 
-function Page({ dispatch, category, subCategoryName, products }) {
+function Page({ dispatch, location, category, subCategoryName }) {
     const [screenSize, setScreen] = useState('');
-    const [subCategory, setSubCategory] = useState({name: 'Wheelbarrow'});
-    // const { query } = parseQuery(location.search);
+    const [products, setProductList] = useState([]);
+    const { query } = queryString.parse(location.search);
     const [loading, setLoading] = useState(true);
-    // const [text, setText] = useState(query || '');
     const [sort, setSort] = useState('rank');
     const [altText, setAltText] = useState('');
     const [page, setPage] = useState(1);
   
 
     useEffect(() => {
-        
-        dispatch(getSubCategoryList({subCategoryName})).catch(err => err);
-        dispatch(getProducts({})).catch(err => err);
+        console.log('q', query)
+        dispatch(getProductSearch({query})).then(data => setProductList(data)).catch(err => err);
     
     }, [
         dispatch,
@@ -87,29 +86,22 @@ function Page({ dispatch, category, subCategoryName, products }) {
     
     };
 
-    const getSubCategory = () => {
-        const subCat = category.subArray && category.subArray.find(sub => sub.slug == subCategoryName);
-        if(subCat && !_.isEqual(subCat, subCategory)){
-            setSubCategory(subCat);
-        }
-    }
-    
+
     const handleFilter = (params) => {
         // const searchQuery = { ...params, ...(!!text && { query: text }) };
     
         
     };
         
-    getSubCategory();
     return (
         <>
         
-            <PageSeo category={subCategory} />
+            <PageSeo category={query} />
             <main className="page">
                 <div className="container sm-container page-content">
-                    <Breadcrumb category={category} subCategory={subCategory} />
+                    <Breadcrumb query={query} />
                     <section className="">
-                        <div className="section--title">{subCategory.name}</div>
+                        <div className="section--title">{query}</div>
                     </section>
                     <div className="product-list-body">
                         {screenSize === 'large' ? (
@@ -140,9 +132,9 @@ function Page({ dispatch, category, subCategoryName, products }) {
 const mapStateToProps = (state, router) => {
     const { params } = router.match;
     return {
+        location: router.location,
         subCategoryName: params.name,
         category: state.web.categories.find(cat => cat.slug === params.categoryName) || {}, 
-        products: state.web.products
     };
 };
 

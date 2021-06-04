@@ -15,70 +15,69 @@ function AutoComplete({
   const wrapperRef = useRef(null);
   const history = useHistory();
 
-  const useOutsideAlerter = (ref) => {
-    const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) {
-        toggleShowSuggestions(false);
-      }
+    const useOutsideAlerter = (ref) => {
+        const handleClickOutside = (event) => {
+            if (ref.current && !ref.current.contains(event.target)) {
+                toggleShowSuggestions(false);
+            }
+        
+        };
+
+        useEffect(() => {
+            // Bind the event listener
+            document.addEventListener('mousedown', handleClickOutside);
+            return () => {
+                // Unbind the event listener on clean up
+                document.removeEventListener('mousedown', handleClickOutside);
+            };
+        });
     };
 
     useEffect(() => {
-      // Bind the event listener
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => {
-        // Unbind the event listener on clean up
-        document.removeEventListener('mousedown', handleClickOutside);
-      };
-    });
-  };
+        if (suggestions.length > 1) {
+            console.log(suggestions);
+            toggleShowSuggestions(true);
+        }
+    }, [suggestions]);
 
-  useEffect(() => {
-    if (suggestions.length > 1) {
-      console.log(suggestions);
-      toggleShowSuggestions(true);
-    }
-  }, [suggestions]);
+    useOutsideAlerter(wrapperRef);
 
-  useOutsideAlerter(wrapperRef);
+    const replaceSpaces = (string) => {
+        return string
+            .trim()
+            .split(' ')
+            .filter((word) => word.length > 0)
+            .join('+');
+    };
 
-  const replaceSpaces = (string) => {
-    return string
-      .trim()
-      .split(' ')
-      .filter((word) => word.length > 0)
-      .join('+');
-  };
+    const searchSuggestion = (sugg) => {
+        const refinedString = replaceSpaces(sugg);
+        if (refinedString.length > 0) {
+            toggleShowSuggestions(false);
+            clearSearchQuery && clearSearchQuery();
+            toggleSearchMode && toggleSearchMode();
+            search
+                ? search(sugg)
+                : history.push(`/product-search?query=${refinedString}`);
+        }
+    };
 
-  const searchSuggestion = (sugg) => {
-    const refinedString = replaceSpaces(sugg);
-    if (refinedString.length > 0) {
-      toggleShowSuggestions(false);
-      clearSearchQuery && clearSearchQuery();
-      toggleSearchMode && toggleSearchMode();
-      search
-        ? search(sugg)
-        : history.push(`/profile-search?query=${refinedString}`);
-    }
-  };
-
-  return showSuggestion ? (
-    <ul className={`autocomplete ${elementClass}`} ref={wrapperRef}>
-      {suggestions.map((sugg, index) => {
-        return (
-          <a href="#0" key={index} onClick={(e) => searchSuggestion(sugg, e)}>
-            <li>{sugg}</li>
-          </a>
-        );
-      })}
-    </ul>
-  ) : null;
+    return showSuggestion ? (
+        <ul className={`autocomplete ${elementClass}`} ref={wrapperRef}>
+            {suggestions.map((sugg, index) => {
+                return (
+                    <li key={index} onClick={(e) => searchSuggestion(sugg.name, e)}>{sugg.name}</li>
+                );
+            })}
+        </ul>
+    ) : null;
 }
 
 AutoComplete.propTypes = {
-  suggestions: PropTypes.array,
-  className: PropTypes.string,
-  clearSearchQuery: PropTypes.func,
-  search: PropTypes.func,
+    suggestions: PropTypes.array,
+    className: PropTypes.string,
+    clearSearchQuery: PropTypes.func,
+    search: PropTypes.func,
 };
 
 export default AutoComplete;

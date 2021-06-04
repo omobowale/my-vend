@@ -26,7 +26,6 @@
 
         .pricing{
             display: flex;
-            justify-content: space-between;
             align-items: center;
             min-width: max-content;
             .starting_from_caption {
@@ -42,6 +41,9 @@
                 color: #FD8825;
                 padding-top: 20px;
                 padding-left: 10px;
+                @media #{$mobile-view} {
+                    font-size: 13px !important;
+                }
             }
             .currency-price {
                 font-size: 100%;
@@ -197,7 +199,7 @@
     overflow-wrap: anywhere;
     .stack-items{
         margin-bottom: 25px;
-        min-height: 400px;
+        min-height: 200px;
     }
 
     .stack-item.result {
@@ -327,7 +329,6 @@
             
                 .pricing{
                     display: flex;
-                    // justify-content: space-between;
                     align-items: center;
                     min-width: max-content;
                     .starting_from_caption {

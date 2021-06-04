@@ -74,3 +74,30 @@ export function getCurrencyList(params) {
                 }));
         });
 }
+
+export function getSuggestions(params) {
+    return new Promise((resolve, reject) => {
+            const url = `product/autosearch/${params.query}` ;
+            API.getReq(url,
+                (res => {
+                    resolve(res);
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
+export function getProductSearch(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `product/search/${params.query}` ;
+            API.getReq(url,
+                (res => {
+                    resolve(res);
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}

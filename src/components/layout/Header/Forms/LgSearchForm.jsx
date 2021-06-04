@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AutoComplete from '../../../common/autocomplete/AutoComplete';
-// import { searchValue, getSuggestions } from '../../../../utils/search';
+import { getSuggestions } from '../../../../modules/web/service';
 
 const LgSearchForm = (props) => {
     const [value, setValue] = useState('');
@@ -30,9 +30,9 @@ const LgSearchForm = (props) => {
     };
 
     const inputHandler = async (e) => {
-        // const data = await getSuggestions(e.target.value);
+        const data = await getSuggestions({query: e.target.value});
 
-        // setSuggestions(data);
+        setSuggestions(data);
     };
 
     const clearSearchQuery = () => {
@@ -56,14 +56,15 @@ const LgSearchForm = (props) => {
                     <div className="search-icon">
                         <FontAwesomeIcon icon={faSearch} className="icon" />
                     </div>
-                    {suggestions.length > 0 ? (
-                        <AutoComplete
-                            suggestions={suggestions}
-                            elementClass="header-suggestions"
-                            clearSearchQuery={clearSearchQuery}
-                        />
-                    ) : null}
                 </div>
+
+                {suggestions.length > 0 ? (
+                    <AutoComplete
+                        suggestions={suggestions}
+                        elementClass="header-suggestions"
+                        clearSearchQuery={clearSearchQuery}
+                    />
+                ) : null}
             </form>
         </div>
     );

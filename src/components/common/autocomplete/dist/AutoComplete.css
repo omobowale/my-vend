@@ -1,0 +1,29 @@
+.autocomplete {
+  background: #fff;
+  box-shadow: 0px 2px 5px #e4e3e3;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  white-space: nowrap;
+  position: absolute !important;
+  width: 90%;
+  max-width: 90%;
+  padding-top: 5px;
+}
+.autocomplete.header-suggestions {
+  top: 38px;
+}
+.autocomplete.home-suggestions {
+  top: 100%;
+}
+.autocomplete li {
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  border-top: 1px solid #f5f5f5;
+  overflow: hidden;
+  margin-bottom: 2px;
+  background-color: #f0f0f0;
+  color: #F05C40;
+}
+.autocomplete li:hover {
+  background: #f5f5f5;
+}

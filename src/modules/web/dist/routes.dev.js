@@ -28,6 +28,11 @@ var SubCategoryProductList = (0, _react.lazy)(function () {
     return _interopRequireWildcard(require('./pages/SubCategoryProductList'));
   });
 });
+var SearchProductList = (0, _react.lazy)(function () {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('./pages/SearchProductList'));
+  });
+});
 var NotFound = (0, _react.lazy)(function () {
   return Promise.resolve().then(function () {
     return _interopRequireWildcard(require('./pages/Notfound/NotFound'));
@@ -46,6 +51,11 @@ var _default = [{
 }, {
   path: '/category/:categoryName/:name',
   component: SubCategoryProductList,
+  exact: true,
+  auth: false
+}, {
+  path: '/product-search',
+  component: SearchProductList,
   exact: true,
   auth: false
 }];

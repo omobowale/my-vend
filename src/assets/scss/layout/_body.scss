@@ -8,10 +8,7 @@ main{
     &.page {
         height: calc(100% - 350px);
         margin-top: 110px;
-        @media #{$tablet-view} {
-          margin-top: 190px;
-        }      
-        @media #{$mobile-view} {
+        @media screen and (min-width: 220px) and (max-width: 720px) {
           margin-top: 190px;
         }      
     }

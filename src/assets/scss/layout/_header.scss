@@ -26,8 +26,11 @@
             .main-search-form{
                 display: flex;
                 flex: 1;
+                position: relative;
                 // background-color: #fff;
+                flex-direction: column;
                 justify-content: center;
+                z-index: 12;
                 .form{
                     display: flex; 
                     width: 90%;
@@ -41,7 +44,7 @@
 
     &-bottom {
         padding: 5px 0;
-        z-index: 20;
+        z-index: 11;
         background: $theme-secondary;
         position: relative;
         div .navigation ul li {
@@ -57,9 +60,13 @@
             }
         }
 
+        .nav-mobile {
+            width: 100%;
+        }
+
         @media #{$tablet-view} {
             .navigation {
-                width: 100%;
+                // width: 100%;
                 ul{ 
                     display: flex;
                     justify-content: space-between;
@@ -241,6 +248,7 @@
         display: flex;
         flex: 1;
         justify-content: center;
+        z-index: 12;
         
         svg {
             // margin-top: 6px;
@@ -257,7 +265,7 @@
             height: 42px;
             min-width: 200px;
             display: flex;
-            color: white;
+            color: #1A222A;
             flex: 1
         }
         .search-icon{
@@ -277,12 +285,20 @@
  
     .search-mobile {
       width: 100%;
+      z-index: 12;
       .search-form{
+        margin-top: 5px;
         padding: 10px;
+        padding-top: 0;
         display: flex;
         flex: 1;
         position: relative;
         display: flex;
+        &-group{
+            flex: 1;
+            position: relative;
+            display: flex;
+        }
         svg {
             // margin-top: 6px;
             color: #fff;
@@ -298,7 +314,7 @@
             height: 40px;
             display: flex;
             flex: 1;
-            color: white;
+            color: #1A222A;
         }
 
         .search-icon{
