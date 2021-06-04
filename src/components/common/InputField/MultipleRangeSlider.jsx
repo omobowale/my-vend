@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
+import Transformer from "../../../utils/Transformer";
 
 const MultiRangeSlider = ({ min, max, name='', onChange, minVal, maxVal }) => {
     const minValRef = useRef(min);
@@ -64,8 +65,8 @@ const MultiRangeSlider = ({ min, max, name='', onChange, minVal, maxVal }) => {
             <div className="slider">
                 <div className="slider__track" />
                 <div ref={range} className="slider__range" />
-                <div className="slider__left-value">{minVal}</div>
-                <div className="slider__right-value">{maxVal}</div>
+                <div className="slider__left-value">{Transformer.numberWithCommas(minVal)}</div>
+                <div className="slider__right-value">{Transformer.numberWithCommas(maxVal)}</div>
             </div>
         </div>
     );

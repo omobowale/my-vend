@@ -40,30 +40,32 @@ const LgSearchForm = (props) => {
     };
 
     return (
-        <form onSubmit={submitForm} autoComplete="off">
-            <div className="search-field">
-                <input
-                    type="text"
-                    value={value}
-                    placeholder="Search here for materials , supliers and contractors"
-                    onChange={handleChange}
-                    onFocus={changeToSearchMode}
-                    onBlur={changeToNormalMode}
-                    onInput={inputHandler}
-                    list="suggestions"
-                />
-                <div className="search-icon">
-                    <FontAwesomeIcon icon={faSearch} className="icon" />
-                </div>
-                {suggestions.length > 0 ? (
-                    <AutoComplete
-                        suggestions={suggestions}
-                        elementClass="header-suggestions"
-                        clearSearchQuery={clearSearchQuery}
+        <div className="main-search-form">
+            <form className="form" onSubmit={submitForm} autoComplete="off">
+                <div className="search-field">
+                    <input
+                        type="text"
+                        value={value}
+                        placeholder="Search here for materials , supliers and contractors"
+                        onChange={handleChange}
+                        onFocus={changeToSearchMode}
+                        onBlur={changeToNormalMode}
+                        onInput={inputHandler}
+                        list="suggestions"
                     />
-                ) : null}
-            </div>
-        </form>
+                    <div className="search-icon">
+                        <FontAwesomeIcon icon={faSearch} className="icon" />
+                    </div>
+                    {suggestions.length > 0 ? (
+                        <AutoComplete
+                            suggestions={suggestions}
+                            elementClass="header-suggestions"
+                            clearSearchQuery={clearSearchQuery}
+                        />
+                    ) : null}
+                </div>
+            </form>
+        </div>
     );
 };
 

@@ -29,7 +29,7 @@ function LgHeader({
         useEffect(() => {
             function handleClickOutside(event) {
                 if (ref.current && !ref.current.contains(event.target)) {
-                hideSidebar();
+                // hideSidebar();
                 }
             }
             // Bind the event listener
@@ -77,15 +77,6 @@ function LgHeader({
 
     const changeMode = (mode) => setMode(mode);
 
-    const showSidebar = () => setSidebar('show');
-
-    const hideSidebar = () => setSidebar('');
-
-    const renderSidebar = () => {
-        return (
-            <Sidebar closeSidebar={hideSidebar} openAuthPage={openAuthPage} signup={signup} />
-        );
-    };
 
     const renderNavigation = () => {
         return (
@@ -96,7 +87,7 @@ function LgHeader({
     return (
         <header className={`header ${mode}`}>
             <div className="header-top">
-                <div className="container clearfix">
+                <div className="header-top-container clearfix">
                     
                     <Link to={'/'} className="logo mr-5">
                         <img
@@ -106,18 +97,6 @@ function LgHeader({
                     </Link>
                     <LgSearchForm changeMode={changeMode} />
                     {renderNavigation()}
-                </div>
-                <div className={`sidebar ${sidebar}`}>
-                    <div className="side-content" ref={wrapperRef}>
-                        <FontAwesomeIcon
-                            icon={faTimes}
-                            size="lg"
-                            onClick={hideSidebar}
-                            className="close"
-                        />
-
-                        <nav className="sidebar-nav">{renderSidebar()}</nav>
-                    </div>
                 </div>
             </div>
             <div className="header-bottom">

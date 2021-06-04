@@ -77,7 +77,13 @@
   overflow-wrap: anywhere;
 }
 .mega-menu .sub-category-section .sub-category-menu .advert-section {
+  display: none;
   width: 270px;
+}
+@media (min-width: 990px) {
+  .mega-menu .sub-category-section .sub-category-menu .advert-section {
+    display: block;
+  }
 }
 .mega-menu .sub-category-section .sub-category-menu .advert-section .adv-img {
   width: 100%;

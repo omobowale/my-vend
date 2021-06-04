@@ -1,6 +1,36 @@
 @import './normalize';
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600,700&display=swap");
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Airbnb Cereal App:300,400,500,700&display=swap');
+@font-face {
+    font-family: 'Airbnb Cereal App Black';
+    src: local('Airbnb Cereal App Black'), url(../fonts/AirbnbCereal-Black.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App Bold';
+    src: local('Airbnb Cereal App Bold'), url(../fonts/AirbnbCereal-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App Book';
+    src: local('AirbnbCereal App Book'), url(../fonts/AirbnbCereal-Book.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App ExtraBold';
+    src: local('Airbnb Cereal App ExtraBold'), url(../fonts/AirbnbCereal-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App Light';
+    src: local('Airbnb Cereal App Light'), url(../fonts/AirbnbCereal-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Airbnb Cereal App Medium';
+    src: local('Airbnb Cereal App Medium'), url(../fonts/AirbnbCereal-Medium.ttf) format('truetype');
+}
 
 // @import '~bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,6 +69,7 @@
 @import "component/multirangeslider";
 @import "component/sidebar";
 @import "component/subscription";
+@import "component/productitem";
 
 
 // Layout Modules

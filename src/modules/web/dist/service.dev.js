@@ -9,6 +9,7 @@ exports.getProducts = getProducts;
 exports.getFeaturedProducts = getFeaturedProducts;
 exports.getProductCategoryList = getProductCategoryList;
 exports.getSubCategoryList = getSubCategoryList;
+exports.getCurrencyList = getCurrencyList;
 
 var API = _interopRequireWildcard(require("../../utils/api"));
 
@@ -65,7 +66,21 @@ function getSubCategoryList(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/subcategory/".concat(params.subCategoryName);
       API.getReq(url, function (res) {
+        dispatch(actions.setCategoryList(res));
         resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function getCurrencyList(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "currency";
+      API.getReq(url, function (res) {
+        dispatch(actions.setCurrencyList(res));
       }, function (err) {
         return reject(err);
       });

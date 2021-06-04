@@ -79,24 +79,29 @@
     font-size: 11px !important;
   }
 }
-.stack-content-text .pricing {
+.stack-content-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stack-content-bottom .pricing {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-width: max-content;
 }
-.stack-content-text .pricing .starting_from_caption {
+.stack-content-bottom .pricing .starting_from_caption {
   justify-self: start;
   font-size: 12px !important;
   color: #999;
   color: #1A222A78;
 }
 @media screen and (min-width: 220px) and (max-width: 579px) {
-  .stack-content-text .pricing .starting_from_caption {
+  .stack-content-bottom .pricing .starting_from_caption {
     font-size: 8px !important;
   }
 }
-.stack-content-text .pricing .starting_from_main {
+.stack-content-bottom .pricing .starting_from_main {
   font-weight: 900;
   font-size: 17px;
   color: #FD8825;
@@ -104,14 +109,9 @@
   padding-left: 10px;
 }
 @media screen and (min-width: 220px) and (max-width: 579px) {
-  .stack-content-text .pricing .starting_from_main {
+  .stack-content-bottom .pricing .starting_from_main {
     font-size: 12px !important;
   }
-}
-.stack-content-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .stack-content-bottom .compare-icon {
   width: 50px;

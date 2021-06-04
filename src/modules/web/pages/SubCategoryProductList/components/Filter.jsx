@@ -67,7 +67,7 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                         return (
                                             <div
                                                 key={index}
-                                                className="custom-control custom-checkbox "
+                                                className="custom-control custom-checkbox mt-2"
                                             >
                                                 <input
                                                     type="radio"

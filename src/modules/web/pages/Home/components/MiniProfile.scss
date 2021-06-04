@@ -97,6 +97,14 @@
 
         }
     
+        
+    }
+  
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
         .pricing{
             display: flex;
             justify-content: space-between;
@@ -123,13 +131,6 @@
                 }
             }
         }
-    }
-  
-    &-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  
         .compare-icon {
             width: 50px;
             color: #484848;

@@ -13,10 +13,18 @@ import Footer from '../components/layout/Footer/Footer';
 import ScrollToTop from '../components/util/ScrollToTop/ScrollToTop';
 import ChangeHeader from '../components/util/ScrollToTop/ChangeHeader';
 import TransparentSpinner from '../components/common/Spinner/TransparentSpinner';
+import { getCurrencyList } from '../modules/web/service';
 
 const Routes = React.memo((props) => {
     const [loading, setLoading] = useState(true);
 
+
+    useEffect(() => {
+        (async function () {
+          const { dispatch } = props;
+          await dispatch(getCurrencyList());
+        })();
+      }, []);
 
 
     const renderRoutes = useMemo(

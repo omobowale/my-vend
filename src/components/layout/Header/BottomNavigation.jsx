@@ -11,7 +11,7 @@ const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuB
                     <li className="m-t-three "  onMouseEnter={ () => mouseOverMenuButton('product') } onMouseLeave={ () => mouseLeaveMenuButton() } onClick={ () => toggleMegaMenuStatus('product') } >
                         <a href="javascript: false" >Products</a>
                     </li>
-                    <li className="m-t-three">
+                    {/* <li className="m-t-three">
                         <Link to="/">
                             Suppliers
                         </Link>
@@ -25,13 +25,13 @@ const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuB
                         <Link to="/">
                             Services
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
             </nav>
             
             <nav className="navigation">
                 <ul>
-                    <li className="m-t-three">
+                    {/* <li className="m-t-three">
                         <Link
                             to={{
                             pathname: '/login',
@@ -50,12 +50,12 @@ const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuB
                         >
                             About Cutstruct
                         </Link>
-                    </li>
+                    </li> */}
 
                     <li>
                         <a href="javascript: false"
                             onClick={() => openAuthPage('signup')}
-                            className="butn butn--gray"
+                            className="btn btn-sign-up "
                         >
                             Register
                         </a>

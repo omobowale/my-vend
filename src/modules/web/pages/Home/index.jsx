@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 import PageSeo from './components/PageSeo';
 import HomeHeader from './components/HomeHeader';
@@ -17,8 +17,9 @@ import { Link } from 'react-router-dom';
 import LiveVendApp from './components/LiveVendApp';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 
-function Home({ dispatch, featuredProducts, products }) {
-    console.log('fed', products)
+function Home({ dispatch, mainProduct, featuredProducts, products }) {
+    console.log('fed', products, featuredProducts)
+    const featuredRef = useRef();
     useEffect(() => {
         
         dispatch(getFeaturedProducts({})).catch(err => err);
@@ -33,10 +34,10 @@ function Home({ dispatch, featuredProducts, products }) {
         
             <PageSeo />
             <main className="page page-home">
-                <HomeHeader />
-                <div className="container home_content">
+                <HomeHeader featuredRef={featuredRef} />
+                <div ref={featuredRef} className="container home_content">
                     <HomeHeroBelt />
-                    <HomeFeatured products={featuredProducts} />
+                    <HomeFeatured mainProduct={mainProduct} featuredProducts={featuredProducts} />
                     <HomeMiddleBelt />
                     <HomeBanner />
                     <HomeTopSelling products={products} />
@@ -149,8 +150,12 @@ function Home({ dispatch, featuredProducts, products }) {
 }
 
 const mapStateToProps = (state) => {
+    
+    const random = Math.floor(Math.random() * state.web.featuredProducts.length);
+    const mainProduct = state.web.featuredProducts[random];
     return {
-        featuredProducts: state.web.featuredProducts,
+        mainProduct: mainProduct || {},
+        featuredProducts: state.web.featuredProducts.length > 5 ? state.web.featuredProducts.slice(0,6).filter(item => item.id !== mainProduct.id) : [...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts].slice(0, 5),
         products: state.web.products,
     };
 };

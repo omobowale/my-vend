@@ -18,342 +18,6 @@
     }
 }
 
-.product-list {
-    display: flex;
-    flex: 1 1;
-    position: relative;
-    overflow-x: hidden;
-    overflow-wrap: anywhere;
-    .stack-items{
-        margin-bottom: 25px;
-        min-height: 400px;
-    }
-    .stack-item {
-        min-width: 150px;
-        // border: 1px solid #EBEBEB;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        margin:0;
-        padding: 0;
-
-        .stack-content {
-            max-width: 260px;
-            position: relative;
-            margin-bottom: 5px;
-            display: flex;
-            flex-direction: column;
-            background-color: #ffffff;
-            border-radius: 5px;
-            overflow: hidden;
-            border: 1px solid #EBEBEB;
-            margin-right: 10px;
-            margin-bottom: 10px;
-            height: 100%;
-         
-            &-header {
-                padding: 5px 10px;
-                display: flex;
-                justify-content: space-between;
-                .save-button {
-                    height: 18px;
-                    width: 18px;
-                    background-color: #C4C4C470;
-                    border-radius: 50%;
-                    position: relative;
-                    right: 0px;
-                    top: 0px;
-                    z-index: 3;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                }
-            
-            }
-
-            &-img {
-                background: transparent;
-                height: 150px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                overflow: hidden ;
-                img{
-                    position: relative;;
-                }
-            }
-            &-text{
-                position: relative;
-                padding-top: 15px;
-                font-size: 15px;
-                font-weight: 700;
-            }
-
-            &-tag {
-                background-color: #00B2FF30;
-                color: #00B2FF;
-                font-size: 12px;
-                font-weight: 700;
-                padding: 2px 10px;
-                border-radius: 10px;
-                margin-bottom: 5px;
-                // text-align: center;
-                @media screen and (min-width: 220px) and (max-width: 579px) {
-                    font-size: 8px !important;
-                }
-            }
-
-            .save,
-            .delete {
-                font-size: 1.2rem;
-                color: #222;
-                cursor: pointer;
-                z-index: 3;
-            }
-
-            &-text {
-                padding: 0.5rem 0.8rem;
-                height: min-content;
-
-                .work {
-                    font-size: 14px !important;
-                    // height: 50px;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                    color: #1A222A;
-                    @media screen and (min-width: 220px) and (max-width: 579px) {
-                        font-size: 11px !important;
-                    }
-
-                }
-            
-                .rating-review {
-                    display: flex;
-                    // justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 1rem;
-            
-                    .rating {
-                        span {
-                            font-size: 0.9rem;
-                        }
-                        svg{
-                            margin-right: 5px; 
-                        }
-                    }
-                }
-            
-                .review {
-                    font-size: 11px;
-                    color: #1A222Ab2;
-                    font-weight: 700;
-                    padding: 5px;
-                }
-            
-                .pricing{
-                    display: flex;
-                    // justify-content: space-between;
-                    align-items: center;
-                    min-width: max-content;
-                    .starting_from_caption {
-                        justify-self: start;
-                        font-size: 12px !important;
-                        color: #999;
-                        color: #1A222A78;
-                        @media screen and (min-width: 220px) and (max-width: 579px) {
-                            font-size: 8px !important;
-                        }
-                    }
-                
-                    .starting_from_main {
-                        font-weight: 900;
-                        font-size: 17px;
-                        color: #FD8825;
-                        padding-top: 20px;
-                        padding-left: 10px;
-                        @media screen and (min-width: 220px) and (max-width: 579px) {
-                            font-size: 12px !important;
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
-    
-
-}
-
-.mini-products{
-    position: relative;
-    &-title {
-        .section--title {
-            // position: absolute;
-            z-index: 3;
-            // top: -50px
-        }
-    }
-    &-content {
-        
-        .stack-items{
-            
-            display: flex;
-            flex-direction: row;
-    
-            .stack-item{
-
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                padding: 10px !important;
-                margin-right: 5px;
-                
-                .stack-content {
-                    // text-decoration: none !important;
-                    position: relative;
-                    margin-bottom: 5px;
-                    display: flex;
-                    flex-direction: column;
-                    background-color: #ffffff;
-                    border-radius: 5px;
-                    overflow: hidden;
-                    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.15);
-                    @media screen and (min-width: 220px) and (max-width: 579px) {
-                        padding: 0px !important;
-                    }
-                
-                    .save-button {
-                        height: 18px;
-                        width: 18px;
-                        background-color: #C4C4C470;
-                        border-radius: 50%;
-                        z-index: 1;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        position: absolute;
-                        right: 10px;
-                        top: 10px;
-                    }
-                
-                    .save,
-                    .delete {
-                        font-size: 1.2rem;
-                        color: #222;
-                        cursor: pointer;
-                    }
-                
-                
-                    &-img {
-                        // background: #04066209;
-                        background-color: #F5F5F5;
-                        height: 157px;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        position: relative;
-                        overflow: hidden ;
-                        img{
-                            position: relative;;
-                        }
-                    }
-
-                    &-tag {
-                        color: #1A222A70;
-                        font-size: 12px;
-                        font-weight: 700;
-                        margin-bottom: 5px;
-                        // text-align: center;
-                        @media screen and (min-width: 220px) and (max-width: 579px) {
-                            font-size: 8px !important;
-                        }
-                    }
-
-                    &-text {
-                        padding: 0.5rem 0.8rem;
-                        height: min-content;
-
-                        .work {
-                            font-size: 14px !important;
-                            // height: 50px;
-                            font-weight: bold;
-                            margin-bottom: 10px;
-                            color: #1A222A;
-                            @media screen and (min-width: 220px) and (max-width: 579px) {
-                                font-size: 11px !important;
-                            }
-
-                        }
-                    
-                        .rating-review {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            margin-bottom: 1rem;
-                    
-                            .rating {
-
-                                span {
-                                    font-size: 0.9rem;
-                                }
-                                svg{
-                                   margin-right: 5px; 
-                                }
-                            }
-                        }
-                    
-                        .review {
-                            font-size: 0.8rem;
-                        }
-                    
-                        .pricing{
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            min-width: max-content;
-                            .starting_from_caption {
-                                justify-self: start;
-                                font-size: 12px !important;
-                                color: #999;
-                                color: #1A222A78;
-                                @media screen and (min-width: 220px) and (max-width: 579px) {
-                                    font-size: 8px !important;
-                                }
-                            }
-                        
-                            .starting_from_main {
-                                font-weight: 900;
-                                font-size: 17px;
-                                // color: #FD8825;
-                                padding-top: 20px;
-                                padding-left: 10px;
-                                @media screen and (min-width: 220px) and (max-width: 579px) {
-                                    font-size: 12px !important;
-                                }
-                            }
-                        }
-                    }
-                
-                    &-bottom {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                
-                        .compare-icon {
-                            width: 50px;
-                            color: #484848;
-                        }
-                    }
-                }
-    
-            }
-        }
-    }
-}
 
 
 .product-list-body {
@@ -378,14 +42,65 @@
 
             .sidebar-header{
                 background-color: #ffffff;
-                padding-top: 15px;
+                padding-top: 25px;
                 .h3{
-                    font-size: 700;
+                    padding-left: 15px;
+                    font-size: 25px;
+                    color: #1A222Ad0;
+                    font-weight: 700;
                 }
             }
 
             .close-sidebar{
-                top: 15px;
+                top: 30px;
+                font-size: 13px;
+            }
+
+            .sub-navigation {
+                padding: 15px;
+
+                .prev-menu {
+                    padding: 15px;
+                    span{
+                        color:#F05C40;
+                        margin-right: 15px;
+                        font-weight: 700;
+                    }
+                }
+                .filter-form{
+                    margin-top: 15px;
+                    padding: 15px;
+                    .form-title {
+                        font-weight: 700;
+                        font-size: 15px;
+                        padding: 15px;
+                    }
+                }
+            }
+            .navigation {
+                ul {
+                    padding: 15px 15px;
+                    li {
+                        padding: 10px 15px;
+                        display: flex;
+                        justify-content: space-between;
+                        span{
+                            font-weight: 700;
+                            color: #1A222Ad0;
+                        }
+                        .nav-icon-chevron::before{
+                            border-width: 0.15em 0.15em 0 0;
+                        }
+                    }
+                }
+            }
+
+            .nav-cutstruct{
+                padding: 15px;
+                margin-top: 20px;
+                text-align: center;
+                font-weight: 700;
+                color: #1A222Ad0;
             }
 
         }

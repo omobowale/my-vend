@@ -22,6 +22,20 @@
     }
 }
 
+.sm-container {
+    @media screen and (min-width: 576px) and (max-width: 989px){
+        max-width: 100% ;
+    }
+}
+
+.no-result {
+    padding: 15px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1A222Ab2;
+    margin: auto;
+}
+
 /* Tooltip */
 .tooltip-holder {
     position: relative;

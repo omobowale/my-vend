@@ -10,7 +10,7 @@ import './MiniProfile.scss';
 import Price from '../../../../../components/common/Price/Price';
 import { renderRating } from '../../../../../utils/rating';
 
-const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, horizontal=false, className=''}) => {
+const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, horizontal=false, className=''}) => {
     const [selected, setSelected] = useState(false);
     const [profileSaved, setSaved] = useState(saved);
 
@@ -76,7 +76,13 @@ const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSav
                             </p>
                         </div>
                     </div>
+                    {showBtn && 
+                        <div className="call-to-action-container">
+                            <Link className="btn call-to-action-btn" to={'/category/'}>View All Brand Prices</Link>
+                        </div>
+                    }
                 </div>
+                
             </div>
         </Link>
     )

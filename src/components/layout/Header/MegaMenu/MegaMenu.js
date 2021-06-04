@@ -54,7 +54,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
     });
 
     return (
-        <div onMouseLeave={mouseLeaveMegaMenu} onMouseEnter={mouseOverMegaMenu} className={'container mega-menu'}>
+        <div onMouseLeave={mouseLeaveMegaMenu} onMouseEnter={mouseOverMegaMenu} className={'container sm-container mega-menu'}>
             <div className="category-list-menu">
                 <nav className="navigation ">
                     <ul>

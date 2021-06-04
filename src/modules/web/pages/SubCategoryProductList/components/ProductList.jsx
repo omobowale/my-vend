@@ -11,9 +11,12 @@ const ProductList = ({products=[]}) => {
                     <div className="col">
                         <div className="stack-items row ">
                             
-                            {products.map( (product) => (
+                            { products.map( (product) => (
                                 <ProductItem key={shortid.generate()} product={product} />
                             ))}
+
+
+                            {!products.length && <div className="no-result"> Unfortunately, we did not find anything that matches these criteria. </div>}
                         </div>
                     </div>
                 </div>    

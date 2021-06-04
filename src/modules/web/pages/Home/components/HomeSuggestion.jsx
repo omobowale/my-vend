@@ -21,51 +21,7 @@ const HomeTopSelling = ({products=[]}) => {
                             {products.map( (product) => (
                                 <ProductMiniProfile showRating={true} product={product} />
                             ))}
-                            
-                            <div className="stack-item">
-                                <div className="stack-content">
-                                    <div className="rating-review">
-                                        <div className="rating">
-                                            {renderRating(4, false)}
-                                        </div>
-                                    </div>
-                                    <img src={img3} />
-                                    <div className="stack-content-text">
-                                        <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                    
-                                        <div className="stack-content-bottom">
-                                            <div className="pricing">
-                                                <p className="starting_from_caption">from</p>
-                                                <p className="starting_from_main">
-                                                2,000
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="stack-item">
-                                <div className="stack-content">
-                                    <div className="rating-review">
-                                        <div className="rating">
-                                            {renderRating(4, false)}
-                                        </div>
-                                    </div>
-                                    <img src={img3} />
-                                    <div className="stack-content-text">
-                                        <h4 className="work"> Ceramic Wall Tiles 200mm X 300mm </h4>
-                                        <div className="stack-content-bottom">
-                                            <div className="pricing">
-                                                <p className="starting_from_caption">from</p>
-                                                <p className="starting_from_main">
-                                                2,000
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+ 
                         </div>
                     </div> 
             </section>

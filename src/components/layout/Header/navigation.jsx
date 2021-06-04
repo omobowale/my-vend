@@ -8,13 +8,15 @@ const Navigation = ({ signup, openAuthPage }) => {
         <nav className="navigation">
             <ul>
                 <span className="other_links pull-left visible-lg">
-                    <li className="m-t-three ">
+                    {/* <li className="m-t-three ">
                         <Link to="/"> <span><img src={rqs}/> </span> <span>Request Quantity Survey </span></Link>
-                    </li>
+                    </li> */}
                     <li className="m-t-three">
-                        <Link to="/">
-                        <span><img src={rqs}/> </span> <span> Construction Consultation </span>
-                        </Link>
+                        <a href="javascript: false"
+                            onClick={() => openAuthPage('login')}
+                        >
+                            <span><img src={rqs}/> </span> <span> Construction Consultation </span>
+                        </a>
                     </li>
                 </span>
                 <li className="m-t-three">

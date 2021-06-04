@@ -57,11 +57,15 @@ function SmHeader({
                         </button>
 
                         <div className="dropdown-menu top-nav-menu">
-                            <li className="dropdown-item">
+                            {/* <li className="dropdown-item">
                                 <Link to="/"> <span><img src={rqs}/> </span> <span>Request Quantity Survey </span></Link>
-                            </li>
+                            </li> */}
                             <li className="dropdown-item">
-                                <Link to="/"> <span><img src={rqs}/> </span> <span> Construction Consultation </span> </Link>
+                                <a href="javascript: false"
+                                    onClick={() => openAuthPage('login')}
+                                >
+                                    <span><img src={rqs}/> </span> <span> Construction Consultation </span>
+                                </a>
                             </li>
                             <li className="dropdown-item">
                                 <a href="javascript: false" className="sign-in-nav" 

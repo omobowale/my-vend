@@ -67,7 +67,7 @@ function SmBottomNavigator({
                     <li>
                         <a href="javascript: false"
                             onClick={() => openAuthPage('signup')}
-                            className="butn butn--gray"
+                            className="btn btn-sign-up "
                         >
                             Register
                         </a>
@@ -87,13 +87,13 @@ function SmBottomNavigator({
                     </div>
                     
                     <div className="sidebar-header">
-                            
+{/*                             
                         <li className="nav-item" onClick={hideSidebar}>
                             <Link to="/">Enterprise App</Link>
                         </li>
                         <li className="nav-item" onClick={hideSidebar}>
                             <Link to="/"> About Cutstruct </Link>
-                        </li>
+                        </li> */}
                     </div>
                     <nav className="sidebar-nav"><MegaMenu closeMegaMenu={hideSidebar} /></nav>
                 </div>

@@ -78,6 +78,10 @@
             overflow-x: hidden;
             overflow-wrap: anywhere;
             .advert-section {
+                display: none;
+                @media (min-width: 990px) {
+                    display: block;
+                }
                 width: 270px;
                 // border: 1px solid black;
                 .adv-img{

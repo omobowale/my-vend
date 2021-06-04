@@ -14,6 +14,7 @@ var _index = _interopRequireDefault(require("../store/index"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /* eslint-disable no-console */
+// const API_URL ='http://livevend-api.us-east-2.elasticbeanstalk.com/';
 var API_URL = 'http://api.livevend.com:8080/';
 _axios["default"].defaults.baseURL = API_URL;
 _axios["default"].defaults.headers.common.Accept = "application/json";

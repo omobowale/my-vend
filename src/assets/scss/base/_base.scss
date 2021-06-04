@@ -8,7 +8,6 @@
         @extend *;
     }
 }
-
 body,
 html,
 #root {
@@ -26,7 +25,7 @@ body {
         overflow-y: hidden;
     }
     // font: 700 12px/150% 'Lato', sans-serif;
-    font: 400 16px/24px 'Roboto', 'sans-serif';
+    font: 400 16px/24px 'Airbnb Cereal App', 'Airbnb Cereal App Medium', 'Roboto', 'sans-serif';
     // font-family: 'Lato';
     line-height: 1.4;
     color: #222;

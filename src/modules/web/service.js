@@ -52,7 +52,22 @@ export function getSubCategoryList(params) {
             const url = `product/subcategory/${params.subCategoryName}` ;
             API.getReq(url,
                 (res => {
+                    dispatch(actions.setCategoryList(res));
                     resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
+export function getCurrencyList(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `currency` ;
+            API.getReq(url,
+                (res => {
+                    dispatch(actions.setCurrencyList(res));
                 }),
                 (err => {
                     return reject(err);
