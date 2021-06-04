@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import rqs from '../../../assets/img/common/Vector-RQS.png'
-const Navigation = ({ signup, openAuthPage }) => {
+const Navigation = ({ openConsultation, openAuthPage }) => {
     const location = useLocation();
     return (
         <nav className="navigation">
@@ -13,7 +13,7 @@ const Navigation = ({ signup, openAuthPage }) => {
                     </li> */}
                     <li className="m-t-three">
                         <a href="javascript: false"
-                            onClick={() => openAuthPage('login')}
+                            onClick={() => openConsultation()}
                         >
                             <span><img src={rqs}/> </span> <span> Construction Consultation </span>
                         </a>

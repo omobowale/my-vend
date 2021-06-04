@@ -9,6 +9,7 @@ import BottomNavigation from './BottomNavigation';
 import Sidebar from './sidebar/sidebar';
 import logo from '../../../assets/img/logo/logo.png'
 import MegaMenu from './MegaMenu/MegaMenu';
+import RequestConsultance from '../../../modules/web/pages/RequestConsultance';
 
 function LgHeader({
     application,
@@ -19,6 +20,7 @@ function LgHeader({
 }) {
     const [mode, setMode] = useState('');
     const [sidebar, setSidebar] = useState('');
+    const [consultation, openConsultation] = useState(false);
     const [mouseOverButton, setMouseOverButton] = useState(false);
     const [mouseOverMenu, setMouseOverMenu] = useState(false);
     const [activeMenu, setActiveMenu] = useState('product');
@@ -80,7 +82,7 @@ function LgHeader({
 
     const renderNavigation = () => {
         return (
-            <Navigation openAuthPage={openAuthPage} signup={signup} />
+            <Navigation openAuthPage={openAuthPage} openConsultation={() => openConsultation(true)} />
         );
     };
 
@@ -113,6 +115,7 @@ function LgHeader({
                     onClick={() => closeMegaMenu() }
                 >
                     <MegaMenu mouseLeaveMegaMenu={mouseLeaveMegaMenu} mouseOverMegaMenu={mouseOverMegaMenu} closeMegaMenu={closeMegaMenu} />
+                    <RequestConsultance show={consultation} onHide={() => openConsultation(false)} />
                 </div>
 
             </div>
