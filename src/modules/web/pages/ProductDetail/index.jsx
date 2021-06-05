@@ -27,7 +27,7 @@ function Page({ dispatch, category, subCategoryName, products }) {
 
     useEffect(() => {
         
-        // dispatch(getSubCategoryList({subCategoryName})).catch(err => err);
+        dispatch(getSubCategoryList({subCategoryName})).catch(err => err);
         dispatch(getProducts({})).catch(err => err);
     
     }, [
@@ -139,7 +139,6 @@ function Page({ dispatch, category, subCategoryName, products }) {
 
 const mapStateToProps = (state, router) => {
     const { params } = router.match;
-    const categories = state.web.categories; 
     return {
         subCategoryName: params.name,
         category: state.web.categories.find(cat => cat.slug === params.categoryName) || {}, 

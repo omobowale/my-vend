@@ -52,7 +52,6 @@ export function getSubCategoryList(params) {
             const url = `product/subcategory/${params.subCategoryName}` ;
             API.getReq(url,
                 (res => {
-                    dispatch(actions.setCategoryList(res));
                     resolve(res)
                 }),
                 (err => {

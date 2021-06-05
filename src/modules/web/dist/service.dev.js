@@ -69,7 +69,6 @@ function getSubCategoryList(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/subcategory/".concat(params.subCategoryName);
       API.getReq(url, function (res) {
-        dispatch(actions.setCategoryList(res));
         resolve(res);
       }, function (err) {
         return reject(err);
