@@ -15,7 +15,8 @@ html,
 }
 
 body {
-  font: 400 16px/24px "Airbnb Cereal App", "Airbnb Cereal App Medium", "Roboto", "sans-serif";
+  font: 400 16px/24px "Airbnb Cereal App Medium", "Airbnb Cereal App Bold", "Airbnb Cereal App Light", "Roboto", "sans-serif";
+  font-family: "Airbnb Cereal App Medium", "Airbnb Cereal App Bold", "Airbnb Cereal App Light";
   line-height: 1.4;
   color: #222;
   color: #183247;
@@ -96,6 +97,7 @@ video {
   font-size: 14px;
   vertical-align: baseline;
   background: 0 0;
+  font-family: "Airbnb Cereal App Medium", "Airbnb Cereal App Bold", "Airbnb Cereal App Light";
 }
 @media screen and (min-width: 990px) {
   html,
@@ -175,6 +177,7 @@ a {
   text-decoration: none;
   outline: 0 !important;
   cursor: pointer;
+  font-family: "Airbnb Cereal App Medium", "Airbnb Cereal App Bold", "Airbnb Cereal App Light";
 }
 a:hover {
   color: inherit;

@@ -1,8 +1,10 @@
 body {
     margin: 0;
-    font-family: 'Airbnb Cereal App',  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    /* font-family: 'Airbnb Cereal App',  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
+    font-family: 'Airbnb Cereal App Medium', 'Airbnb Cereal App Bold', 'Airbnb Cereal App Light' ;
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100%;

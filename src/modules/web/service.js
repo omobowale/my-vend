@@ -101,3 +101,17 @@ export function getProductSearch(params) {
                 }));
         });
 }
+
+export function constructionConsultantReq(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `form/consultation` ;
+            API.postReq(url, params,
+                (res => {
+                    resolve(res);
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}

@@ -12,6 +12,7 @@ exports.getSubCategoryList = getSubCategoryList;
 exports.getCurrencyList = getCurrencyList;
 exports.getSuggestions = getSuggestions;
 exports.getProductSearch = getProductSearch;
+exports.constructionConsultantReq = constructionConsultantReq;
 
 var API = _interopRequireWildcard(require("../../utils/api"));
 
@@ -106,6 +107,19 @@ function getProductSearch(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/search/".concat(params.query);
       API.getReq(url, function (res) {
+        resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function constructionConsultantReq(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "form/consultation";
+      API.postReq(url, params, function (res) {
         resolve(res);
       }, function (err) {
         return reject(err);

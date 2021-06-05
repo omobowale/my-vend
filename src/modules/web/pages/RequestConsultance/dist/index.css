@@ -1,10 +1,32 @@
+.request-consultant-modal .modal-content {
+  background-color: transparent !important;
+  border: 0;
+}
+
 .consultancy {
+  background-color: #fff;
   display: flex;
   padding: 30px !important;
   min-height: 480px;
   flex-direction: column;
   border-radius: 10px;
   justify-content: center;
+  transform: translateX(100%);
+  transition: all 500ms ease-in-out;
+  position: absolute;
+  left: -1000px;
+}
+.consultancy.show {
+  transform: translateX(100%);
+  transform: translateX(0%);
+  display: flex;
+  position: relative;
+  right: unset;
+  top: unset;
+  left: unset;
+}
+.consultancy.exit {
+  width: 0px;
 }
 .consultancy-header {
   position: relative;
@@ -49,27 +71,72 @@
   color: #1A222Ad0;
   margin-bottom: 15px;
 }
-.consultancy-main-container .label-text {
+.consultancy-main-container .label-text, .consultancy-main-container .label {
   color: #767A7F;
   font-size: 15px;
   line-height: 20px;
 }
-.consultancy-main-container .floating-select {
+.consultancy-main-container .floating-label {
+  margin-top: 20px;
+}
+.consultancy-main-container .floating-label .label {
+  padding-left: 0;
+}
+.consultancy-main-container .label, .consultancy-main-container .floating-input:not(:placeholder-shown) ~ .label, .consultancy-main-container .floating-select:focus ~ .label, .consultancy-main-container .floating-select:not([value=""]):valid ~ .label {
+  color: #767A7F;
+  font-size: 15px;
+  line-height: 20px;
+}
+.consultancy-main-container .floating-select, .consultancy-main-container .floating-input {
   padding: 5px 0;
   color: #484E55;
   font-weight: bold;
   line-height: 21px;
   font-size: 15px;
+  margin-right: 10px;
 }
 .consultancy .action-container {
   position: relative;
   display: flex;
   margin-top: 15px;
+  justify-content: space-between;
+}
+.consultancy .action-container.right {
   justify-content: flex-end;
 }
 .consultancy .action-btn {
   background: linear-gradient(90deg, #F05C40 15.81%, #FD8825 95.18%);
   border-radius: 5px;
-  width: 300px;
+  min-width: 150px;
   text-transform: capitalize;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .consultancy .action-btn {
+    min-width: none;
+  }
+}
+.consultancy .success-message {
+  text-align: center;
+}
+
+.dialog-enter {
+  opacity: 0.01;
+  transform: scale(1.1);
+}
+
+.dialog-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 300ms;
+}
+
+.dialog-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.dialog-exit-active {
+  opacity: 0.01;
+  transform: scale(1.1);
+  transition: all 300ms;
 }

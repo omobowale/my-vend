@@ -4,13 +4,13 @@ import storeConfig from "./store";
 import Routes from "./routes";
 
 const App = () => {
-  return (
-    <Provider store={storeConfig}>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </Provider>
-  );
+    return (
+        <Provider store={storeConfig}>
+            <BrowserRouter>
+                <Routes />
+            </BrowserRouter>
+        </Provider>
+    );
 };
 
 export default App;
