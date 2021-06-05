@@ -12,6 +12,7 @@ import './index.scss';
 import authBanner from '../../../../assets/img/common/auth-banner.png'
 import logo from '../../../../assets/img/logo/Logo1.png';
 import FloatingDropdown from '../../../../components/common/Form/FloatingDropdown';
+import FloatingText from '../../../../components/common/Form/FloatingText';
 
 
 const validator = new Validator({
@@ -88,28 +89,45 @@ function Page({ onHide, show, dispatch, }) {
                 <div className="consultancy-main-container">
                     <div className="section--title">About you & <span>your company</span></div>
 
-                    
-                    <div className="col-6">
-                        <label className="label-text">Consultation Interest</label>              
-                        <FloatingDropdown
-                            label="Consultation Interest"
-                            name="consultationInterest"
-                            showLabel={false}
-                            list={[ 
-                                    {name: 'Construction Materials/Products and pricing'}, 
-                                    {name: 'Construction Labour/Contractors and pricing'}, 
-                                    {name: 'Construction Project Monitoring'}, 
-                                    {name: 'Quantity Surveying Requirements'},
-                                    {name: 'Bulk Construction Materials/Products sourcing'}
-                                ]}
-                            value={requestForm.consultationInterest}
-                            displayField='name'
-                            field='name'
-                            errors={formError}
-                            onChange={onChange}
-                        />
+                    <div className="row">
+                        <div className="col-5">
+                            <label className="label-text">Full Name</label>              
+                            <FloatingText
+                                label="Full Name"
+                                name="name"
+                                showLabel={false}
+                                value={requestForm.name}
+                                field='name'
+                                errors={formError}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="col-5">
+                            <label className="label-text">Full Name</label>              
+                            <FloatingText
+                                label="Full Name"
+                                name="name"
+                                showLabel={false}
+                                value={requestForm.name}
+                                field='name'
+                                errors={formError}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div className="col-5">
+                            <label className="label-text">Full Name</label>              
+                            <FloatingText
+                                label="Full Name"
+                                name="name"
+                                showLabel={false}
+                                value={requestForm.name}
+                                field='name'
+                                errors={formError}
+                                onChange={onChange}
+                            />
+                        </div>
+                        
                     </div>
-
                 </div>
                 <div className="action-container">
                     <button className="btn action-btn">Next</button>
