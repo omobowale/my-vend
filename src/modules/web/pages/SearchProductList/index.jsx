@@ -6,7 +6,7 @@ import Breadcrumb from './components/BreadCrumb';
 import Filter from './components/Filter';
 import SmFilter from './components/SmFilter';
 import SortTotal from './components/SortTotal';
-import {getProducts, getProductSearch, getSubCategoryList } from '../../service'
+import {getProductSearch } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';

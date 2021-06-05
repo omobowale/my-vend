@@ -46,7 +46,6 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
     });
     useEffect( () => {
         _isMounted = true;
-        console.log(categories)
         if (categories.length < 1) {
             loadCategories();
         }

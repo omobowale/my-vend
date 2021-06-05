@@ -26,7 +26,7 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.slice(4,8).map( (product) => (
-                                <ProductMiniProfile product={product} />
+                                <ProductMiniProfile key={product.id} product={product} />
                             ))}
 
                         </div>

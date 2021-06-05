@@ -135,7 +135,7 @@ function Footer(props) {
                             </Link>
                         </div>
                         <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempus tellus amet tortor tincidunt mattis turpis porttitor</p>
+                            <p>livevend is an online platform where you can get prices of construction materials and products. It also allows you to compare prices of construction materials across locations, brands, types, and get construction consultation services.</p>
                         </div>
                         <div>
                             <p>(c) 2021</p>

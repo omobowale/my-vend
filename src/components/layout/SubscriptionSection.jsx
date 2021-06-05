@@ -41,7 +41,7 @@ const SubscriptionSection = ({}) => {
                     <div className="col-md-4 subscription-section-first">
                         <div className="subscription-section-first-container">
                             <h3 className="text-header">Subscribe To Our Newsletter</h3>
-                            <p className="">We have been transforming ideas and visions into award winning projects</p>
+                            <p className="">Access premium contents only available to our email subscribers. Subscibe today to receive offers handpicked just for you.</p>
                         </div>
                     </div>
                     <div className="col-md-5 subscription-section-middle">

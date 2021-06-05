@@ -30,17 +30,19 @@ const LiveVendApp = () => {
                                 <span>Download</span> Livevend App <span>Now!</span>
                             </h1>
                             <h6 className="app-section--text-sub ">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies senectus nec porta aliquam. Sed auctor ut ullamcorper massa leo, fermentum. 
+                                get Your construction Projects Done Right, From the comfort of your smartphone. 
                             </h6>
                             <div className="app-section--text-stores">
-                                <Link >
+                                <Link className="livevend-app-section-img">
                                     <img
+                                        className="img-fluid"
                                         src={googlestore}
                                         alt="a freelancer"
                                     />
                                 </Link>
-                                <Link >
+                                <Link className="livevend-app-section-img" >
                                     <img
+                                        className="img-fluid"
                                         src={appstore}
                                         alt="a freelancer"
                                     />

@@ -16,7 +16,7 @@ const RelatedProducts = ({products=[{name: 'Ceramic Wall Tiles 200mm X 300mm', p
                 
                 <div className="stack-items">
                     
-                    {products.map(product => (<MiniProductItem product={product} />))}
+                    {products.map(product => (<MiniProductItem key={product.id} product={product} />))}
 
                 </div>
     

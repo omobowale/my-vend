@@ -18,7 +18,6 @@ import LiveVendApp from './components/LiveVendApp';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 
 function Home({ dispatch, mainProduct, featuredProducts, products }) {
-    console.log('fed', products, featuredProducts)
     const featuredRef = useRef();
     useEffect(() => {
         

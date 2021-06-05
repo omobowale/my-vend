@@ -27,11 +27,12 @@ const HomeHeader = ({featuredRef}) => {
                                 <h6 className="home_top--text-small">
                                     The best way to
                                 </h6>
-                                <h1 className="home_top--text-main bold">
-                                    Execute Your Project
+                                <h1 className="home_top--text-main">
+                                    executing your
+                                    projects just got Easier
                                 </h1>
                                 <h6 className="home_top--text-sub ">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies senectus nec porta aliquam. Sed auctor ut ullamcorper massa leo, fermentum. 
+                                    Livevend helps you get price transparency for your construction materials and products. Access premium consultation services for your constuction projects.
                                 </h6>
 
                                 <div className="home_top--text-call-to-action" onClick={() => featuredRef.current && featuredRef.current.scrollIntoView({ behavior: 'smooth' }) }> 
@@ -64,11 +65,11 @@ const HomeHeader = ({featuredRef}) => {
                                 <h6 className="home_top--text-small">
                                     The best way to
                                 </h6>
-                                <h1 className="home_top--text-main bold">
+                                <h1 className="home_top--text-main">
                                     Manage Your Project
                                 </h1>
                                 <h6 className="home_top--text-sub ">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies senectus nec porta aliquam. Sed auctor ut ullamcorper massa leo, fermentum. 
+                                    Livevend helps you get price transparency for your construction materials and products. Access premium consultation services for your constuction projects. 
                                 </h6>
                                 <div className="home_top--text-call-to-action" onClick={() => featuredRef.current && featuredRef.current.scrollIntoView({ behavior: 'smooth' }) }> 
                                     <span>Get Started</span>

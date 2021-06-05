@@ -93,6 +93,9 @@
   background-color: #F0F0F0;
   position: relative;
 }
+.livevend-app-section-img {
+  height: 47px;
+}
 .livevend-app-section .container div.img-background {
   z-index: 0;
   display: flex;

@@ -40,7 +40,6 @@ function Page({ dispatch, category={} }) {
 const mapStateToProps = (state, router) => {
     const { params } = router.match;
     const category = state.web.categories.find(cat => cat.slug === params.name) || {}
-    console.log(category) ;
     return {
         category
     };

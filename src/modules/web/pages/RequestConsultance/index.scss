@@ -37,33 +37,49 @@
     &-header {
         position: relative;
         margin-bottom: 15px;
+        padding-right: 35px;
         .heading-title {
             font-size: 35px;
             font-weight: 800;
             line-height: 45px;
             color: #1A222Ad0;
             margin-bottom: 5px;
+            padding-right: 15px;
+            @media screen and (min-width: 220px) and (max-width: 579px) {
+                font-size: 25px;
+            }
         }
         .heading-desc {
             font-size: 15px;
             font-weight: 400;
             line-height: 22.5px;
             color: #484E5598;
+            padding-right: 15px;
+            @media screen and (min-width: 220px) and (max-width: 579px) {
+                font-size: 13px;
+            }
         }
 
         .paging {
             position: absolute;
+            line-height: 45px;
             right: 0;
             .current-page {
                 font-weight: 800;
                 font-size: 35px;
                 color: #1A222Ad0;
+                @media screen and (min-width: 220px) and (max-width: 579px) {
+                    font-size: 20px;
+                }
 
             }
             .total-page {
                 font-weight: 800;
                 font-size: 20px;
                 color: #1A222Ad0;
+                @media screen and (min-width: 220px) and (max-width: 579px) {
+                    font-size: 10px;
+                }
             }
         }
     }

@@ -19,7 +19,7 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.map( (product) => (
-                                <ProductMiniProfile showRating={true} product={product} />
+                                <ProductMiniProfile  key={product.id} showRating={true} product={product} />
                             ))}
  
                         </div>

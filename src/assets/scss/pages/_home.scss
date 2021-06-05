@@ -203,6 +203,7 @@
                     line-height: 45px;
                     font-weight: 900;
                     color: #1A222A;
+                    text-transform: capitalize;
             
                     @media screen and (min-width: 990px) {
                         font-size: 70px;
@@ -341,6 +342,10 @@
                             font-size: 20px;
                         }
                     }
+                }
+                &-desc {
+                    font-size: 15px;
+                    font-family: "Airbnb Cereal App Light";
                 }
             }
             .home_banner {

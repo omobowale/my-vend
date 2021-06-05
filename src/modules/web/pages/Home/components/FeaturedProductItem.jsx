@@ -36,7 +36,7 @@ const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating
       
     return (
 
-        <Link className={`stack-item ${horizontal && 'horizontal'} ${className}`}>
+        <Link key={product.id} className={`stack-item ${horizontal && 'horizontal'} ${className}`}>
             <div className="stack-content">
                 {showSaveIcon && (!profileSaved ? (
                     <div className="save-button" onClick={saveProfile}>

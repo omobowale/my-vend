@@ -31,6 +31,7 @@
 .consultancy-header {
   position: relative;
   margin-bottom: 15px;
+  padding-right: 35px;
 }
 .consultancy-header .heading-title {
   font-size: 35px;
@@ -38,15 +39,28 @@
   line-height: 45px;
   color: #1A222Ad0;
   margin-bottom: 5px;
+  padding-right: 15px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .consultancy-header .heading-title {
+    font-size: 25px;
+  }
 }
 .consultancy-header .heading-desc {
   font-size: 15px;
   font-weight: 400;
   line-height: 22.5px;
   color: #484E5598;
+  padding-right: 15px;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .consultancy-header .heading-desc {
+    font-size: 13px;
+  }
 }
 .consultancy-header .paging {
   position: absolute;
+  line-height: 45px;
   right: 0;
 }
 .consultancy-header .paging .current-page {
@@ -54,10 +68,20 @@
   font-size: 35px;
   color: #1A222Ad0;
 }
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .consultancy-header .paging .current-page {
+    font-size: 20px;
+  }
+}
 .consultancy-header .paging .total-page {
   font-weight: 800;
   font-size: 20px;
   color: #1A222Ad0;
+}
+@media screen and (min-width: 220px) and (max-width: 579px) {
+  .consultancy-header .paging .total-page {
+    font-size: 10px;
+  }
 }
 .consultancy-main-container {
   margin-top: 15px;

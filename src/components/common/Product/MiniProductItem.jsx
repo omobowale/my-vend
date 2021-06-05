@@ -10,7 +10,7 @@ const MiniProductItem = ({product={},  className=''}) => {
       
     return (
 
-        <div className={`stack-item mini ${className}`}>
+        <div key={product.id} className={`stack-item mini ${className}`}>
             <Link className="stack-content">
                 <div className="save-button" >
                     <FontAwesomeIcon icon={hollowHeart} className="save" />
