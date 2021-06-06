@@ -60,6 +60,21 @@ export function getSubCategoryList(params) {
         });
 }
 
+
+export function getProductDetails(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `product/${params.name}` ;
+            API.getReq(url,
+                (res => {
+                    resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
 export function getCurrencyList(params) {
     return dispatch =>
         new Promise((resolve, reject) => {

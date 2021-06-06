@@ -7,6 +7,7 @@ import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Price from '../../../../../components/common/Price/Price';
 import { renderRating } from '../../../../../utils/rating';
+import Transformer from '../../../utils/Transformer';
 
 const ProductItem = ({product={},  className=''}) => {
       
@@ -27,7 +28,7 @@ const ProductItem = ({product={},  className=''}) => {
                 </div>
                 <div className="stack-content-text">
                     
-                    <h4 className="work"> {product.name} </h4>
+                    <h4 className="work"> {Transformer.trim(product.name, 50)} </h4>
 
                     <div className="rating-review">
                         <div className="rating">

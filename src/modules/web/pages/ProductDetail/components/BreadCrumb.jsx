@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 // import { faHome } from '@fortawesome/free-regular-svg-icons';
 
-const BreadCrumb = ({category, subCategory}) => {
+const BreadCrumb = ({category, product}) => {
 
 
     return (
@@ -15,13 +15,13 @@ const BreadCrumb = ({category, subCategory}) => {
                     <FontAwesomeIcon icon={faHome} className="" />
                 </Link>
             </li>
-            <li className="breadcrumb-item">
+            {/* <li className="breadcrumb-item">
                 <Link to={`/category/${category.slug}`}>
                     {category.name}
                 </Link>
-            </li>
+            </li> */}
             <li className="breadcrumb-item">
-                {subCategory.name}
+                {product.name}
             </li>
         </ol>
     )

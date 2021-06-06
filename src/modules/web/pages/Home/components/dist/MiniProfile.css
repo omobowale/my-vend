@@ -40,18 +40,7 @@
   width: 100%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  height: 150px;
   object-fit: scale-down;
-}
-.stack-content .seller_name {
-  width: 100%;
-  padding: 0.4rem 1rem 0.3rem;
-  margin-top: -0.4rem;
-  background: #21c0fc;
-  color: #fff;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
 }
 .stack-content-tag {
   color: #1A222A70;

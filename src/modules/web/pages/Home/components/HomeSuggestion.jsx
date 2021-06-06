@@ -1,12 +1,8 @@
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import img3 from '../../../../../assets/img/logo/image 3.png'
 import sug from '../../../../../assets/img/common/Suggested.png'
 
-import './MiniProfile.scss';
-import ProductMiniProfile from './ProductMiniProfile';
-import DealCountDown from './DealCountDown';
-import { renderRating } from '../../../../../utils/rating';
+import MainProductItem from '../../../../../components/common/Product/MainProductItem';
 
 const HomeTopSelling = ({products=[]}) => {
     return (
@@ -14,12 +10,12 @@ const HomeTopSelling = ({products=[]}) => {
             <section className="home_top_suggested">
                 <div className="home_top_suggested-content">
                     <div className="suggestion-container">
-                        <img src={sug} />
+                        <img className="img-fluid" src={sug} />
                     </div> 
                         <div className="stack-items">
                             
                             {products.map( (product) => (
-                                <ProductMiniProfile  key={product.id} showRating={true} product={product} />
+                                <MainProductItem  key={product.id} showRating={true} product={product} />
                             ))}
  
                         </div>

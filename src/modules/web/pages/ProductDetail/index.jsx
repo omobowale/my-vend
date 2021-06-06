@@ -2,33 +2,29 @@ import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PageSeo from './components/PageSeo';
 import Breadcrumb from './components/BreadCrumb';
-import Filter from './components/Filter';
-import SmFilter from './components/SmFilter';
-import SortTotal from './components/SortTotal';
-import {getProducts, getSubCategoryList } from '../../service'
+import {getProductDetails, getProducts } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 import { getScreenSize } from '../../../../utils/setScreenSIze';
-import RelatedProducts from './components/RelatedProduct';
-import ProductList from './components/ProductList';
 import _ from 'lodash';
+import AboutProduct from './components/AboutProduct';
+import RelatedProducts from '../../../../components/common/Product/RelatedProducts';
 
-function Page({ dispatch, category, subCategoryName, products }) {
+import ad1 from '../../../../assets/img/common/mega-ad1.png';
+import ad2 from '../../../../assets/img/common/mega-ad2.png';
+import ad3 from '../../../../assets/img/common/mega-ad3.png';
+
+function Page({ dispatch, categories, productName, products }) {
     const [screenSize, setScreen] = useState('');
-    const [subCategory, setSubCategory] = useState({name: 'Wheelbarrow'});
-    // const { query } = parseQuery(location.search);
+    const [relatedProducts, setRelatedProducts] = useState([]);
+    const [product, setProduct] = useState({name: 'Wheelbarrow'});
     const [loading, setLoading] = useState(true);
-    // const [text, setText] = useState(query || '');
     const [sort, setSort] = useState('rank');
-    const [altText, setAltText] = useState('');
-    const [page, setPage] = useState(1);
   
 
     useEffect(() => {
-        
-        dispatch(getSubCategoryList({subCategoryName})).catch(err => err);
-        dispatch(getProducts({})).catch(err => err);
+        dispatch(getProductDetails({name: productName})).then(data => setProduct(data)).catch(err => err);
     
     }, [
         dispatch,
@@ -87,49 +83,41 @@ function Page({ dispatch, category, subCategoryName, products }) {
     
     };
 
-    const getSubCategory = () => {
-        const subCat = category.subArray && category.subArray.find(sub => sub.slug == subCategoryName);
-        if(subCat && !_.isEqual(subCat, subCategory)){
-            setSubCategory(subCat);
-        }
-    }
-    
-    const handleFilter = (params) => {
-        // const searchQuery = { ...params, ...(!!text && { query: text }) };
-    
         
-    };
-        
-    getSubCategory();
     return (
         <>
         
-            <PageSeo category={subCategory} />
+            <PageSeo product={product} />
             <main className="page">
-                <div className="container sm-container page-content">
-                    <Breadcrumb category={category} subCategory={subCategory} />
-                    <section className="">
-                        <div className="section--title">{subCategory.name}</div>
-                    </section>
-                    <div className="product-list-body">
-                        {screenSize === 'large' ? (
-                            <Filter
-                            />
-                        ) : (
-                            <SmFilter
-                            />
-                        )}
-                        <div className="product-list-body-main clearfix">
-                            <SortTotal
-                                total={products.length}
-                                handleSort={onChange}
-                                sort={sort}
-                            />
+                <div className="container detail-container sm-container page-content">
+                    <Breadcrumb category={{}} product={product} />
+                    
+                    <AboutProduct product={product}/>
+                </div>
+                <div className="page-desc-section">
 
-                            <ProductList products={products}  />
+                    <div className="tab-section container detail-container sm-container">
+                        <div className="tab-content row m-3">
+                            
+                            <ul className="desc-container">
+                                <li className="desc"> <span class="left">Type</span> <span>{product.type}</span> </li>
+                                <li className="desc"> <span class="left">Measurement</span> <span>{product.measurement}</span> </li>
+                                <li className="desc"> <span class="left">Weight</span> <span>{product.weight}</span> </li>
+                                <li className="desc"> <span class="left">Quantity</span> <span>{product.quantity}</span> </li>
+                                <li className="desc"> <span class="left">Location</span> <span>{product.location}</span> </li>
+                                
+                            </ul>
+                        </div>
+                        <div className="advert-section">
+                            <img src={ad1} className="img-fluid adv-img" /> 
+                            <img src={ad2} className="img-fluid adv-img" /> 
+                            <img src={ad3} className="img-fluid adv-img" /> 
                         </div>
                     </div>
-                    <RelatedProducts />
+
+                    <div className="container detail-container sm-container mt-3">
+                        <RelatedProducts className="mt-5" products={relatedProducts} />
+                    </div>
                 </div>
                 <SubscriptionSection />
             </main>
@@ -140,9 +128,8 @@ function Page({ dispatch, category, subCategoryName, products }) {
 const mapStateToProps = (state, router) => {
     const { params } = router.match;
     return {
-        subCategoryName: params.name,
-        category: state.web.categories.find(cat => cat.slug === params.categoryName) || {}, 
-        products: state.web.products
+        productName: params.name,
+        categories: state.web.categories, 
     };
 };
 

@@ -10,7 +10,7 @@ import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 import { getScreenSize } from '../../../../utils/setScreenSIze';
-import RelatedProducts from './components/RelatedProduct';
+import RelatedProducts from '../../../../components/common/Product/RelatedProducts';
 import ProductList from './components/ProductList';
 import _ from 'lodash';
 
@@ -130,7 +130,7 @@ function Page({ dispatch, category, subCategoryName, products }) {
                             <ProductList products={products}  />
                         </div>
                     </div>
-                    <RelatedProducts relatedProducts={relatedProducts}/>
+                    <RelatedProducts products={relatedProducts}/>
                 </div>
                 <SubscriptionSection />
             </main>

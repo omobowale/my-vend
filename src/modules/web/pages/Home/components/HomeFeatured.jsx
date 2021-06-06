@@ -1,12 +1,6 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faTag} from '@fortawesome/free-solid-svg-icons';
-import { faClock, } from '@fortawesome/free-regular-svg-icons';
-
-import img3 from '../../../../../assets/img/logo/image 3.png'
-
 import FeaturedProductItem from './FeaturedProductItem';
 import shortid from 'shortid';
 

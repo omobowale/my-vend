@@ -33,6 +33,11 @@ var SearchProductList = (0, _react.lazy)(function () {
     return _interopRequireWildcard(require('./pages/SearchProductList'));
   });
 });
+var ProductDetail = (0, _react.lazy)(function () {
+  return Promise.resolve().then(function () {
+    return _interopRequireWildcard(require('./pages/ProductDetail'));
+  });
+});
 var NotFound = (0, _react.lazy)(function () {
   return Promise.resolve().then(function () {
     return _interopRequireWildcard(require('./pages/Notfound/NotFound'));
@@ -56,6 +61,11 @@ var _default = [{
 }, {
   path: '/product-search',
   component: SearchProductList,
+  exact: true,
+  auth: false
+}, {
+  path: '/product/:name',
+  component: ProductDetail,
   exact: true,
   auth: false
 }];

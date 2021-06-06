@@ -13,7 +13,7 @@ const ProductItem = ({product={},  className=''}) => {
     return (
 
         <div className={`stack-item result col-6 col-md-3 ${className}`}>
-            <Link key={product.id} className="stack-content">
+            <Link key={product.id} className="stack-content" to={`/product/${product.slug}`}>
                 <div className="stack-content-header">
                     {product.tag && product.tag.length > 0 && (
                         <div className="stack-content-tag" >{product.tag[0]}</div>

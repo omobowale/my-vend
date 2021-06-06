@@ -767,20 +767,29 @@
         
                 }
                 .suggestion-container {
-                max-width: 290px;
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                padding: 0px !important;
-                margin-right: 5px;
-                
-                img {
-                    object-fit: scale-down;
+                    max-width: 290px;
+                    height: 290px;
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    padding: 0px !important;
+                    margin-right: 5px;
+                    overflow: hidden;
+                    width: 263px;
                     @media #{$mobile-view} {
-                    max-height: 265px;
-                    object-fit: contain;
+                        height: 245px;
+                        width: 213px;
                     }
-                }
+                    
+                    img {
+                        object-fit: contain;
+                        @media #{$mobile-view} {
+                        // max-height: 265px;
+                            object-fit: scale-down;
+                        }
+                    }
                 }
             }
             
@@ -795,6 +804,79 @@
                 // max-width: 250px;
                 
                 .stack-content {
+
+                    margin-bottom: 5px;
+                      
+                    @media screen and (min-width: 220px) and (max-width: 579px) {
+                        padding: 10px 5px !important;
+                    }
+                
+                    &-tag {
+                        color: #1A222A70;
+                        font-size: 12px;
+                        font-weight: 700;
+                        margin-bottom: 5px;
+                        // text-align: center;
+                        @media screen and (min-width: 220px) and (max-width: 579px) {
+                            font-size: 8px !important;
+                        }
+                    }
+
+                    &-text {
+                        padding: 0.5rem 0.8rem;
+                        height: min-content;
+
+                        .work {
+                            font-size: 14px !important;
+                            // height: 50px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                            color: #1A222A;
+                            @media screen and (min-width: 220px) and (max-width: 579px) {
+                                font-size: 11px !important;
+                            }
+
+                        }
+                    
+                        
+                    }
+                    .save-button {
+                        padding: 7px 7px 4px;
+                        background-color: #ffffff9f;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                    }
+                  
+                    .save,
+                    .delete {
+                        font-size: 1.2rem;
+                        color: #222;
+                    }
+                  
+                    .rating-review {
+                        display: flex;
+                        // justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
+                
+                        .rating {
+                            span {
+                                font-size: 0.9rem;
+                            }
+                            svg{
+                                margin-right: 10px; 
+                            }
+                        }
+                    }
+                
+                    .review {
+                        font-size: 11px;
+                        color: #1A222Ab2;
+                        font-weight: 700;
+                        padding: 5px;
+                    }
 
                     &-img{
                         max-width: 150px;
@@ -851,13 +933,27 @@
                     // min-width: 250px;
                 }
                 .stack-content {
+                    margin-bottom: 5px;
+
+                    @media screen and (min-width: 220px) and (max-width: 579px) {
+                        padding: 10px 5px !important;
+                    }
                     &-text{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+                        padding: 0.5rem 0.8rem;
 
+                      
                         .work {
                             font-size: 20px !important;
+                            // height: 50px;
+                            font-weight: bold;
+                            margin-bottom: 10px;
+                            color: #1A222A;
+                            @media screen and (min-width: 220px) and (max-width: 579px) {
+                                font-size: 11px !important;
+                            }
                         }
 
                         .pricing{
@@ -879,7 +975,43 @@
                             }
                         }
                     }
+                    .save-button {
+                        padding: 7px 7px 4px;
+                        background-color: #ffffff9f;
+                        border-radius: 50%;
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                    }
+                
+                    .save,
+                    .delete {
+                        font-size: 1.2rem;
+                        color: #222;
+                    }
+                
+                    .rating-review {
+                        display: flex;
+                        // justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1rem;
 
+                        .rating {
+                            span {
+                                font-size: 0.9rem;
+                            }
+                            svg{
+                                margin-right: 10px; 
+                            }
+                        }
+                    }
+
+                    .review {
+                        font-size: 11px;
+                        color: #1A222Ab2;
+                        font-weight: 700;
+                        padding: 5px;
+                    }
                     &-img {
                         display: flex;
                         justify-content: center;

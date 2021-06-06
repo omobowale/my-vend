@@ -5,10 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
-
-import './MiniProfile.scss';
 import Price from '../../../../../components/common/Price/Price';
 import { renderRating } from '../../../../../utils/rating';
+import Transformer from '../../../../../utils/Transformer';
 
 const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, horizontal=false, className=''}) => {
     const [selected, setSelected] = useState(false);
@@ -36,7 +35,7 @@ const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating
       
     return (
 
-        <Link key={product.id} className={`stack-item ${horizontal && 'horizontal'} ${className}`}>
+        <Link key={product.id} className={`stack-item ${horizontal && 'horizontal'} ${className}`} to={`/product/${product.slug}`}>
             <div className="stack-content">
                 {showSaveIcon && (!profileSaved ? (
                     <div className="save-button" onClick={saveProfile}>
@@ -61,7 +60,7 @@ const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating
                     {product.tag && product.tag.length > 0 && showTag && (
                         <div className="stack-content-tag" >{product.tag[0]}</div>
                     )}
-                    <h4 className="work"> {product.name} </h4>
+                    <h4 className="work"> {Transformer.trimText(product.name, 50)} </h4>
                     <div className="stack-content-bottom">
                         <div className="pricing">
                             <p className="starting_from_caption">from</p>
@@ -78,7 +77,7 @@ const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating
                     </div>
                     {showBtn && 
                         <div className="call-to-action-container">
-                            <Link className="btn call-to-action-btn" to={'/category/'}>View All Brand Prices</Link>
+                            <Link className="btn call-to-action-btn"  to={`/product/${product.slug}`}>View All Brand Prices</Link>
                         </div>
                     }
                 </div>

@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import shortid from 'shortid';
 import img3 from '../../../../../assets/img/logo/image 3.png'
 
-import './MiniProfile.scss';
-import ProductMiniProfile from './ProductMiniProfile';
+import MainProductItem from '../../../../../components/common/Product/MainProductItem';
 import DealCountDown from './DealCountDown';
 import DealOfTheWeek from './DealOfTheWeek';
 
@@ -19,14 +18,14 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.slice(0,4).map( (product) => (
-                                <ProductMiniProfile key={shortid.generate()} product={product} />
+                                <MainProductItem key={shortid.generate()} product={product} />
                             ))}
                            
                         </div>
                         <div className="stack-items">
                             
                             {products.slice(4,8).map( (product) => (
-                                <ProductMiniProfile key={product.id} product={product} />
+                                <MainProductItem key={product.id} product={product} />
                             ))}
 
                         </div>

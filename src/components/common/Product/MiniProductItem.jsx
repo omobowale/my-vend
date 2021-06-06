@@ -5,13 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Price from '../Price/Price';
+import Transformer from '../../../utils/Transformer';
 
 const MiniProductItem = ({product={},  className=''}) => {
       
     return (
 
         <div key={product.id} className={`stack-item mini ${className}`}>
-            <Link className="stack-content">
+            <Link className="stack-content" to={`/product/${product.slug}`}>
                 <div className="save-button" >
                     <FontAwesomeIcon icon={hollowHeart} className="save" />
                 </div>
@@ -23,7 +24,7 @@ const MiniProductItem = ({product={},  className=''}) => {
                         <div className="stack-content-tag" >{product.tag[0]}</div>
                     )}
 
-                    <h4 className="work"> {product.name} </h4>
+                    <h4 className="work"> { Transformer.trim(product.name, 50) } </h4>
 
                     <div className="stack-content-bottom">                        
                         <div className="pricing">

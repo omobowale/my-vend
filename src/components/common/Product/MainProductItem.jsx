@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
+import Price from '../Price/Price';
+import { renderRating } from '../../../utils/rating';
+import Transformer from '../../../utils/Transformer';
 
-import './MiniProfile.scss';
-import Price from '../../../../../components/common/Price/Price';
-import { renderRating } from '../../../../../utils/rating';
-
-const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, className=''}) => {
+const MainProductItem = ({product={}, showTag=true, showRating=false, showSaveIcon=false, saved, refreshAfterRemove = false, className=''}) => {
     const [selected, setSelected] = useState(false);
     const [profileSaved, setSaved] = useState(saved);
 
@@ -36,17 +35,24 @@ const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSav
       
     return (
 
-        <Link key={product.id} className={`stack-item ${className}`} to={`/product/${product.slug}`}>
+        <Link key={product.id} className={`stack-item listing ${className}`} to={`/product/${product.slug}`}>
             <div className="stack-content">
-                {showSaveIcon && (!profileSaved ? (
-                    <div className="save-button" onClick={saveProfile}>
-                        <FontAwesomeIcon icon={hollowHeart} className="save" />
-                    </div>
-                ) : (
-                    <div className="save-button" onClick={removeProfile}>
-                        <FontAwesomeIcon icon={faTrashAlt} className="delete" />
-                    </div>
-                ))}
+                
+                <div className="stack-content-header">
+                    {product.tag && product.tag.length > 0 && (
+                        <div className="stack-content-tag" >{product.tag[0]}</div>
+                    )}
+                    {showSaveIcon && (!profileSaved ? (
+                        <div className="save-button" onClick={saveProfile}>
+                            <FontAwesomeIcon icon={hollowHeart} className="save" />
+                        </div>
+                    ) : (
+                        <div className="save-button" onClick={removeProfile}>
+                            <FontAwesomeIcon icon={faTrashAlt} className="delete" />
+                        </div>
+                    ))}
+                </div>
+
                 {showRating && 
                     <div className="rating-review">
                         <div className="rating">
@@ -58,10 +64,7 @@ const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSav
                     <img className="img-fluid" src={product.image && product.image[0]} />
                 </div>
                 <div className="stack-content-text">
-                    {product.tag && product.tag.length > 0 && showTag && (
-                        <div className="stack-content-tag" >{product.tag[0]}</div>
-                    )}
-                    <h4 className="work"> {product.name} </h4>
+                    <h4 className="work"> {Transformer.trimText(product.name, 52)} </h4>
                     <div className="stack-content-bottom">
                         <div className="pricing">
                             <p className="starting_from_caption">from</p>
@@ -83,4 +86,4 @@ const ProductMiniProfile = ({product={}, showTag=true, showRating=false, showSav
 
 }
 
-export default ProductMiniProfile;
+export default MainProductItem;

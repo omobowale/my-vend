@@ -9,6 +9,7 @@ exports.getProducts = getProducts;
 exports.getFeaturedProducts = getFeaturedProducts;
 exports.getProductCategoryList = getProductCategoryList;
 exports.getSubCategoryList = getSubCategoryList;
+exports.getProductDetails = getProductDetails;
 exports.getCurrencyList = getCurrencyList;
 exports.getSuggestions = getSuggestions;
 exports.getProductSearch = getProductSearch;
@@ -68,6 +69,19 @@ function getSubCategoryList(params) {
   return function (dispatch) {
     return new Promise(function (resolve, reject) {
       var url = "product/subcategory/".concat(params.subCategoryName);
+      API.getReq(url, function (res) {
+        resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function getProductDetails(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "product/".concat(params.name);
       API.getReq(url, function (res) {
         resolve(res);
       }, function (err) {

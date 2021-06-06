@@ -1,9 +1,9 @@
 import {Helmet} from 'react-helmet'
 
-const PageSeo = ({category={}}) => {
+const PageSeo = ({product={}}) => {
     return (
         <Helmet>
-            <title>LiveVend | Product List - {category.name || 'General'} </title>
+            <title>LiveVend | Product Detail - {product.name || 'General'} </title>
             <meta 
                 name="description" 
                 content="Livevend is a construction and real estate price discovery platform that provides realtime prices from all markets across nigeria"
