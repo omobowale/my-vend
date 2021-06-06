@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AutoComplete from '../../../common/autocomplete/AutoComplete';
 import { getSuggestions } from '../../../../modules/web/service';
+import { searchValue } from '../../../../utils/search';
 
 const MobileSearchForm = ({ toggleSearchMode }) => {
     const [value, setValue] = useState('');
@@ -11,7 +12,7 @@ const MobileSearchForm = ({ toggleSearchMode }) => {
 
     const submitForm = (e) => {
         e.preventDefault();
-        // searchValue(value);
+        searchValue(value);
     };
 
     const handleChange = (e) => {
