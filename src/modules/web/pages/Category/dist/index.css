@@ -87,6 +87,7 @@
   top: -50px;
 }
 .popular-products-content .stack-items {
+  min-height: 200px;
   display: flex;
   flex-direction: row;
 }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PageSeo from './components/PageSeo';
 import Breadcrumb from './components/BreadCrumb';
@@ -11,6 +11,7 @@ import PopularProducts from './components/PopularProduct';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 
 function Page({ dispatch, category={} }) {
+    const [popularProducts, setPopularProducts] = useState([]);
     
     useEffect(() => {
         
@@ -28,7 +29,7 @@ function Page({ dispatch, category={} }) {
                 <div className="container page-content">
                     <Breadcrumb category={category} />
                     <SubCategoryList category={category} />
-                    <PopularProducts />
+                    <PopularProducts popularProducts={popularProducts} />
                 </div>
                 <LiveVendApp />
                 <SubscriptionSection />

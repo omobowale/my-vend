@@ -17,9 +17,10 @@ import _ from 'lodash';
 function Page({ dispatch, category, subCategoryName, products }) {
     const [screenSize, setScreen] = useState('');
     const [subCategory, setSubCategory] = useState({name: 'Wheelbarrow'});
+    const [brands, setBrands] = useState([]);
     // const { query } = parseQuery(location.search);
     const [loading, setLoading] = useState(true);
-    // const [text, setText] = useState(query || '');
+    const [relatedProducts, setRelatedProducts] = useState([]);
     const [sort, setSort] = useState('rank');
     const [altText, setAltText] = useState('');
     const [page, setPage] = useState(1);
@@ -91,13 +92,13 @@ function Page({ dispatch, category, subCategoryName, products }) {
         const subCat = category.subArray && category.subArray.find(sub => sub.slug == subCategoryName);
         if(subCat && !_.isEqual(subCat, subCategory)){
             setSubCategory(subCat);
+            setBrands(subCat.subArray);
         }
     }
     
     const handleFilter = (params) => {
         // const searchQuery = { ...params, ...(!!text && { query: text }) };
     
-        
     };
         
     getSubCategory();
@@ -113,10 +114,10 @@ function Page({ dispatch, category, subCategoryName, products }) {
                     </section>
                     <div className="product-list-body">
                         {screenSize === 'large' ? (
-                            <Filter
+                            <Filter brands={brands}
                             />
                         ) : (
-                            <SmFilter
+                            <SmFilter brands={brands}
                             />
                         )}
                         <div className="product-list-body-main clearfix">
@@ -129,7 +130,7 @@ function Page({ dispatch, category, subCategoryName, products }) {
                             <ProductList products={products}  />
                         </div>
                     </div>
-                    <RelatedProducts />
+                    <RelatedProducts relatedProducts={relatedProducts}/>
                 </div>
                 <SubscriptionSection />
             </main>

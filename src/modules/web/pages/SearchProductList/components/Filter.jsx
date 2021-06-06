@@ -92,7 +92,7 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item">
+                        {/* <div className="accordion-item">
                             <h2 className="accordion-header" id="headingThree">
                                 <div className="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#invertory_status_filter" aria-expanded="false" aria-controls="invertory_status_filter">
                                     <span className>Inventory Status</span>  <span className="accordion-icon chevron"></span>
@@ -103,7 +103,9 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                     Inventory Status
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
+
+
                     </div>
 
                 </form>

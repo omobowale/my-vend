@@ -6,7 +6,7 @@ import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 import MiniProductItem from '../../../../../components/common/Product/MiniProductItem';
 
 
-const RelatedProducts = ({products=[{name: 'Ceramic Wall Tiles 200mm X 300mm', price: 20000, tag:['Floor'], image: img3}]}) => {
+const RelatedProducts = ({relatedProducts=[]}) => {
     return (
         <div className="mini-products">
             <section className="mini-products-title">
@@ -16,7 +16,9 @@ const RelatedProducts = ({products=[{name: 'Ceramic Wall Tiles 200mm X 300mm', p
                 
                 <div className="stack-items">
                     
-                    {products.map(product => (<MiniProductItem key={product.id} product={product} />))}
+                    {relatedProducts.map(product => (<MiniProductItem key={product.id} product={product} />))}
+
+                    {!relatedProducts.length && <div className="no-result"> Unfortunately, we did not find anything that matches these criteria. </div>}
 
                 </div>
     

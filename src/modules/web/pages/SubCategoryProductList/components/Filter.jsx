@@ -67,7 +67,7 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                         return (
                                             <div
                                                 key={index}
-                                                className="custom-control custom-checkbox mt-2"
+                                                className="custom-control custom-radio mt-2"
                                             >
                                                 <input
                                                     type="radio"
@@ -78,7 +78,7 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                                     // onClick={e =>
                                                     //     onChange(e.target.name, e.target.value)
                                                     // }
-                                                    className="custom-control-input"
+                                                    className="custom-control-input filter-radio"
                                                 />
                                                 <label
                                                     className="custom-control-label"
@@ -92,7 +92,8 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                 </div>
                             </div>
                         </div>
-                        <div className="accordion-item">
+
+                        {/* <div className="accordion-item">
                             <h2 className="accordion-header" id="headingThree">
                                 <div className="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#invertory_status_filter" aria-expanded="false" aria-controls="invertory_status_filter">
                                     <span className>Inventory Status</span>  <span className="accordion-icon chevron"></span>
@@ -103,9 +104,9 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                                     Inventory Status
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
 
+                    </div>
                 </form>
             </div>
         </div>

@@ -4,7 +4,7 @@ import img3 from '../../../../../assets/img/common/image3.png'
 import MiniProductItem from '../../../../../components/common/Product/MiniProductItem';
 
 
-const PopularProducts = ({products=[{name: 'Ceramic Wall Tiles 200mm X 300mm', price: 20000, tag:['Floor'], image: img3}]}) => {
+const PopularProducts = ({popularProducts=[]}) => {
     return (
         <div className="popular-products">
             <section className="popular-products-title">
@@ -14,8 +14,10 @@ const PopularProducts = ({products=[{name: 'Ceramic Wall Tiles 200mm X 300mm', p
                 
                 <div className="stack-items">
                    
-                    {products.map(product => (<MiniProductItem key={product.id} product={product} />))}
+                    {popularProducts.map(product => (<MiniProductItem key={product.id} product={product} />))}
                    
+                    {!popularProducts.length && <div className="no-result"> Unfortunately, we did not find anything that matches these criteria. </div>}
+
                 </div>
     
             </section>

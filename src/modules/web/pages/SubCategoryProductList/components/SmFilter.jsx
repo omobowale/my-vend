@@ -9,7 +9,7 @@ import MultiRangeSlider from '../../../../../components/common/InputField/Multip
 
 // import PriceInput from '../../../../../components/common/PriceInput/PriceInput';
 
-function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Presto', slug: 'presto'}, {name: 'TopSteel', slug: 'topsteel'}], onPage }) {
+function Filter({ filter, brands = [], onPage }) {
     const [filterMenu, setFilterMenu] = useState('');
     const [sidebar, setSidebar] = useState('');
  
@@ -117,10 +117,10 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                             <ul>
                                 <li onClick={() => setFilterMenu('price')} > <span className>Price</span>  <span className="chevron right nav-icon-chevron"></span></li>
                                 <li onClick={() => setFilterMenu('brand')} > <span className>Brand</span>  <span className="chevron right nav-icon-chevron"></span></li>
-                                <li > <span className>Inventory Status</span>  <span className="chevron right nav-icon-chevron"></span></li>
+                                {/* <li > <span className>Inventory Status</span>  <span className="chevron right nav-icon-chevron"></span></li>
                                 <li > <span className>Rating</span>  <span className="chevron right nav-icon-chevron"></span></li>
                                 <li > <span className>Sales</span>  <span className="chevron right nav-icon-chevron"></span></li>
-                                <li > <span className>Retailer</span>  <span className="chevron right nav-icon-chevron"></span></li>
+                                <li > <span className>Retailer</span>  <span className="chevron right nav-icon-chevron"></span></li> */}
                             </ul>
                         </nav>
                         <div className="pt-5 pl-3">

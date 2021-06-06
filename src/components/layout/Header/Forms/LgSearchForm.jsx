@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import AutoComplete from '../../../common/autocomplete/AutoComplete';
 import { getSuggestions } from '../../../../modules/web/service';
+import { searchValue } from '../../../../utils/search';
 
 const LgSearchForm = (props) => {
     const [value, setValue] = useState('');
@@ -14,11 +15,11 @@ const LgSearchForm = (props) => {
 
         setValue('');
 
-        // searchValue(value);
+        searchValue(value);
     };
 
     const changeToSearchMode = () => {
-        props.changeMode('search_mode');
+        // props.changeMode('search_mode');
     };
 
     const changeToNormalMode = () => {

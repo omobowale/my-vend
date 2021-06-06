@@ -18,6 +18,7 @@ import _ from 'lodash';
 function Page({ dispatch, location, category, subCategoryName }) {
     const [screenSize, setScreen] = useState('');
     const [products, setProductList] = useState([]);
+    const [relatedProducts, setRelatedProducts] = useState([]);
     const { query } = queryString.parse(location.search);
     const [loading, setLoading] = useState(true);
     const [sort, setSort] = useState('rank');
@@ -121,7 +122,7 @@ function Page({ dispatch, location, category, subCategoryName }) {
                             <ProductList products={products}  />
                         </div>
                     </div>
-                    <RelatedProducts />
+                    <RelatedProducts relatedProducts={relatedProducts} />
                 </div>
                 <SubscriptionSection />
             </main>
