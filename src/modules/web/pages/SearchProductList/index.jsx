@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useRef } from 'react';
 import { connect } from 'react-redux';
 import queryString from 'query-string';
 import PageSeo from './components/PageSeo';
@@ -13,11 +13,14 @@ import SubscriptionSection from '../../../../components/layout/SubscriptionSecti
 import { getScreenSize } from '../../../../utils/setScreenSIze';
 import RelatedProducts from '../../../../components/common/Product/RelatedProducts';
 import ProductList from './components/ProductList';
+import Transformer from '../../../../utils/Transformer'
+import SimpleSpinner from '../../../../components/common/Spinner/SimpleSpinner';
 import _ from 'lodash';
 
 function Page({ dispatch, location, category, subCategoryName }) {
     const [screenSize, setScreen] = useState('');
     const [products, setProductList] = useState([]);
+    const [priceRange, setPriceRange] = useState({min: 0, max: 10000});
     const [relatedProducts, setRelatedProducts] = useState([]);
     const { query } = queryString.parse(location.search);
     const [loading, setLoading] = useState(true);
@@ -26,14 +29,15 @@ function Page({ dispatch, location, category, subCategoryName }) {
     const [page, setPage] = useState(1);
   
 
-    useEffect(() => {
-        console.log('q', query)
-        dispatch(getProductSearch({query})).then(data => setProductList(data)).catch(err => err);
-    
-    }, [
-        dispatch,
-    ]);
-
+    const isFirstRun = useRef(true);
+    useEffect (() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            getData();
+            return;
+        }
+        getData();
+    }, [query]);
 
     useEffect(() => {
         updateScreenWidth();
@@ -87,6 +91,15 @@ function Page({ dispatch, location, category, subCategoryName }) {
     
     };
 
+    const getData = useCallback(() => {
+        setLoading(true);
+        dispatch(getProductSearch({query})).then(data => {
+            setProductList(_.isArray(data) ? data : []);
+            setPriceRange( Transformer.findMinMax(_.isArray(data) ? data : [], 'price'));
+            setLoading(false);
+        }).catch(err => err);
+
+    })
 
     const handleFilter = (params) => {
         // const searchQuery = { ...params, ...(!!text && { query: text }) };
@@ -106,10 +119,10 @@ function Page({ dispatch, location, category, subCategoryName }) {
                     </section>
                     <div className="product-list-body">
                         {screenSize === 'large' ? (
-                            <Filter
+                            <Filter min={priceRange.min} max={priceRange.max}
                             />
                         ) : (
-                            <SmFilter
+                            <SmFilter min={priceRange.min} max={priceRange.max}
                             />
                         )}
                         <div className="product-list-body-main clearfix">
@@ -119,7 +132,8 @@ function Page({ dispatch, location, category, subCategoryName }) {
                                 sort={sort}
                             />
 
-                            <ProductList products={products}  />
+                            { loading && <SimpleSpinner /> }
+                            { !loading && <ProductList products={products}  /> }
                         </div>
                     </div>
                     <RelatedProducts products={relatedProducts} />

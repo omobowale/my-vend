@@ -28,6 +28,18 @@
 .consultancy.exit {
   width: 0px;
 }
+.consultancy-close-butn {
+  color: #F05C40;
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.consultancy-close-butn svg {
+  margin-right: 5px;
+}
 .consultancy-header {
   position: relative;
   margin-bottom: 15px;

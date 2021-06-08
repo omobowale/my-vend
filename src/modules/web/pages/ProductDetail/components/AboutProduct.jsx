@@ -20,14 +20,14 @@ const AboutProduct = ({product={}}) => {
                     <div className="product-detail-img-container">
                         <div className="img-list">
                             {product.image && product.image.length > 0 && (
-                                product.image.map( image => (<div className="img-item" onClick={() => setImage(image)}><img className="img-fluid" src={image} /> </div> ) )
+                                product.image.map( image => (<div key={shortid.generate()} className="img-item" onClick={() => setImage(image)}><img className="img-fluid" src={image} /> </div> ) )
                             )}
                         </div>
                         <div className="img-content">
                             <div className="img-content-header">
 
                                 {product.tag && product.tag.length > 0 && (
-                                    product.tag.map( tag => (<div className="content-tag" >{tag}</div> ) )
+                                    product.tag.map( tag => (<div key={shortid.generate()} className="content-tag" >{tag}</div> ) )
                                 )}
                                 
                                 <div className="save-button" >
@@ -89,6 +89,8 @@ const AboutProduct = ({product={}}) => {
                             <li className="m-t-three">
                                 <Link
                                     className="active"
+                                    onClick={(e) => e.preventDefault() }
+                                    to=""
                                 >
                                     Product Information
                                 </Link>

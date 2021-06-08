@@ -100,11 +100,11 @@ function Page({ dispatch, categories, productName, products }) {
                         <div className="tab-content row m-3">
                             
                             <ul className="desc-container">
-                                <li className="desc"> <span class="left">Type</span> <span>{product.type}</span> </li>
-                                <li className="desc"> <span class="left">Measurement</span> <span>{product.measurement}</span> </li>
-                                <li className="desc"> <span class="left">Weight</span> <span>{product.weight}</span> </li>
-                                <li className="desc"> <span class="left">Quantity</span> <span>{product.quantity}</span> </li>
-                                <li className="desc"> <span class="left">Location</span> <span>{product.location}</span> </li>
+                                <li className="desc"> <span className="left">Type</span> <span>{product.type}</span> </li>
+                                <li className="desc"> <span className="left">Measurement</span> <span>{product.measurement}</span> </li>
+                                <li className="desc"> <span className="left">Weight</span> <span>{product.weight}</span> </li>
+                                <li className="desc"> <span className="left">Quantity</span> <span>{product.quantity}</span> </li>
+                                <li className="desc"> <span className="left">Location</span> <span>{product.location}</span> </li>
                                 
                             </ul>
                         </div>

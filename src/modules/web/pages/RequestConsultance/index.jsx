@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import Validator from 'form-input-validator';
 import { Modal, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import {constructionConsultantReq, getFeaturedProducts} from '../../service'
 import './index.scss';
@@ -67,10 +69,17 @@ function Page({ onHide, show, dispatch, }) {
             });
     };
 
+    const closeModal = () => {
+        setFormAttribute({interest: '', name: '', email: '', contact: '', day: '', time: ''});
+        setCurrentPage(1);
+        setLoadingState(false);
+        onHide();
+    }
+
     return (
         <Modal
             show={show}
-            onHide={() => {setCurrentPage(1); onHide(); }}
+            onHide={() => closeModal()}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             className="request-consultant-modal"
@@ -250,13 +259,16 @@ function Page({ onHide, show, dispatch, }) {
                 </div>         
 
                 <div className={`consultancy ${currentPage == 4 || loading ? "show" : "exit"}`} >
+                    <span onClick={closeModal} className="consultancy-close-butn" > 
+                        <FontAwesomeIcon icon={faTimes} className="icon" /> Close
+                    </span>
                     {
                         loading && <SimpleSpinner />
                     }
                     {  !loading &&
                         <>
                             {formError.any() && 
-                                <div onClick={() => setCurrentPage(1)} class="invalid-feedback">Unable to submit information. Please click here to go back to the form.</div>
+                                <div onClick={() => setCurrentPage(1)} class="invalid-feedback">Unable to submit information. Please click here to go back to the form <FontAwesomeIcon icon={faArrowLeft} />.</div>
                             }
                             { !formError.any() &&
                                 

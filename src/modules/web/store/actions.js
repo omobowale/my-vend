@@ -28,6 +28,14 @@ export const setCategoryList = (payload) => {
     };
 };
 
+
+export const setCategoryFlatList = (payload) => {
+    return {
+        type: actionTypes.CATEGORY_FLAT_LIST,
+        payload,
+    };
+};
+
 export const login = payload => {
     return {
         type: actionTypes.AUTH_LOGIN,

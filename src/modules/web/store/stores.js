@@ -24,6 +24,12 @@ export function setCategoryList(state, payload) {
     });
 }
 
+export function setCategoryFlatList(state, payload) {
+    return Object.assign({}, state, { 
+        categoryList : payload,
+    });
+}
+
 export function setAuthUser(state, payload) {
     return Object.assign({}, state, { 
         authUser : payload,

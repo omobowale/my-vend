@@ -39,8 +39,9 @@ function SmHeader({
                         
                         <Link to={'/'} className="logo-sm">
                             <img
-                            src={logo}
-                            alt="logo"
+                                className="img-fluid"
+                                src={logo}
+                                alt="logo"
                             />
                         </Link>
 

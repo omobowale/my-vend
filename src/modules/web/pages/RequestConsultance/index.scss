@@ -33,6 +33,18 @@
         width: 0px;
         
     }
+    &-close-butn{
+        color: #F05C40;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        svg{
+            margin-right: 5px;
+        }
+    }
 
     &-header {
         position: relative;

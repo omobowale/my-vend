@@ -145,4 +145,16 @@ export default class Transformer {
           .join(replacer);
     };
 
+    static findMinMax = (arr=[], column) => {
+        let min = arr[0] ? arr[0][column] : 0, max = arr[0] ? arr[0][column] : 10000;
+      
+        for (let i = 1, len=arr.length; i < len; i++) {
+            let v = arr[i][column];
+            min = (v < min) ? v : min;
+            max = (v > max) ? v : max;
+        }
+      
+        return {min, max};
+    }
+
 }

@@ -46,10 +46,39 @@ export function getProductCategoryList(params) {
         });
 }
 
+export function getProductCategoryFlatList(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = "category/flat" ;
+            API.getReq(url,
+                (res => {
+                    dispatch(actions.setCategoryFlatList(res));
+                    resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
 export function getSubCategoryList(params) {
     return dispatch =>
         new Promise((resolve, reject) => {
             const url = `product/subcategory/${params.subCategoryName}` ;
+            API.getReq(url,
+                (res => {
+                    resolve(res)
+                }),
+                (err => {
+                    return reject(err);
+                }));
+        });
+}
+
+export function getBrandCategoryList(params) {
+    return dispatch =>
+        new Promise((resolve, reject) => {
+            const url = `product/brandcategory/${params.brandName}` ;
             API.getReq(url,
                 (res => {
                     resolve(res)

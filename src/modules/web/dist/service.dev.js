@@ -8,7 +8,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.getProducts = getProducts;
 exports.getFeaturedProducts = getFeaturedProducts;
 exports.getProductCategoryList = getProductCategoryList;
+exports.getProductCategoryFlatList = getProductCategoryFlatList;
 exports.getSubCategoryList = getSubCategoryList;
+exports.getBrandCategoryList = getBrandCategoryList;
 exports.getProductDetails = getProductDetails;
 exports.getCurrencyList = getCurrencyList;
 exports.getSuggestions = getSuggestions;
@@ -65,10 +67,37 @@ function getProductCategoryList(params) {
   };
 }
 
+function getProductCategoryFlatList(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "category/flat";
+      API.getReq(url, function (res) {
+        dispatch(actions.setCategoryFlatList(res));
+        resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
 function getSubCategoryList(params) {
   return function (dispatch) {
     return new Promise(function (resolve, reject) {
       var url = "product/subcategory/".concat(params.subCategoryName);
+      API.getReq(url, function (res) {
+        resolve(res);
+      }, function (err) {
+        return reject(err);
+      });
+    });
+  };
+}
+
+function getBrandCategoryList(params) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      var url = "product/brandcategory/".concat(params.brandName);
       API.getReq(url, function (res) {
         resolve(res);
       }, function (err) {

@@ -91,9 +91,10 @@ function LgHeader({
             <div className="header-top">
                 <div className="header-top-container clearfix">
                     
-                    <Link to={'/'} className="logo mr-5">
+                    <Link to={'/'} className="logo">
                         <img
                             src={logo}
+                            className="img-fluid"
                             alt="logo"
                         />
                     </Link>

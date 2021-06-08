@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getProductCategoryList } from '../../../../modules/web/service'
+import { getProductCategoryList, getProductCategoryFlatList } from '../../../../modules/web/service'
 import ad1 from '../../../../assets/img/common/mega-ad1.png';
 import ad2 from '../../../../assets/img/common/mega-ad2.png';
 import ad3 from '../../../../assets/img/common/mega-ad3.png';
@@ -16,6 +16,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
     const loadCategories = useCallback(() => {
         
         dispatch(getProductCategoryList({}))
+        dispatch(getProductCategoryFlatList({}))
         
     });
 
@@ -35,7 +36,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
                     </li>
                     {brands.map( brand => {
                         return (
-                            <li key={brand.id} className=""> {brand.name} </li>
+                            <li key={brand.id} className=""> <Link className="" onClick={() => closeMegaMenu()} to={`/category/${cat.slug}/${subCat.slug}/${brand.slug}`} > {brand.name} </Link> </li>
                         )
                     })}
                 </ul>

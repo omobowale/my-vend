@@ -16,6 +16,7 @@ import bua from '../../../../assets/img/common/bua.png'
 import { Link } from 'react-router-dom';
 import LiveVendApp from './components/LiveVendApp';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
+import _ from 'lodash';
 
 function Home({ dispatch, mainProduct, featuredProducts, products }) {
     const featuredRef = useRef();
@@ -151,11 +152,16 @@ function Home({ dispatch, mainProduct, featuredProducts, products }) {
 const mapStateToProps = (state) => {
     
     const random = Math.floor(Math.random() * state.web.featuredProducts.length);
-    const mainProduct = state.web.featuredProducts[random];
+    const mainProduct = state.web.featuredProducts[random] || {};
+    const categories = state.web.categoryList || [];
+    const brandCategory = _.isString(mainProduct.category) ?  categories.find(cat => cat.id === mainProduct.category) || {} : mainProduct.category || {};
+    const subCategory = categories.find(cat => cat.id === brandCategory.parentId) || {}
+    const mainCategory = categories.find(cat => cat.id === subCategory.parentId) || {}
     return {
-        mainProduct: mainProduct || {},
+        mainProduct: {...mainProduct, brandCategory, subCategory, mainCategory} || {},
         featuredProducts: state.web.featuredProducts.length > 5 ? state.web.featuredProducts.slice(0,6).filter(item => item.id !== mainProduct.id) : [...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts].slice(0, 5),
         products: state.web.products,
+        
     };
 };
 

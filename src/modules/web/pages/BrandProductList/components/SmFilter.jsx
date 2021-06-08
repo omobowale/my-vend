@@ -9,14 +9,13 @@ import MultiRangeSlider from '../../../../../components/common/InputField/Multip
 
 // import PriceInput from '../../../../../components/common/PriceInput/PriceInput';
 
-function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {name: 'Presto', slug: 'presto'}, {name: 'TopSteel', slug: 'topsteel'}], onPage }) {
+function Filter({ filter, min, max, brands = [], onPage }) {
     const [filterMenu, setFilterMenu] = useState('');
     const [sidebar, setSidebar] = useState('');
  
-    const [min_price, setMinPrice] = useState(0);
-    const [max_price, setMaxPrice] = useState(900000);
+    const [min_price, setMinPrice] = useState(min);
+    const [max_price, setMaxPrice] = useState(max);
     const [type, setType] = useState('');
-    const [brand, setBand] = useState('');
     const [showFilter, setShowFilter] = useState(false);
 
     const toggleFilter = () => setShowFilter(!showFilter);
@@ -28,7 +27,6 @@ function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {n
         ...(!!type && { project_type: type }),
         ...(!!min_price && { min_budget: min_price }),
         ...(!!max_price && { max_budget: max_price }),
-        ...(!!brand && { brand_id: brand }),
         };
 
         setShowFilter(false);
@@ -40,7 +38,6 @@ function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {n
         setMinPrice('');
         setMaxPrice('');
         setType('');
-        setBand('');
     };
 
     const isFirstRun = useRef(true);
@@ -56,6 +53,7 @@ function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {n
             setMinPrice(min);
         }
     }, [min, max]);
+
     const showSidebar = () => setSidebar('show');
 
     const hideSidebar = () => setSidebar('');
@@ -76,49 +74,6 @@ function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {n
                         <div className="filter-form">
                             <div className="form-title">Price</div>
                             <MultiRangeSlider min={min} max={max} minVal={min_price} maxVal={max_price} name="price" onChange={(name, min, max) => {setMinPrice(min); setMaxPrice(max)}} minVal={min_price} maxVal={max_price} />
-                        </div>
-                    </div>
-                )
-
-            case 'brand': 
-                return (
-                    <div className="sub-navigation">
-                        <div onClick={() => setFilterMenu('')}  className="prev-menu">
-                            <span> 
-                                <FontAwesomeIcon
-                                icon={faAngleLeft}
-                                />
-                            </span>
-                            <span>Back </span>
-                        </div>
-                        <div className="filter-form">
-                                <div className="form-title">Brand</div>
-                                {brands.map((option, index) => {
-                                        return (
-                                            <div
-                                                key={index}
-                                                className="custom-control custom-checkbox mt-3"
-                                            >
-                                                <input
-                                                    type="radio"
-                                                    id={`brand${option.slug}`}
-                                                    name={'brand'}
-                                                    value={option.slug}
-                                                    // defaultChecked={value == option ? true : false}
-                                                    // onClick={e =>
-                                                    //     onChange(e.target.name, e.target.value)
-                                                    // }
-                                                    className="custom-control-input"
-                                                />
-                                                <label
-                                                    className="custom-control-label"
-                                                    htmlFor={`brand${option.slug}`}
-                                                >
-                                                    {option.name}
-                                                </label>
-                                            </div>
-                                        );
-                                    })}
                         </div>
                     </div>
                 )

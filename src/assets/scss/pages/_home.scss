@@ -193,6 +193,7 @@
                 margin-bottom: 2rem;
                 text-align: left;
                 max-width: 300px;
+                // background-color: #00000032;
                 @media screen and (min-width: 990px) {
                     max-width: 510px;
                 }
@@ -222,7 +223,7 @@
                     font-size: 17px;
                     line-height: 22.13px;
                     font-weight: 500;
-                    color:#767A7F;
+                    color:#767A7F80;
         
                     @media #{$mobile-view} {
                         font-size: 14px;
@@ -841,7 +842,14 @@
                         
                     }
                     .save-button {
-                        padding: 7px 7px 4px;
+                        height: 18px;
+                        width: 18px;
+                        background-color: #C4C4C470;
+                        border-radius: 50%;
+                        z-index: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         background-color: #ffffff9f;
                         border-radius: 50%;
                         position: absolute;
@@ -976,7 +984,14 @@
                         }
                     }
                     .save-button {
-                        padding: 7px 7px 4px;
+                        height: 18px;
+                        width: 18px;
+                        background-color: #C4C4C470;
+                        border-radius: 50%;
+                        z-index: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         background-color: #ffffff9f;
                         border-radius: 50%;
                         position: absolute;

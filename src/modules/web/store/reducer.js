@@ -7,6 +7,7 @@ const initialState = {
     featuredProducts: [],
     currencies : [],
     categories : [],
+    categoryList : [],
     showAuth: false,
     authPage: 'login',
     isAuthenticated: false,
@@ -26,6 +27,8 @@ const reducer = (state = initialState, { type, payload = null }) => {
             return stores.setCurrencyList(state, payload);
         case actionTypes.CATEGORY_LIST :
             return stores.setCategoryList(state, payload);
+        case actionTypes.CATEGORY_FLAT_LIST :
+            return stores.setCategoryFlatList(state, payload);
         case actionTypes.AUTH_USER :
             return stores.setAuthUser(state, payload);
         case actionTypes.AUTH_TOKEN :

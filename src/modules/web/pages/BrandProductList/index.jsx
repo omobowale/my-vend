@@ -5,7 +5,7 @@ import Breadcrumb from './components/BreadCrumb';
 import Filter from './components/Filter';
 import SmFilter from './components/SmFilter';
 import SortTotal from './components/SortTotal';
-import {getProducts, getSubCategoryList } from '../../service'
+import {getProducts, getBrandCategoryList } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
@@ -13,15 +13,13 @@ import { getScreenSize } from '../../../../utils/setScreenSIze';
 import RelatedProducts from '../../../../components/common/Product/RelatedProducts';
 import ProductList from './components/ProductList';
 import Transformer from '../../../../utils/Transformer'
-import SimpleSpinner from '../../../../components/common/Spinner/SimpleSpinner';
 import _ from 'lodash';
+import SimpleSpinner from '../../../../components/common/Spinner/SimpleSpinner';
 
-function Page({ dispatch, category, subCategoryName }) {
+function Page({ dispatch, category={}, subCategory={}, brand={}, brandName, defaultCurrency }) {
     const [screenSize, setScreen] = useState('');
-    const [subCategory, setSubCategory] = useState({name: 'Wheelbarrow'});
-    const [priceRange, setPriceRange] = useState({min: 0, max: 10000});
-    const [brands, setBrands] = useState([]);
     const [products, setProducts] = useState([]);
+    const [priceRange, setPriceRange] = useState({min: 0, max: 10000});
     // const { query } = parseQuery(location.search);
     const [loading, setLoading] = useState(true);
     const [relatedProducts, setRelatedProducts] = useState([]);
@@ -47,7 +45,7 @@ function Page({ dispatch, category, subCategoryName }) {
             return;
         }
         getData();
-    }, [subCategoryName]);
+    }, [brand]);
 
 
     const updateScreenWidth = () => {
@@ -56,6 +54,16 @@ function Page({ dispatch, category, subCategoryName }) {
         setScreen(newScreenSize);
         }
     };
+
+    const getData = useCallback(() => {
+        setLoading(true);
+        dispatch(getBrandCategoryList({brandName})).then(data => {
+                setProducts(_.isArray(data) ? data : []); 
+                setLoading(false);
+                setPriceRange( Transformer.findMinMax(_.isArray(data) ? data : [], 'price'));
+            }).catch(err => err);
+
+    })
 
     const onChange = (e) => {
         const { value, name } = e.target;
@@ -92,47 +100,28 @@ function Page({ dispatch, category, subCategoryName }) {
         }
     
     };
-
-    const getSubCategory = () => {
-        const subCat = category.subArray && category.subArray.find(sub => sub.slug == subCategoryName);
-        if(subCat && !_.isEqual(subCat, subCategory)){
-            setSubCategory(subCat);
-            setBrands(subCat.subArray);
-        }
-    }
     
     const handleFilter = (params) => {
         // const searchQuery = { ...params, ...(!!text && { query: text }) };
     
     };
 
-    const getData = useCallback(() => {
-        setLoading(true);
-        dispatch(getSubCategoryList({subCategoryName})).then(data => {
-            setProducts(_.isArray(data) ? data : []);
-            setPriceRange( Transformer.findMinMax(_.isArray(data) ? data : [], 'price'));
-            setLoading(false);
-        }).catch(err => err);
-
-    })
-
-    getSubCategory();
     return (
         <>
         
             <PageSeo category={subCategory} />
             <main className="page">
                 <div className="container sm-container page-content">
-                    <Breadcrumb category={category} subCategory={subCategory} />
+                    <Breadcrumb category={category} subCategory={subCategory} brand={brand} />
                     <section className="">
-                        <div className="section--title">{subCategory.name}</div>
+                        <div className="section--title">{brand.name}</div>
                     </section>
                     <div className="product-list-body">
                         {screenSize === 'large' ? (
-                            <Filter brands={brands} min={priceRange.min} max={priceRange.max} 
+                            <Filter min={priceRange.min} max={priceRange.max}
                             />
                         ) : (
-                            <SmFilter brands={brands} min={priceRange.min} max={priceRange.max}
+                            <SmFilter min={priceRange.min} max={priceRange.max}
                             />
                         )}
                         <div className="product-list-body-main clearfix">
@@ -141,6 +130,11 @@ function Page({ dispatch, category, subCategoryName }) {
                                 handleSort={onChange}
                                 sort={sort}
                             />
+
+                            <div className="filter-content-section">
+                                <div className="filter-content-section-tag" > Price: {`${defaultCurrency.symbol}${priceRange.min} - ${defaultCurrency.symbol}${priceRange.max}`} </div>
+                                <div className="filter-content-section-tag" > {brand.name} </div>
+                            </div>
 
                             { loading && <SimpleSpinner /> }
                             { !loading && <ProductList products={products}  /> }
@@ -158,8 +152,11 @@ const mapStateToProps = (state, router) => {
     const { params } = router.match;
     const categories = state.web.categories; 
     return {
-        subCategoryName: params.name,
+        brandName: params.name,
         category: state.web.categories.find(cat => cat.slug === params.categoryName) || {}, 
+        subCategory: state.web.categoryList.find(cat => cat.slug === params.subCategoryName) || {}, 
+        brand: state.web.categoryList.find(cat => cat.slug === params.name) || {}, 
+        defaultCurrency: state.web.currencies.length > 0 ? state.web.currencies.find(cur => cur.short.toLowerCase() == 'ngn') : {},
     };
 };
 

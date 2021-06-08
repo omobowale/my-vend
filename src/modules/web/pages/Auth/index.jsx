@@ -36,7 +36,7 @@ function Page({ onHide, show, authPage='', openAuthPage, dispatch, authenticated
             <Modal.Body className="auth">
                     <div className="auth-main-container">
                        <div className="logo-container">
-                           <img src={logo} />
+                           <img className="img-fluid" src={logo} />
                        </div>
                        <div className="auth-form-container">
                             {(authPage.toLowerCase() == 'login' || authPage.toLowerCase() == 'signin') && <Login dispatch={dispatch} openAuthPage={openAuthPage} closeModal={onHide} />}

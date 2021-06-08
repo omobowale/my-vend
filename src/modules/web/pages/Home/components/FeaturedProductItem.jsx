@@ -77,7 +77,7 @@ const ProductMiniProfile = ({product={}, showBtn=false, showTag=true, showRating
                     </div>
                     {showBtn && 
                         <div className="call-to-action-container">
-                            <Link className="btn call-to-action-btn"  to={`/product/${product.slug}`}>View All Brand Prices</Link>
+                            <Link className="btn call-to-action-btn"  to={`/category/${product.mainCategory.slug}/${product.subCategory.slug}/${product.brandCategory.slug}`}>View All Brand Prices</Link>
                         </div>
                     }
                 </div>

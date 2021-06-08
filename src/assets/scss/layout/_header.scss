@@ -220,14 +220,21 @@
 
     .logo {
         float: left;
+        padding: 0px;
+        margin: 0;
+        position: relative;
 
         img {
-            height: 28px;
+            height: 40px;
+            position: relative;
+            object-fit: cover;
+            transform: scale(2.0);
+
             &.black {
                 display: none;
             }
             @media #{$mobile-view} {
-              height: 20px;
+                height: 28px;
             }
         }
 
@@ -529,7 +536,13 @@
             // position: absolute;
             // left: 50%;
             // transform: translateX(-50%);
-            height: 30px;
+            height: 40px;
+            position: relative;
+            img {
+                height: 40px;
+                position: relative;
+                object-fit: cover;
+            }
 
         }
         .top-nav-menu-icon{

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import MultiRangeSlider from '../../../../../components/common/InputField/MultipleRangeSlider';
 // import PriceInput from '../../../../../components/common/PriceInput/PriceInput';
 
-function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Presto', slug: 'presto'}, {name: 'TopSteel', slug: 'topsteel'}], onPage }) {
-    const [min_price, setMinPrice] = useState(0);
-    const [max_price, setMaxPrice] = useState(900000);
+function Filter({ filter, min, max, brands = [{name: 'Local', slug: 'local'}, {name: 'Presto', slug: 'presto'}, {name: 'TopSteel', slug: 'topsteel'}], onPage }) {
+    const [min_price, setMinPrice] = useState(min);
+    const [max_price, setMaxPrice] = useState(max);
     const [type, setType] = useState('');
     const [brand, setBand] = useState('');
     const [showFilter, setShowFilter] = useState(false);
@@ -25,6 +25,20 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
         setShowFilter(false);
         filter(params);
     };
+
+    const isFirstRun = useRef(true);
+    useEffect (() => {
+        if (isFirstRun.current) {
+            isFirstRun.current = false;
+            return;
+        }
+        if(max < max_price || min > max_price){
+            setMaxPrice(max+1);
+        }
+        if(min > min_price){
+            setMinPrice(min);
+        }
+    }, [min, max]);
 
     const clearFilters = () => {
         setMinPrice('');
@@ -51,7 +65,7 @@ function Filter({ filter, brands = [{name: 'Local', slug: 'local'}, {name: 'Pres
                             </h2>
                             <div id="price_filter" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-parent="#filter_box_content">
                                 <div className="accordion-body">
-                                    <MultiRangeSlider min={0} max={1000000} name="price" onChange={(name, min, max) => {setMinPrice(min); setMaxPrice(max)}} minVal={min_price} maxVal={max_price} />
+                                    <MultiRangeSlider min={min} max={max} minVal={min_price} maxVal={max_price}name="price" onChange={(name, min, max) => {setMinPrice(min); setMaxPrice(max)}} minVal={min_price} maxVal={max_price} />
                                 </div>
                             </div>
                         </div>
