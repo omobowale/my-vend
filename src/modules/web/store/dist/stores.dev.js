@@ -96,7 +96,6 @@ function checkAuth(state) {
     _Http["default"].defaults.headers.common["Authorization"] = "".concat(localStorage.getItem("access_token"));
   }
 
-  console.log('new', state);
   return state;
 }
 

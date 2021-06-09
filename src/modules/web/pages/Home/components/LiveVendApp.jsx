@@ -26,11 +26,11 @@ const LiveVendApp = () => {
                 <div className="right-container">
                     
                         <div className="app-section--text">
-                            <h1 className="app-section--text-main ">
-                                <span>Download</span> Livevend App <span>Now!</span>
+                            <h1 className="app-section--text-main text-capitalize ">
+                                <span>Download</span> Livevend Pro App <span>Now!</span>
                             </h1>
                             <h6 className="app-section--text-sub ">
-                                get Your construction Projects Done Right, From the comfort of your smartphone. 
+                                To get Your construction Projects Done Right, From the comfort of your smartphone. 
                             </h6>
                             <div className="app-section--text-stores">
                                 <Link className="livevend-app-section-img">

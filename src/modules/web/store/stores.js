@@ -76,7 +76,6 @@ export function checkAuth(state) {
         ] = `${localStorage.getItem("access_token")}`;
     }
 
-    console.log('new', state)
     return state;
 }
 

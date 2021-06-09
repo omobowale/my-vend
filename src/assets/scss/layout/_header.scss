@@ -235,7 +235,7 @@
             height: 40px;
             position: relative;
             object-fit: cover;
-            transform: scale(2.0);
+            transform: scale(1.5);
 
             &.black {
                 display: none;
@@ -572,6 +572,8 @@
                 height: 40px;
                 position: relative;
                 object-fit: cover;
+                transform: scale(1.5);
+                margin-left: 25px;
             }
 
         }
