@@ -86,7 +86,7 @@ const myAccountLinks = [
 
 const connectLinks = [
     {
-        title: '42 avenue des Champs Elysées 75000 Paris France',
+        title: 'No 8, providence street, lekki phase1, Lagos',
         icon: <FontAwesomeIcon color={'#FD8825'} icon={faMapMarker} />,
     },
     {
