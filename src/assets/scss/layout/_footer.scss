@@ -34,6 +34,8 @@
             img {
                 height: 50px;
                 object-fit: scale-down;
+                transform: scale(1.4);
+                margin-left: 15px;
             }
             @media screen and (min-width: 990px) {
                 width: 25%;

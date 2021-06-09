@@ -135,6 +135,7 @@ function Footer(props) {
                             <Link to={'/'} className="logo mr-5">
                                 <img
                                     src={logo}
+                                    className="img-fluid"
                                     alt="logo"
                                 />
                             </Link>
