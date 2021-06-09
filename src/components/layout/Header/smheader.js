@@ -37,7 +37,7 @@ function SmHeader({
     return (
         <>
             <header className={`header ${searchMode}`}>
-                <div className="container">
+                <div className="container sm-container">
                     <div className="header-flex">
                         
                         <Link to={'/'} className="logo-sm">
@@ -128,7 +128,7 @@ function SmHeader({
                     </div>
                 </div>
                 <div className="header-bottom">
-                    <div className="container clearfix">
+                    <div className="container sm-container clearfix">
                         <SmBottomNavigation user={user} authenticated={authenticated} openAuthPage={openAuthPage} />
                     </div>
 

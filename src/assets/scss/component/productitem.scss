@@ -258,7 +258,7 @@
         .stack-content-img {
             display: flex;
             justify-content: center;
-            // height: 125px;
+            height: 150px;
             @media #{$mobile-view}{
                 max-height: 125px;
             }

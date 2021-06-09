@@ -105,7 +105,7 @@ function LgHeader({
                 </div>
             </div>
             <div className="header-bottom">
-                <div className="container clearfix">
+                <div className="container sm-container clearfix">
                     <BottomNavigation  openAuthPage={openAuthPage} authenticated={authenticated}
                         mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} toggleMegaMenuStatus={toggleMegaMenuStatus} />
                 </div>
