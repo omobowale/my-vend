@@ -20,6 +20,7 @@ var initialState = {
   featuredProducts: [],
   currencies: [],
   categories: [],
+  categoryList: [],
   showAuth: false,
   authPage: 'login',
   isAuthenticated: false,
@@ -27,10 +28,7 @@ var initialState = {
     route: '',
     params: {}
   },
-  authCognitoUser: {
-    email_verified: false
-  },
-  authUser: {},
+  user: {},
   authToken: ''
 };
 
@@ -55,8 +53,14 @@ var reducer = function reducer() {
     case actionTypes.CATEGORY_LIST:
       return stores.setCategoryList(state, payload);
 
+    case actionTypes.CATEGORY_FLAT_LIST:
+      return stores.setCategoryFlatList(state, payload);
+
     case actionTypes.AUTH_USER:
       return stores.setAuthUser(state, payload);
+
+    case actionTypes.AUTH_CHECK:
+      return stores.checkAuth(state, payload);
 
     case actionTypes.AUTH_TOKEN:
       return stores.setAuthToken(state, payload);

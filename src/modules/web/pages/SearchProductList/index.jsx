@@ -114,7 +114,7 @@ function Page({ dispatch, location, category, subCategoryName }) {
             <main className="page">
                 <div className="container sm-container page-content">
                     <Breadcrumb query={query} />
-                    <section className="">
+                    <section className="mt-2 mb-5">
                         <div className="section--title">{query}</div>
                     </section>
                     <div className="product-list-body">

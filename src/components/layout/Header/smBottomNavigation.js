@@ -11,6 +11,8 @@ import BottomNavigation from './BottomNavigation';
 
 function SmBottomNavigator({
     signup,
+    user,
+    authenticated,
     openAuthPage
 }) {
     const [sidebar, setSidebar] = useState('');
@@ -64,14 +66,16 @@ function SmBottomNavigator({
                             />
                         </a>
                     </li>
-                    <li>
-                        <a href="javascript: false"
-                            onClick={() => openAuthPage('signup')}
-                            className="btn btn-sign-up "
-                        >
-                            Register
-                        </a>
-                    </li>
+                    { !authenticated && 
+                        <li>
+                            <a href="javascript: false"
+                                onClick={() => openAuthPage('signup')}
+                                className="btn btn-sign-up "
+                            >
+                                Register
+                            </a>
+                        </li>
+                    }
                 </ul>
             </nav>
 

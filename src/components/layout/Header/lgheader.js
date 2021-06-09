@@ -13,9 +13,11 @@ import RequestConsultance from '../../../modules/web/pages/RequestConsultance';
 
 function LgHeader({
     application,
+    userLogout,
     authenticated,
     dispatch,
     signup,
+    user,
     openAuthPage,
 }) {
     const [mode, setMode] = useState('');
@@ -82,7 +84,7 @@ function LgHeader({
 
     const renderNavigation = () => {
         return (
-            <Navigation openAuthPage={openAuthPage} openConsultation={() => openConsultation(true)} />
+            <Navigation userLogout={userLogout} user={user} openAuthPage={openAuthPage} authenticated={authenticated} openConsultation={() => openConsultation(true)} />
         );
     };
 
@@ -104,7 +106,7 @@ function LgHeader({
             </div>
             <div className="header-bottom">
                 <div className="container clearfix">
-                    <BottomNavigation  openAuthPage={openAuthPage} 
+                    <BottomNavigation  openAuthPage={openAuthPage} authenticated={authenticated}
                         mouseLeaveMenuButton={mouseLeaveMenuButton} mouseOverMenuButton={mouseOverMenuButton} toggleMegaMenuStatus={toggleMegaMenuStatus} />
                 </div>
                 <div

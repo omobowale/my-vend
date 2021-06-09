@@ -12,8 +12,7 @@ const initialState = {
     authPage: 'login',
     isAuthenticated: false,
     intendedRoute: {route: '', params: {}},
-    authCognitoUser: {email_verified: false},
-    authUser: {},
+    user: {},
     authToken: '',
 };
 
@@ -31,6 +30,8 @@ const reducer = (state = initialState, { type, payload = null }) => {
             return stores.setCategoryFlatList(state, payload);
         case actionTypes.AUTH_USER :
             return stores.setAuthUser(state, payload);
+        case actionTypes.AUTH_CHECK :
+            return stores.checkAuth(state, payload);
         case actionTypes.AUTH_TOKEN :
             return stores.setAuthToken(state, payload);
         case actionTypes.AUTH_LOGIN :

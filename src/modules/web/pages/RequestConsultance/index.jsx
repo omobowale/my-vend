@@ -22,9 +22,12 @@ const validator = new Validator({
     time: "",
 });
 
-function Page({ onHide, show, dispatch, }) {
+function Page({ onHide, show, authenticated, user, dispatch, }) {
 
-    const [requestForm, setFormAttribute] = useState({interest: '', name: '', email: '', contact: '', day: '', time: ''});
+    const [requestForm, setFormAttribute] = useState({interest: '', 
+        name: authenticated && user.firstName ? `${user.firstName} ${user.lastName}` :'', 
+        email: authenticated && user.email ? user.email : '', 
+        contact: '', day: '', time: ''});
     const [formError, setFormError] = useState(validator.errors);
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoadingState] = useState(false);
@@ -286,7 +289,8 @@ function Page({ onHide, show, dispatch, }) {
 
 const mapStateToProps = (state) => {
     return {
-        authenticated: state.web.isAuthenticated
+        authenticated: state.web.isAuthenticated,
+        user: state.web.user,
     };
 };
 

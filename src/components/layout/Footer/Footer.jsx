@@ -6,6 +6,7 @@ import {
     faTwitter,
     faFacebook,
     faPinterest,
+    faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
 import {
     faEnvelope,
@@ -89,8 +90,12 @@ const connectLinks = [
         icon: <FontAwesomeIcon color={'#FD8825'} icon={faMapMarker} />,
     },
     {
-        title: 'Call Us Now',
+        title: 'Call Us Now: +(234)8092355555',
         icon: <FontAwesomeIcon color={'#FD8825'} icon={faPhone} />,
+    },
+    {
+        title: 'Chat Us Now: +1(713)474-4127',
+        icon: <FontAwesomeIcon color={'#FD8825'} icon={faWhatsapp} />,
     },
     {
         title: 'info@livevend.com',
@@ -135,7 +140,7 @@ function Footer(props) {
                             </Link>
                         </div>
                         <div>
-                            <p>livevend is an online platform where you can get prices of construction materials and products. It also allows you to compare prices of construction materials across locations, brands, types, and get construction consultation services.</p>
+                            <p>Livevend.com is an online platform where you can get prices of construction materials and products. It also allows you to compare prices of construction materials across locations, brands, types, and get construction consultation services.</p>
                         </div>
                         <div>
                             <p>(c) 2021</p>

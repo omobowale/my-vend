@@ -63,7 +63,7 @@ const SubscriptionSection = ({}) => {
                                     </button>
                                 </form>
                             </div>
-                            <p>Yes, I want to receive news and offers related to PriceRunner's product range, competitions and recommendations via email. I can withdraw my consent at any time. Read more in our Privacy Policy.</p>
+                            <p>Yes, I want to receive news and offers related to Livevend's product range, competitions and recommendations via email. I can withdraw my consent at any time. Read more in our Privacy Policy.</p>
                         </div>
                     </div>
 

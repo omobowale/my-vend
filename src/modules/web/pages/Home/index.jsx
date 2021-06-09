@@ -18,7 +18,7 @@ import LiveVendApp from './components/LiveVendApp';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 import _ from 'lodash';
 
-function Home({ dispatch, mainProduct, featuredProducts, products }) {
+function Home({ dispatch, mainProduct, featuredProducts, products, suggestedProducts }) {
     const featuredRef = useRef();
     useEffect(() => {
         
@@ -48,7 +48,7 @@ function Home({ dispatch, mainProduct, featuredProducts, products }) {
                             <button className="butn px-4 py-2 mt-2 bg-theme-gray text-w-700">Request a Quantity Survey</button>
                         </div>
                     </div>
-                    <HomeSuggestion products={products} />
+                    <HomeSuggestion products={suggestedProducts} />
                     <HomeBanner />
                     <div className="bg-theme-dark p-3 text-center">
                         Brands and product manafacturer that have been trusted over time
@@ -161,6 +161,7 @@ const mapStateToProps = (state) => {
         mainProduct: {...mainProduct, brandCategory, subCategory, mainCategory} || {},
         featuredProducts: state.web.featuredProducts.length > 5 ? state.web.featuredProducts.slice(0,6).filter(item => item.id !== mainProduct.id) : [...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts].slice(0, 5),
         products: state.web.products,
+        suggestedProducts: state.web.products.slice(0,10)
         
     };
 };

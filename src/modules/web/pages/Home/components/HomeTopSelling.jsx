@@ -18,14 +18,14 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.slice(0,4).map( (product) => (
-                                <MainProductItem key={shortid.generate()} product={product} />
+                                <MainProductItem className="flexitem" key={shortid.generate()} product={product} />
                             ))}
                            
                         </div>
-                        <div className="stack-items">
+                        <div className="stack-items pt-2">
                             
                             {products.slice(4,8).map( (product) => (
-                                <MainProductItem key={product.id} product={product} />
+                                <MainProductItem className="flexitem" key={product.id} product={product} />
                             ))}
 
                         </div>

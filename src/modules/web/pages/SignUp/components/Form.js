@@ -18,6 +18,8 @@ const propTypes = {
 const Form = ({
     email,
     password,
+    first_name,
+    last_name,
     role,
     errors,
     handleChange,
@@ -48,7 +50,7 @@ const Form = ({
             noValidate
         >
             
-            <FloatingDropdown
+            {/* <FloatingDropdown
                 label="Role"
                 name="role"
                 showLabel={false}
@@ -58,8 +60,24 @@ const Form = ({
                 field='name'
                 errors={errors}
                 onChange={handleChange}
-            />
+            /> */}
             
+            <FloatingText
+                label="First Name"
+                name="first_name"
+                value={first_name}
+                errors={errors}
+                onChange={handleChange}
+            />
+
+            <FloatingText
+                label="Last Name"
+                name="last_name"
+                value={last_name}
+                errors={errors}
+                onChange={handleChange}
+            />
+
             <FloatingText
                 label="Email"
                 name="email"

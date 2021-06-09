@@ -113,7 +113,7 @@ function Page({ dispatch, category={}, subCategory={}, brand={}, brandName, defa
             <main className="page">
                 <div className="container sm-container page-content">
                     <Breadcrumb category={category} subCategory={subCategory} brand={brand} />
-                    <section className="">
+                    <section className="mt-2 mb-5">
                         <div className="section--title">{brand.name}</div>
                     </section>
                     <div className="product-list-body">

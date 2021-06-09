@@ -5,7 +5,8 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setIntendedRoute = exports.setAuthPage = exports.setAuthToken = exports.logout = exports.login = exports.setCategoryList = exports.setCurrencyList = exports.featuredProducts = exports.productList = void 0;
+exports.authCheck = authCheck;
+exports.setIntendedRoute = exports.setAuthPage = exports.setAuthToken = exports.authUser = exports.logout = exports.login = exports.setCategoryFlatList = exports.setCategoryList = exports.setCurrencyList = exports.featuredProducts = exports.productList = void 0;
 
 var actionTypes = _interopRequireWildcard(require("./actionTypes"));
 
@@ -49,6 +50,15 @@ var setCategoryList = function setCategoryList(payload) {
 
 exports.setCategoryList = setCategoryList;
 
+var setCategoryFlatList = function setCategoryFlatList(payload) {
+  return {
+    type: actionTypes.CATEGORY_FLAT_LIST,
+    payload: payload
+  };
+};
+
+exports.setCategoryFlatList = setCategoryFlatList;
+
 var login = function login(payload) {
   return {
     type: actionTypes.AUTH_LOGIN,
@@ -65,6 +75,21 @@ var logout = function logout() {
 };
 
 exports.logout = logout;
+
+var authUser = function authUser(payload) {
+  return {
+    type: actionTypes.AUTH_USER,
+    payload: payload
+  };
+};
+
+exports.authUser = authUser;
+
+function authCheck() {
+  return {
+    type: actionTypes.AUTH_CHECK
+  };
+}
 
 var setAuthToken = function setAuthToken(payload) {
   return {

@@ -89,6 +89,7 @@
             color: #1A222Ad0 !important;
             font-weight: 700 !important;
             border-radius: 5px;
+            text-transform: none;
             &:hover{
                 color: #F05C40 !important;
             }
@@ -186,8 +187,14 @@
             }
 
             .user_online .user_profile {
-                border-color: $theme-green;
-                color: $theme-green;
+                border-color: #F05C40;
+                color: #F05C40;
+                .user{
+                    color: #F05C40;
+                    &:hover{
+                        color: $theme-primary;
+                    }
+                }
             }
         }
     }
@@ -409,7 +416,7 @@
         .user_online {
             margin-left: 10px;
             margin-right: 10px;
-
+            min-width: max-content;
             .user_profile {
                 border: 1px solid #fff;
                 background: transparent;
@@ -423,10 +430,31 @@
                 cursor: pointer;
 
                 &:hover {
-                    border-color: $theme-green;
-                    color: $theme-green;
+                    border-color: $theme-primary;
                 }
 
+                .user {
+
+                    &:hover{
+                        color: $theme-primary !important;
+                    }
+                }
+                .dropdown-menu{
+                    .dropdown-item{
+                        // margin-right: 0px !important;
+                        margin-left: 0px !important;
+                        color: $theme-primary;
+                        a{
+                            color: $theme-primary;
+                            svg{
+                                color: $theme-primary;
+                            }
+                        }
+                        svg {
+                            color: $theme-primary;
+                        }
+                    }
+                }
                 .avatar {
                     float: left;
                     margin-right: 10px;
@@ -548,6 +576,112 @@
         .top-nav-menu-icon{
           color: #fff;
         }
+
+
+        .user_online {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            .user_profile {
+                border: 1px solid #fff;
+                background: transparent;
+                padding: 0 4px;
+                line-height: 28px;
+                border-radius: 60px;
+                min-height: 30px;
+                transition: 0.3s ease-in-out;
+                display: inline-block;
+                color: #fff;
+                cursor: pointer;
+
+                &:hover {
+                    border-color: $theme-primary;
+                }
+
+                .user {
+
+                    &:hover{
+                        color: $theme-primary !important;
+                    }
+                }
+           
+                .dropdown-item{
+                    color: #fff;
+                    white-space: break-spaces;
+                    padding-top: 5px;
+                    a {
+                        color: white;
+                        // text-transform: uppercase;
+                        font-size: 13px;
+                        line-height: 17px;
+                        font-weight: 500;
+                        display: flex;
+                        overflow-x:hidden;
+                        // flex-flow: row nowrap;
+        
+                        svg, img {
+                            margin-top: 5px;
+                            margin-bottom: 5px;
+                            margin-right: 7px;
+                            width: 16px;
+                            display: inline-block;
+                        }
+                        span {
+                          display: flex;
+                          vertical-align: middle;
+                          word-wrap: break-word;
+                          text-align: left;
+                          font-size: 13px;
+                          font-weight: 500;
+                          flex-wrap: wrap;
+                        }
+                        &.butn:hover {
+                            color: $theme-primary;
+                        }
+                        &.notifications {
+                            position: relative;
+                        }
+                        &.sign-in-nav {
+                          padding: 10px;
+                          border-radius: 5px;
+                          background-color: #ffffff32;
+                          text-align: center;
+                      }
+                    }
+                  }
+                .avatar {
+                    float: left;
+                    margin-right: 10px;
+                    position: relative;
+                    max-height: 25px;
+                    border-radius: 500px;
+                    white-space: nowrap;
+
+                    img {
+                        max-height: 25px;
+                        width: 24px;
+                        height: auto;
+                        margin-bottom: 1px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .username {
+                    float: left;
+                    max-width: 100px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: 12px;
+                    white-space: nowrap;
+                }
+
+                svg {
+                    margin-left: 5px;
+                    margin-right: 7px;
+                }
+            }
+        }
+
 
         .top-nav-menu{
           background-color: #1A222A;

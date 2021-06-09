@@ -7,5 +7,6 @@ export const AUTH_USER = 'AUTH_USER';
 export const AUTH_TOKEN = 'AUTH_TOKEN';
 export const AUTH_LOGIN = "AUTH_LOGIN";
 export const AUTH_LOGOUT = "AUTH_LOGOUT";
+export const AUTH_CHECK = "AUTH_CHECK";
 export const SET_INTENDED_ROUTE = "SET_INTENDED_ROUTE";
 export const SHOW_AUTH_PAGE = "SHOW_AUTH_PAGE";

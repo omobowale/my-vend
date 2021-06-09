@@ -15,7 +15,7 @@ const HomeTopSelling = ({products=[]}) => {
                         <div className="stack-items">
                             
                             {products.map( (product) => (
-                                <MainProductItem  key={product.id} showRating={true} product={product} />
+                                <MainProductItem className="listing"  key={product.id} showRating={true} product={product} />
                             ))}
  
                         </div>

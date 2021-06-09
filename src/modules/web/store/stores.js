@@ -32,7 +32,7 @@ export function setCategoryFlatList(state, payload) {
 
 export function setAuthUser(state, payload) {
     return Object.assign({}, state, { 
-        authUser : payload,
+        user : payload,
     });
 }
 
@@ -43,26 +43,41 @@ export function setAuthToken(state, payload) {
 }
 
 export function login(state, payload) {
-    // localStorage.setItem("access_token", payload);
-    HTTP.defaults.headers.common["Authorization"] = `Bearer ${payload.accessToken}`;
+    localStorage.setItem("access_token", payload);
+    HTTP.defaults.headers.common["Authorization"] = `${payload}`;
     return {
         ...state,
         isAuthenticated: true,
-        authToken: payload.accessToken,
-        authCognitoUser: payload.attributes
+        authToken: payload,
     };
 }
 
 export function logout(state) {
-    // localStorage.removeItem("access_token");
+    localStorage.removeItem("access_token");
     HTTP.defaults.headers.common["Authorization"] = ``;
 
     return {
         ...state,
         isAuthenticated: false,
         authToken: null,
-        authCognitoUser: {email_verified: false}
+        user: {}
     };
+}
+
+
+export function checkAuth(state) {
+    state = Object.assign({}, state, {
+        isAuthenticated: !!localStorage.getItem("access_token")
+    });
+
+    if (state.isAuthenticated) {
+        HTTP.defaults.headers.common[
+            "Authorization"
+        ] = `${localStorage.getItem("access_token")}`;
+    }
+
+    console.log('new', state)
+    return state;
 }
 
 export function setAuthPage(state, payload) {

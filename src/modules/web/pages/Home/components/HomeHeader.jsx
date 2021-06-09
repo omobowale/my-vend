@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import shortid from 'shortid';
-import home1 from '../../../../../assets/img/logo/2671.png'
-import home2 from '../../../../../assets/img/logo/47861.png'
+import home1 from '../../../../../assets/img/common/home-slider1.jpg'
+import home2 from '../../../../../assets/img/common/home-slider2.jpg'
 import HomeCarousel from './HomeCarousel';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -24,14 +24,14 @@ const HomeHeader = ({featuredRef}) => {
                         
                         <div className="home_top-left">
                             <div className="home_top--text">
-                                <h6 className="home_top--text-small">
+                                <h6 className="home_top--text-small text-white fade80">
                                     The best way to
                                 </h6>
-                                <h1 className="home_top--text-main">
+                                <h1 className="home_top--text-main text-white">
                                     executing your
                                     projects just got Easier
                                 </h1>
-                                <h6 className="home_top--text-sub ">
+                                <h6 className="home_top--text-sub text-white fade80">
                                     Livevend helps you get price transparency for your construction materials and products. Access premium consultation services for your constuction projects.
                                 </h6>
 
@@ -55,7 +55,7 @@ const HomeHeader = ({featuredRef}) => {
                     <img
                         src={home2}
                         alt=""
-                        className='img-fluid'
+                        className="full-screen"
                     />
                 </div>
                 <div className="container">
@@ -68,7 +68,7 @@ const HomeHeader = ({featuredRef}) => {
                                 <h1 className="home_top--text-main">
                                     Manage Your Project
                                 </h1>
-                                <h6 className="home_top--text-sub ">
+                                <h6 className="home_top--text-sub text-dark-gray fade60">
                                     Livevend helps you get price transparency for your construction materials and products. Access premium consultation services for your constuction projects. 
                                 </h6>
                                 <div className="home_top--text-call-to-action" onClick={() => featuredRef.current && featuredRef.current.scrollIntoView({ behavior: 'smooth' }) }> 

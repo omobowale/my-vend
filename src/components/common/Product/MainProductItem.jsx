@@ -35,7 +35,7 @@ const MainProductItem = ({product={}, showTag=true, showRating=false, showSaveIc
       
     return (
 
-        <Link key={product.id} className={`stack-item listing ${className}`} to={`/product/${product.slug}`}>
+        <Link key={product.id} className={`stack-item ${className}`} to={`/product/${product.slug}`}>
             <div className="stack-content">
                 
                 <div className="stack-content-header">

@@ -7,10 +7,12 @@ exports.storeProductList = storeProductList;
 exports.storeFeaturedProducts = storeFeaturedProducts;
 exports.setCurrencyList = setCurrencyList;
 exports.setCategoryList = setCategoryList;
+exports.setCategoryFlatList = setCategoryFlatList;
 exports.setAuthUser = setAuthUser;
 exports.setAuthToken = setAuthToken;
 exports.login = login;
 exports.logout = logout;
+exports.checkAuth = checkAuth;
 exports.setAuthPage = setAuthPage;
 exports.setIntendedRoute = setIntendedRoute;
 
@@ -48,9 +50,15 @@ function setCategoryList(state, payload) {
   });
 }
 
+function setCategoryFlatList(state, payload) {
+  return Object.assign({}, state, {
+    categoryList: payload
+  });
+}
+
 function setAuthUser(state, payload) {
   return Object.assign({}, state, {
-    authUser: payload
+    user: payload
   });
 }
 
@@ -61,25 +69,35 @@ function setAuthToken(state, payload) {
 }
 
 function login(state, payload) {
-  // localStorage.setItem("access_token", payload);
-  _Http["default"].defaults.headers.common["Authorization"] = "Bearer ".concat(payload.accessToken);
+  localStorage.setItem("access_token", payload);
+  _Http["default"].defaults.headers.common["Authorization"] = "".concat(payload);
   return _objectSpread({}, state, {
     isAuthenticated: true,
-    authToken: payload.accessToken,
-    authCognitoUser: payload.attributes
+    authToken: payload
   });
 }
 
 function logout(state) {
-  // localStorage.removeItem("access_token");
+  localStorage.removeItem("access_token");
   _Http["default"].defaults.headers.common["Authorization"] = "";
   return _objectSpread({}, state, {
     isAuthenticated: false,
     authToken: null,
-    authCognitoUser: {
-      email_verified: false
-    }
+    user: {}
   });
+}
+
+function checkAuth(state) {
+  state = Object.assign({}, state, {
+    isAuthenticated: !!localStorage.getItem("access_token")
+  });
+
+  if (state.isAuthenticated) {
+    _Http["default"].defaults.headers.common["Authorization"] = "".concat(localStorage.getItem("access_token"));
+  }
+
+  console.log('new', state);
+  return state;
 }
 
 function setAuthPage(state, payload) {

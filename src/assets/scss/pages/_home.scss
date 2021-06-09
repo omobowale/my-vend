@@ -165,7 +165,7 @@
                 // padding: 4rem 3rem 3rem;
             
                 &-left {
-                    width: 45%;
+                    width: 60%;
                     align-self: center;
                 }
             
@@ -195,7 +195,7 @@
                 max-width: 300px;
                 // background-color: #00000032;
                 @media screen and (min-width: 990px) {
-                    max-width: 510px;
+                    max-width: 710px;
                 }
                 &-main {
                     font-size: 38px;
@@ -204,6 +204,7 @@
                     line-height: 45px;
                     font-weight: 900;
                     color: #1A222A;
+                    font-family: "Airbnb Cereal App ExtraBold";
                     text-transform: capitalize;
             
                     @media screen and (min-width: 990px) {
@@ -224,6 +225,7 @@
                     line-height: 22.13px;
                     font-weight: 500;
                     color:#767A7F80;
+                    color: #1A222Ad0;
         
                     @media #{$mobile-view} {
                         font-size: 14px;

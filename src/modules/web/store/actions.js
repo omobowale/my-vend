@@ -49,6 +49,19 @@ export const logout = () => {
     };
 }
 
+export const authUser = payload => {
+    return {
+        type: actionTypes.AUTH_USER,
+        payload
+    };
+}
+
+export function authCheck() {
+    return {
+        type: actionTypes.AUTH_CHECK
+    };
+}
+
 export const setAuthToken = payload => {
     return {
         type: actionTypes.AUTH_TOKEN,

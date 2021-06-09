@@ -5,6 +5,7 @@ import Validator from 'form-input-validator';
 
 import './Login.scss';
 import Form from './components/Form';
+import { register } from '../../service';
 
 class Page extends Component{
 
@@ -13,12 +14,16 @@ class Page extends Component{
         super(props);
         this.validator = new Validator({
             email: "required|min:3",
-            role: "required",
+            last_name: 'required',
+            first_name: 'required',
+            // role: "required",
             password: "required",
         });
         this.state = {
             role: '',
             email: '',
+            last_name :'',
+            first_name: '',
             password: '',
             refreshing: false,
             disableLogin: false,
@@ -38,79 +43,39 @@ class Page extends Component{
             this.setState({ errors, err: `${name}:${value}` });
         });
     }
-    
-    successActions = () => {
-        
-        // this.props.closeModal();
-        // this.props.openIntendedRoute();
-    
-    } 
-
-
-    postLogin = () => {
-        // const state = location.state;
-        // localStorage.removeItem('checkPending');
-        // localStorage.removeItem('shared-review');
-
-        // if (state && state.from) {
-        //     window.location.href = state.from.pathname;
-        // } else {
-        //     window.location.href = '/';
-        // }
-    }
 
     handleSubmit = (e) => {
-        
         e.preventDefault();
-
-        const {email, password} = this.state;
+        const { email, password, first_name, last_name, role } = this.state;
         const { errors } = this.validator;
-
-        this.validator.validateAll({email, password}).then(success => {
+        const credentials = {email, password, first_name, last_name};
+        this.validator.validateAll(credentials).then(success => {
             if (success) {
-                // this.setState({ err: "success", disableLogin: true });
-                // if(Transformer.validEmail(email)){
-                //     this.props.dispatch(findUserRequest({email: email})).then(data => {
-                //         if(data.buyer){
-                //             this.login(data.buyer.username, password );
-                //         }
-                //         this.setState({disableLogin: false });
-                //     }).catch(error => {})
-                // }else{
-                //     this.login(email, password);
-                // }
+                this.submit(credentials);
             } else {
-                this.setState({
-                    errors,
-                    err: "error"
-                });
+                this.setState({ errors });
             }
         });
     }
 
-    login = async (username, password) => {
-        const {dispatch} = this.props;
-        
-        try {
-            
-            
-            this.setState({disableLogin: false})
-        } catch (error) {
-            
-            this.setState({disableLogin: false})
-        }
-
-    };
+    submit(credentials) {
+        const {closeModal} = this.props;
+        this.props
+            .dispatch(register(credentials)).then(data => closeModal() )
+            .catch(({ error, statusCode }) => {
+                const { errors } = this.validator;
+            });
+    }
     
     render(){
-        const {email, role, password, errors} = this.state;
+        const {email, role, last_name, first_name, password, errors} = this.state;
         return (
             <>
 
                 <h2 className='auth-page-title'>Create account</h2>
 
                 <div className='auth-desc'>Already member? <span className="auth-nav-link" onClick={() => this.props.openAuthPage('login')}>Sign in </span></div>
-                <Form email={email} role={role} password={password} errors={errors} handleChange={this.onChange} handleSubmit={this.handleSubmit} />
+                <Form email={email} role={role} last_name={last_name} first_name={first_name} password={password} errors={errors} handleChange={this.onChange} handleSubmit={this.handleSubmit} />
             </>
         )
     }
@@ -118,7 +83,7 @@ class Page extends Component{
 
 const mapStateToProps = (state) => {
     return {
-        authenticated: state.web.authenticated
+        authenticated: state.web.isAuthenticated
     };
 };
 

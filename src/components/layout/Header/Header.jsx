@@ -7,6 +7,7 @@ import { getScreenSize } from '../../../utils/setScreenSIze';
 import { useHistory, useLocation } from 'react-router-dom';
 import Auth from '../../../modules/web/pages/Auth';
 import * as actions from '../../../modules/web/store/actions'
+import { fetchUser, logout } from '../../../modules/web/service';
 
 function Header({
     dispatch,
@@ -17,6 +18,7 @@ function Header({
     authenticated,
     authPage,
     showAuth,
+    user,
     notifications,
 }) {
     const [screenSize, setScreen] = useState('');
@@ -28,6 +30,16 @@ function Header({
 
         history.push('/signup');
     };
+    useEffect(() => {
+        if (authenticated && !user.id) {
+            dispatch(fetchUser())
+                .catch((err) => {
+                    if (err.statusCode === 401) {
+                        dispatch(logout());
+                    }
+                });
+        }
+    }, [dispatch, authenticated, user]);
 
     useEffect(() => {
         updateScreenWidth();
@@ -45,6 +57,10 @@ function Header({
         }
     };
 
+    const userLogout = () => {
+        dispatch(logout());
+    }
+
     const closeAuthPage = () => {
         dispatch(actions.setAuthPage({showAuth: false, authPage: 'login'}));
     }
@@ -57,24 +73,27 @@ function Header({
 
         return screenSize === 'large' ? (
             <LgHeader
-            buyer={buyer}
-            seller={seller}
-            openAuthPage={openAuthPage}
-            pendingOrders={pendingOrders}
-            application={application}
-            authenticated={authenticated}
-            dispatch={dispatch}
-            notifications={notifications}
-            signup={goToSignup}
+                user={user}
+                userLogout={userLogout}
+                openAuthPage={openAuthPage}
+                pendingOrders={pendingOrders}
+                application={application}
+                authenticated={authenticated}
+                dispatch={dispatch}
+                notifications={notifications}
+                signup={goToSignup}
+                
             />
         ) : (
             <SmHeader
-            openAuthPage={openAuthPage}
-            application={application}
-            authenticated={authenticated}
-            notifications={notifications}
-            dispatch={dispatch}
-            signup={goToSignup}
+                user={user}
+                userLogout={userLogout}
+                openAuthPage={openAuthPage}
+                application={application}
+                authenticated={authenticated}
+                notifications={notifications}
+                dispatch={dispatch}
+                signup={goToSignup}
             />
         );
     }
@@ -91,6 +110,7 @@ const mapStateToProps = (state) => {
     return {
         showAuth: state.web.showAuth,
         authPage: state.web.authPage,
+        user: state.web.user,
         authenticated: state.web.isAuthenticated,
     };
 };

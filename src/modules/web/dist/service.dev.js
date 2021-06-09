@@ -16,10 +16,18 @@ exports.getCurrencyList = getCurrencyList;
 exports.getSuggestions = getSuggestions;
 exports.getProductSearch = getProductSearch;
 exports.constructionConsultantReq = constructionConsultantReq;
+exports.fetchUser = fetchUser;
+exports.login = login;
+exports.register = register;
+exports.logout = logout;
 
 var API = _interopRequireWildcard(require("../../utils/api"));
 
+var _notify = _interopRequireDefault(require("../../utils/notify"));
+
 var actions = _interopRequireWildcard(require("./store/actions"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
@@ -30,8 +38,8 @@ function getProducts(params) {
     return new Promise(function (resolve, reject) {
       var url = "product";
       API.getReq(url, function (res) {
-        dispatch(actions.productList(res));
-        resolve(res);
+        dispatch(actions.productList(res.data));
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -44,8 +52,8 @@ function getFeaturedProducts(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/featured/list";
       API.getReq(url, function (res) {
-        dispatch(actions.featuredProducts(res));
-        resolve(res);
+        dispatch(actions.featuredProducts(res.data));
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -58,8 +66,8 @@ function getProductCategoryList(params) {
     return new Promise(function (resolve, reject) {
       var url = "category";
       API.getReq(url, function (res) {
-        dispatch(actions.setCategoryList(res));
-        resolve(res);
+        dispatch(actions.setCategoryList(res.data));
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -72,8 +80,8 @@ function getProductCategoryFlatList(params) {
     return new Promise(function (resolve, reject) {
       var url = "category/flat";
       API.getReq(url, function (res) {
-        dispatch(actions.setCategoryFlatList(res));
-        resolve(res);
+        dispatch(actions.setCategoryFlatList(res.data));
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -86,7 +94,7 @@ function getSubCategoryList(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/subcategory/".concat(params.subCategoryName);
       API.getReq(url, function (res) {
-        resolve(res);
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -99,7 +107,7 @@ function getBrandCategoryList(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/brandcategory/".concat(params.brandName);
       API.getReq(url, function (res) {
-        resolve(res);
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -112,7 +120,7 @@ function getProductDetails(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/".concat(params.name);
       API.getReq(url, function (res) {
-        resolve(res);
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -125,7 +133,7 @@ function getCurrencyList(params) {
     return new Promise(function (resolve, reject) {
       var url = "currency";
       API.getReq(url, function (res) {
-        dispatch(actions.setCurrencyList(res));
+        dispatch(actions.setCurrencyList(res.data));
       }, function (err) {
         return reject(err);
       });
@@ -137,7 +145,7 @@ function getSuggestions(params) {
   return new Promise(function (resolve, reject) {
     var url = "product/autosearch/".concat(params.query);
     API.getReq(url, function (res) {
-      resolve(res);
+      resolve(res.data);
     }, function (err) {
       return reject(err);
     });
@@ -149,7 +157,7 @@ function getProductSearch(params) {
     return new Promise(function (resolve, reject) {
       var url = "product/search/".concat(params.query);
       API.getReq(url, function (res) {
-        resolve(res);
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
@@ -162,10 +170,103 @@ function constructionConsultantReq(params) {
     return new Promise(function (resolve, reject) {
       var url = "form/consultation";
       API.postReq(url, params, function (res) {
-        resolve(res);
+        resolve(res.data);
       }, function (err) {
         return reject(err);
       });
     });
   };
+}
+
+function fetchUser() {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      API.getReq("user/profile", function (data) {
+        dispatch(actions.authUser(data.user));
+        return resolve(data.user);
+      }, function (err) {
+        // dispatch(authActions.authPageLoading(false));
+        return reject(err);
+      });
+    });
+  };
+}
+
+function login(credentials) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      // dispatch(authActions.authPageLoading(true));
+      API.postReq("auth/login", credentials, function (data) {
+        dispatch(actions.login(data.token));
+        dispatch(actions.authUser(data.user));
+
+        _notify["default"].success('You have successfully logged in');
+
+        return resolve();
+      }, function (err) {
+        // const statusCode = err.response.status;
+        // const data = {
+        //     error: null,
+        //     statusCode, err
+        // };
+        // if (statusCode === 422) {
+        // } else if (statusCode === 401) {
+        //     data.error = err.response.data.error.message;
+        // }
+        // dispatch(authActions.authPageLoading(false));
+        return reject(err);
+      });
+    });
+  };
+}
+
+function register(credentials) {
+  return function (dispatch) {
+    return new Promise(function (resolve, reject) {
+      API.postReq("auth/register", credentials, function (res) {
+        // dispatch(actions.login(data.accessToken));
+        _notify["default"].success(res.message);
+
+        return resolve(res.message);
+      }, function (err) {
+        // const statusCode = err.response.status;
+        // const data = {
+        //     error: null,
+        //     statusCode
+        // };
+        // if (statusCode === 422) {
+        // } else if (statusCode === 401) {
+        //     data.error = err.response.data.message;
+        // }
+        _notify["default"].error(err.message);
+
+        return reject(err);
+      });
+    });
+  };
+}
+/**
+ * logout user
+ *
+ * @returns {function(*)}
+ */
+
+
+function logout() {
+  return function (dispatch) {
+    return (// new Promise((resolve, reject) => {
+      //     API.deleteReq("auth/logout",
+      //     (() => {
+      dispatch(actions.logout())
+    );
+  }; //     }),
+  //     (err => {
+  //         const statusCode = err.response.status;
+  //         const data = {
+  //             error: err.response.data.error.message,
+  //             statusCode
+  //         };
+  //         return reject(data);
+  //     }));
+  // });
 }

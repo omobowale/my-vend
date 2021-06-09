@@ -5,6 +5,7 @@ import Validator from 'form-input-validator';
 
 import './Login.scss';
 import Form from './components/Form';
+import { login } from '../../service';
 
 class Page extends Component{
 
@@ -37,68 +38,28 @@ class Page extends Component{
             this.setState({ errors, err: `${name}:${value}` });
         });
     }
-    
-    successActions = () => {
-        
-        // this.props.closeModal();
-        // this.props.openIntendedRoute();
-    
-    } 
-
-
-    postLogin = () => {
-        // const state = location.state;
-        // localStorage.removeItem('checkPending');
-        // localStorage.removeItem('shared-review');
-
-        // if (state && state.from) {
-        //     window.location.href = state.from.pathname;
-        // } else {
-        //     window.location.href = '/';
-        // }
-    }
 
     handleSubmit = (e) => {
         e.preventDefault();
-
-        const {email, password} = this.state;
+        const { email, password } = this.state;
         const { errors } = this.validator;
-
-        this.validator.validateAll({email, password}).then(success => {
+        const credentials = {email, password};
+        this.validator.validateAll(credentials).then(success => {
             if (success) {
-                // this.setState({ err: "success", disableLogin: true });
-                // if(Transformer.validEmail(email)){
-                //     this.props.dispatch(findUserRequest({email: email})).then(data => {
-                //         if(data.buyer){
-                //             this.login(data.buyer.username, password );
-                //         }
-                //         this.setState({disableLogin: false });
-                //     }).catch(error => {})
-                // }else{
-                //     this.login(email, password);
-                // }
+                this.submit(credentials);
             } else {
-                this.setState({
-                    errors,
-                    err: "error"
-                });
+                this.setState({ errors });
             }
         });
     }
 
-    login = async (username, password) => {
-        const {dispatch} = this.props;
-        
-        try {
-            
-            
-            this.setState({disableLogin: false})
-        } catch (error) {
-            
-            this.setState({disableLogin: false})
-        }
-
-    };
+    submit(credentials) {
+        this.props
+            .dispatch(login(credentials))
+            .catch(({ error, statusCode }) => {
+                const { errors } = this.validator;
+            });
+    }
     
     render(){
         const {email, password, errors} = this.state;

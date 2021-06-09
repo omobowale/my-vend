@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 
-const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuButton, toggleMegaMenuStatus }) => {
+const Navigation = ({ signup, authenticated, openAuthPage, mouseOverMenuButton, mouseLeaveMenuButton, toggleMegaMenuStatus }) => {
     const location = useLocation();
     return (
         <>
@@ -51,15 +51,16 @@ const Navigation = ({ signup, openAuthPage, mouseOverMenuButton, mouseLeaveMenuB
                             About Cutstruct
                         </Link>
                     </li> */}
-
-                    <li>
-                        <a href="javascript: false"
-                            onClick={() => openAuthPage('signup')}
-                            className="btn btn-sign-up "
-                        >
-                            Register
-                        </a>
-                    </li>
+                    {!authenticated &&
+                        <li>
+                            <a href="javascript: false"
+                                onClick={() => openAuthPage('signup')}
+                                className="btn btn-sign-up "
+                            >
+                                Register
+                            </a>
+                        </li>
+                    }
                 </ul>
             </nav>
         </>
