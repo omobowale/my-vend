@@ -48,11 +48,19 @@
         font-weight: 900;
         font-size: 40px;
         line-height: 55px;
+        @media  screen and (min-width: 220px) and (max-width: 579px) {
+            font-size: 25px;
+            line-height: 35px;
+        }
     }
     .section-message{
         color: #1A222A87;
         font-size: 17px;
         line-height: 27px;
+        @media  screen and (min-width: 220px) and (max-width: 579px) {
+            font-size: 14px;
+            line-height: 20px;
+        }
     }
 }
 
@@ -83,7 +91,7 @@
         .single-page-title{
             color: #767A7F;
             font-weight: 700;
-            font-size: 14px;
+            font-size: 12px;
             line-height: 22px;
         }
         .single-page-dash{
@@ -184,8 +192,18 @@
                         font-size: 17px;
                         line-height: 27px;
                     }
+                    @media  screen and (min-width: 220px) and (max-width: 579px) {
+                        font-size: 14px;
+                        line-height: 20px;
+                        font-weight: 700;
+
+                        p{
+                            font-size: 14px;
+                            font-weight: 700;
+                            line-height: 20px;
+                        }
+                    }
                 }
-    
             }
         }
     }
@@ -341,15 +359,16 @@
                 }
         
                 @media screen and (min-width: 990px) {
-                font-size: 60px;
-                line-height: 80px;
+                    font-size: 60px;
+                    line-height: 80px;
                 }
                 @media  screen and (min-width: 220px) and (max-width: 579px) {
-                font-size: 30px;
-                max-width: 300px;
-                margin-top: 1rem;
-                margin-bottom: 1rem;
-                line-height: 45px;
+                    font-size: 30px;
+                    max-width: 300px;
+                    margin-top: 1rem;
+                    margin-left: 90px;
+                    margin-bottom: 1rem;
+                    line-height: 45px;
                     span {
                         font-size: 20px;
                         font-weight: 400;
@@ -368,6 +387,8 @@
                 @media  screen and (min-width: 220px) and (max-width: 579px) {
                     font-size: 14px;
                     line-height: 18px;
+                    margin-left: 90px;
+                    font-weight: 500;
                 }
             }
         }
