@@ -74,8 +74,10 @@
 
 // Layout Modules
 @import "layout/header";
+@import "layout/header-cutstruct";
 @import "layout/body";
 @import "layout/footer";
+@import "layout/footer-cutstruct";
 
 //Pages Modules
 @import "pages/home";

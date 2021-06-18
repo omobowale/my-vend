@@ -63,9 +63,6 @@ const HomeHeader = ({featuredRef}) => {
                         
                         <div className="home_top-left">
                             <div className="home_top--text">
-                                <h6 className="home_top--text-small text-white fade80">
-                                    The best way to
-                                </h6>
                                 <h1 className="home_top--text-main text-white">
                                     Welcome to the World of Construction Price Discovery.
                                 </h1>
@@ -101,14 +98,11 @@ const HomeHeader = ({featuredRef}) => {
                     <div className="left-container">                    
                         <div className="home_top-left">
                             <div className="home_top--text">
-                                <h6 className="home_top--text-small">
-                                    The best way to
-                                </h6>
                                 <h1 className="home_top--text-main">
                                     Have a Product You Want to Tell Everyone About?
                                 </h1>
                                 <h6 className="home_top--text-sub ">
-                                Why not contact us so we could feature your construction products and materials on our platform to help reach a wide range of tailored audience which includes construction professionals, real estate businesses & private clients. 
+                                    Why not contact us so we could feature your construction products and materials on our platform to help reach a wide range of tailored audience which includes construction professionals, real estate businesses & private clients. 
                                 </h6>
                                 <div className="home_top--text-call-to-action" onClick={() => featuredRef.current && featuredRef.current.scrollIntoView({ behavior: 'smooth' }) }> 
                                     <span>Get listed from here</span>

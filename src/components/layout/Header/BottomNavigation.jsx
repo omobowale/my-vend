@@ -40,17 +40,14 @@ const Navigation = ({ signup, authenticated, openAuthPage, mouseOverMenuButton, 
                         >
                             Enterprise App
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="m-t-three">
                         <Link
-                            to={{
-                            pathname: '/login',
-                            state: { from: location },
-                            }}
+                            to={'/cutstruct'}
                         >
                             About Cutstruct
                         </Link>
-                    </li> */}
+                    </li>
                     {!authenticated &&
                         <li>
                             <a href="javascript: false"

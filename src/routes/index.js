@@ -47,9 +47,9 @@ const Routes = React.memo((props) => {
                 <ScrollToTop />
                 <ChangeHeader/>
                 <ErrorHandler>
-                <Header />
-                <Switch>{renderRoutes}</Switch>
-                <Footer />
+                    {/* <Header /> */}
+                    <Switch>{renderRoutes}</Switch>
+                    {/* <Footer /> */}
                 </ErrorHandler>
             </Suspense>
         </Router>

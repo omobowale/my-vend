@@ -1,0 +1,415 @@
+.cutstruct-page {
+    margin-top: 0px !important;
+
+}
+.home-banner-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    .full-screen {
+        width: 100%;
+        height: 100%;
+    }
+}
+.page-container{
+    max-width: 1440px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav-border{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    height: 100%;
+    // height: calc(100% - 550px);
+    border-left: 1px solid #767A7F;
+    margin-left: 150px;
+    @media screen and (min-width: 220px) and (max-width: 579px){
+        margin-left: 90px;
+    }
+}
+
+.nav-content-section{
+    position: relative;
+    margin-left: 150px;
+    display: flex;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    @media screen and (min-width: 220px) and (max-width: 579px){
+        padding-left: 15px;
+        margin-left: 100px;
+    }
+    .section-header{
+        color: #1A222A;
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .section-message{
+        color: #1A222A87;
+        font-size: 17px;
+        line-height: 27px;
+    }
+}
+
+.single-page-nav{
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    top: 0;
+
+    height: 100%;
+    width: 150px;
+    padding: 15px;
+    .single-page-title{
+        color: #767A7F;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 22px;
+    }
+    .single-page-dash{
+        border-bottom: 1px solid #767A7F;
+        width: 30px;
+        margin-right: 10px;
+    }
+    @media screen and (min-width: 220px) and (max-width: 579px){
+        width: 90px;
+        .single-page-title{
+            color: #767A7F;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .single-page-dash{
+            border-bottom: 1px solid #767A7F;
+            width: 0px;
+            margin-right: 10px;
+            display: none;
+        }
+    }
+}
+
+.about-us-section {
+    background: linear-gradient(180deg, #D7D8DA 0%, rgba(221, 222, 223, 0) 100%);
+    .nav-content-section{
+        display: flex;
+        padding-left: 30px;
+        flex-direction: column;
+        @media screen and (min-width: 220px) and (max-width: 579px){
+            padding-left: 10px;
+        }
+        .about-image-container{
+            height: auto;
+            max-height: 422px;
+        }
+        .about-image-container-v{
+            height: 440px;
+            width: 380px;
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            margin-bottom: 40px;
+            display: none;
+            @media screen and (min-width: 990px) {
+                display: flex;
+            }
+        }
+
+        .about-mission-container{
+            max-width: 500px;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-direction: column;
+
+            .section-message{
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.service-section {
+    .nav-content-section{
+        display: flex;
+        padding-left: 30px;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 50px;
+        @media screen and (min-width: 220px) and (max-width: 579px){
+            padding-left: 10px;
+        }
+
+        .service-section-container{
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            .service-list-container {
+                margin-top: 30px;
+                margin-bottom: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+    
+                @media screen and (min-width: 990px) {
+                    display: flex;
+                    justify-content: space-between;
+    
+                    ul {
+                        width: 25%;
+                    }
+                }
+    
+                li {
+                    color: #DADADA;
+                    font-weight: 800;
+                    font-size: 17px;
+                    line-height: 27px;
+                    margin-bottom: 15px;
+                    
+                    p { 
+                        display: flex;
+                        justify-content: flex-start;
+                        color: #1A222A;
+                        font-weight: 800;
+                        font-size: 17px;
+                        line-height: 27px;
+                    }
+                }
+    
+            }
+        }
+    }
+}
+
+.product-section {
+    .page-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-content-section{
+        display: flex;
+        padding-left: 30px;
+        flex-direction: column;
+        padding-bottom: 50px;
+        @media screen and (min-width: 220px) and (max-width: 579px){
+            padding-left: 10px;
+        }
+        .product-section-container{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+
+
+        }
+    }
+}
+
+.service-section, .product-section {
+    background: #fff;
+    min-height: 100px;
+}
+.livevend-app-section {
+    margin-bottom: 70px;
+    // background-color: #F0F0F0;
+    position: relative;
+    .clear-shift{ 
+        width: 750px;
+        background-color: black;
+        background: #DADADAaa;
+        opacity: 0.8;
+        height: 100%;
+        position: absolute;
+    }
+    .background-img{
+        width: 700px;
+        opacity: 0.8;
+        height: 100%;
+        left: 50px;
+        position: absolute;
+        img{
+            height: 100%;
+        }
+    }
+    .livevend-app-section-content {
+        // background-color: #F0F0F0;
+        position: relative;
+        // background: #DADADAaa;
+        // opacity: 0.8;
+    }
+
+    &-img{
+        height: 47px;
+    }
+    .container {
+        margin: 0;
+        div.img-background {
+            margin-top: 70px;
+            margin-left: 40px;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            height: 450px;
+            justify-content: flex-end;
+            img.livevend-app {
+              z-index: 0;
+              position: relative; 
+              right: -60px;
+              top: 10px;
+              object-fit: contain;
+              max-height: 450px;
+              transform: rotate(-12deg);
+            }
+            img.livevend-project-app {
+                object-fit: contain;
+                z-index: 2;
+                top: 30px;
+                position: relative;
+                max-height: 450px;
+                transform: rotate(-12deg);
+            }
+            @media  screen and (min-width: 220px) and (max-width: 579px) {
+              display: none;
+            }
+        }
+  
+        div.right-container{
+            position: relative;
+            // align-items: center;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 15px 15px 0 0;
+        }
+    
+    
+        @media screen and (min-width: 990px) {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            // padding: 4rem 3rem 3rem;
+        
+            // &-right {
+            //     width: 45%;
+            //     align-self: center;
+            // }
+        
+            &-left {
+                img {
+                position: absolute;
+                // width: 320px;
+                right: 15%;
+                bottom: 0;
+        
+                   
+                }
+            }
+        }
+    
+        .app-section--text {
+            text-align: left;
+            max-width: 500px;
+            padding: 20px 0px;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            
+            &-main {
+                font-size: 50px;
+                font-weight: 800;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                line-height: 45px;
+                text-transform: capitalize;
+                span {
+                    font-weight: 900;
+                    font-size: 15px;
+                    line-height: 18px;
+                    display: block;
+                }
+        
+                @media screen and (min-width: 990px) {
+                font-size: 60px;
+                line-height: 80px;
+                }
+                @media  screen and (min-width: 220px) and (max-width: 579px) {
+                font-size: 30px;
+                max-width: 300px;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                line-height: 45px;
+                    span {
+                        font-size: 20px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        
+            &-sub {
+                font-size: 15px;
+                line-height: 22.13px;
+                font-weight: 400;
+                color: #1A222A89;
+                font-size: 17px;
+                line-height: 27px;
+                font-family: "Airbnb Cereal App Light";
+                @media  screen and (min-width: 220px) and (max-width: 579px) {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        .app-store-container {
+            display: flex;
+            &-left {
+                background-color: #fff;
+                padding: 15px;
+                max-width: 200px;
+                .store-text{
+                    font-style: normal;
+                    font-weight: 900;
+                    font-size: 20px;
+                    line-height: 24px;
+                    text-transform: uppercase;
+                    text-align: left;
+                    span {
+                        font-family: "Airbnb Cereal App Light";
+                        font-weight: 300;
+                        font-size: 20px;
+                        line-height: 24px;
+                    }
+                }
+            }
+            &-stores {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                padding: 15px ;
+                background-color: #F05C40;
+                a {
+                    margin-right: 10px;
+                    width: auto;
+                    height: 45px;
+                    img {
+                        height: 45px;
+                        // object-fit: contain;
+                    }
+                }
+            }
+        }
+    
+    }
+}

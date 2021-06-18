@@ -44,5 +44,9 @@ export default [
         component: ProductDetail,
         exact: true,
         auth: false
+    },
+    {
+      component: NotFound,
+      auth: false,
     }
 ];

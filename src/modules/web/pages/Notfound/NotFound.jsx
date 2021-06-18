@@ -8,7 +8,7 @@ function NotFound() {
   return (
     <main className="page notfound">
       <Helmet>
-        <title>404! Page Not Found | TERAWORK</title>
+        <title>404! Page Not Found | Livevend</title>
       </Helmet>
       <div className="center-block">
         <h1>404</h1>
@@ -22,14 +22,14 @@ function NotFound() {
               Go Back Home
             </button>
           </Link>
-          <Link to="https://www.terawork.com/talk-to-us">
+          {/* <Link to="https://www.livevend.com">
             <button
               type="button"
               className="butn butn--green--outline wide-butn"
             >
               Talk to Us
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </main>

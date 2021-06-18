@@ -91,13 +91,13 @@ function SmBottomNavigator({
                     </div>
                     
                     <div className="sidebar-header">
-                       
-                        {/* <li className="nav-item" onClick={hideSidebar}>
-                            <Link to="/">Enterprise App</Link>
-                        </li> */}
+{/*                             
                         <li className="nav-item" onClick={hideSidebar}>
-                            <Link to="/cutstruct"> About Cutstruct </Link>
-                        </li> 
+                            <Link to="/">Enterprise App</Link>
+                        </li>
+                        <li className="nav-item" onClick={hideSidebar}>
+                            <Link to="/"> About Cutstruct </Link>
+                        </li> */}
                     </div>
                     <nav className="sidebar-nav"><MegaMenu closeMegaMenu={hideSidebar} /></nav>
                 </div>

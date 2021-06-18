@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getProductCategoryList, getProductCategoryFlatList } from '../../../../modules/web/service'
 import ad1 from '../../../../assets/img/common/mega-ad1.png';
-import ad2 from '../../../../assets/img/common/mega-ad2.png';
-import ad3 from '../../../../assets/img/common/mega-ad3.png';
+// import ad2 from '../../../../assets/img/common/mega-ad2.png';
+// import ad3 from '../../../../assets/img/common/mega-ad3.png';
 import './MegaMenu.scss'
+import shortid from 'shortid';
 
 function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, mouseOverMegaMenu }) {
     let _isMounted = false;
+    console.log('en', categories.length > 0)
     const [activeCategory, setActiveCategory] = useState({});
     const [subCategories, setSubCategories] = useState([]);
 
@@ -49,6 +51,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
         _isMounted = true;
         if (categories.length < 1) {
             loadCategories();
+            // categories.length > 0 ? categories[0] : 
         }
         return () => {_isMounted = false; };
     });
@@ -60,7 +63,7 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
                     <ul>
                         {categories.map( category => {
                             return (
-                                <li key={category.id} onClick={(e) => selectCategory(e, category)} className={`m-t-three ${category.id == activeCategory.id ? 'active' : ''}`} > 
+                                <li key={category.id} onMouseEnter={(e) => selectCategory(e, category)} onClick={(e) => selectCategory(e, category)} className={`m-t-three ${category.id == activeCategory.id ? 'active' : ''}`} > 
                                     <img src={category.image} />  <span>{category.name}</span>
                                 </li>
                             )
@@ -73,14 +76,14 @@ function MegaMenu({ dispatch, categories=[], closeMegaMenu, mouseLeaveMegaMenu, 
                 <div className="sub-category-menu">
                     <div className="nav-section row m-0">
                         {subCategories.map( sub => renderMenu(activeCategory, sub, sub.subArray))}
-                        <div className="col-12 pt-4">
+                        <div key={shortid.generate()} className="col-12 pt-4">
                             {activeCategory.name && <Link className="category-link" onClick={() => closeMegaMenu() } to={`/category/${activeCategory.slug}`} >Show all Sub-categories in {activeCategory.name}</Link> }
                         </div>
                     </div>
                     <div className="advert-section">
                         <img src={ad1} className="img-fluid adv-img" /> 
-                        <img src={ad2} className="img-fluid adv-img" /> 
-                        <img src={ad3} className="img-fluid adv-img" /> 
+                        {/* <img src={ad2} className="img-fluid adv-img" />  */}
+                        {/* <img src={ad3} className="img-fluid adv-img" />  */}
                     </div>
                 </div>
 

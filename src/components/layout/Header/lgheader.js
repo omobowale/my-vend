@@ -50,7 +50,7 @@ function LgHeader({
     }
 
     const mouseOverMenuButton = (menu) => {
-        // setMouseOverButton(true);
+        setMouseOverButton(true);
         setActiveMenu(menu)
     }
 
@@ -90,7 +90,7 @@ function LgHeader({
 
     return (
         <header className={`header ${mode}`}>
-            <div className="header-top">
+            <div className="header-top" onClick={() => closeMegaMenu()}>
                 <div className="header-top-container clearfix">
                     
                     <Link to={'/'} className="logo">
@@ -118,8 +118,8 @@ function LgHeader({
                     onClick={() => closeMegaMenu() }
                 >
                     <MegaMenu mouseLeaveMegaMenu={mouseLeaveMegaMenu} mouseOverMegaMenu={mouseOverMegaMenu} closeMegaMenu={closeMegaMenu} />
-                    <RequestConsultance show={consultation} onHide={() => openConsultation(false)} />
                 </div>
+                <RequestConsultance show={consultation} onHide={() => openConsultation(false)} />
 
             </div>
         </header>

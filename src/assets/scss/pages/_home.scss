@@ -165,7 +165,7 @@
                 // padding: 4rem 3rem 3rem;
             
                 &-left {
-                    width: 60%;
+                    width: 75%;
                     align-self: center;
                 }
             
@@ -195,7 +195,7 @@
                 max-width: 300px;
                 // background-color: #00000032;
                 @media screen and (min-width: 990px) {
-                    max-width: 710px;
+                    max-width: 780px;
                 }
                 &-main {
                     font-size: 38px;
@@ -222,14 +222,16 @@
             
                 &-sub {
                     font-size: 17px;
-                    line-height: 22.13px;
+                    line-height: 26px;
                     font-weight: 500;
                     color:#767A7F80;
                     color: #1A222Ad0;
-        
+                    @media screen and (min-width: 990px) {
+                        max-width: 600px;
+                    }
                     @media #{$mobile-view} {
                         font-size: 14px;
-                        line-height: 18px;
+                        line-height: 20px;
                     }
                     span {
                         display: none;
@@ -242,12 +244,12 @@
                 }
                 &-small {
                     font-size: 14px;
-                    line-height: 1.7;
+                    line-height: 19px;
                     font-weight: bold;
         
                     @media #{$mobile-view} {
                         font-size: 12px;
-                        line-height: 1.2;
+                        line-height: 16px;
                     }
                     span {
                         display: none;

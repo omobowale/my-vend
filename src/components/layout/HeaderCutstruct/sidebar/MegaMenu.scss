@@ -1,0 +1,174 @@
+.sm-mega-menu {
+    display: flex;
+    background-color: #fff;
+    padding: 0 !important;
+    flex-direction: row;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    .category-list-menu {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        padding-bottom: 35px;
+        left: -800vw;
+        // opacity: 0.95;
+        position: relative;
+        transition: 1.9s ease all;
+        &.show {
+            left: 0;
+        }
+        nav{
+            padding-top: 10px;
+            width: 100%;
+            overflow: auto;
+            ul{
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                li{
+                    padding: 5px 5px;
+                    justify-content: flex-start !important;
+                    width: 100%;
+                    max-width: 350px !important;
+                    margin: 0;
+                    margin-bottom: 5px;
+                    color: #1A222A;
+                    font-size: 15px;
+                    font-weight: 700;
+                    &.active{
+                        background: #C4C4C456;
+                    }
+                    &:hover{ 
+                        color: #F05C40;
+                    }
+                   
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 15px;
+                    img{
+                        margin-left: 5px;
+                        height: 30px;
+                        width: 30px;
+                        object-fit: scale-down;
+                    }
+                    span {
+                        padding-left: 15px;
+                        font-size: 15px;
+                    }
+                    
+                }
+            }
+        }
+
+    }
+    .sub-category-section {
+        // background-color: black;
+        height: 100%;
+        flex: 1;
+        position: relative;
+        // padding: 35px 15px;
+        display: flex;
+        flex-direction: column;
+        right: -800vw;
+        // opacity: 0.95;
+        transition: 1.9s ease all;
+        overflow: hidden;
+
+        &.show {
+            right: unset;
+        }
+        .mega-title {
+            margin-bottom: 10px;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        .prev-menu {
+            display: flex;
+            cursor: pointer;
+            color:  #F05C40;
+            font-weight: 700;
+            padding-left: 15px;
+            span {
+                padding: 2px 8px;
+            }
+        }
+        .sub-category-menu {
+            display: flex;
+            flex-direction: column;
+            flex: 1 1;
+            position: relative;
+            min-width: 200px;
+            overflow: auto;
+            // overflow-wrap: anywhere;
+            padding-left: 15px;
+            height: auto;
+
+            .category-link{
+                font-size: 13px;
+                font-weight: 700;
+                color: #F05C40;
+            }            
+            nav{
+                padding: 15px 15px 0px 0px;
+                float: none;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    li{
+                        padding: 5px 5px 0px 5px;
+                        justify-content: flex-start !important;
+                        width: 100%;
+                        min-height: 20px !important;
+                        max-width: 300px !important;
+                        margin: 0;
+                        color: #767A7F;
+                        font-size: 13px;
+                        font-weight: 700;
+                        &.active{
+                            color: #1A222A;
+                            font-size: 17px;
+                            a{
+                                color: #1A222A;
+                                font-size: 15px;
+                                font-weight: 700;
+                                span{
+                                    font-size: 15px;
+                                    font-weight: 700;
+                                }
+                            }
+                        }
+                        &:hover{ 
+                            color: #F05C40;
+                        }
+
+                        a{
+                            color: #1A222A;
+                            background: transparent;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 15px;
+                            img{
+                                height: 30px;
+                                width: 30px;
+                                object-fit: scale-down;
+                            }
+                            span {
+                                font-size: 13px;
+                                font-weight: 700;
+                                padding-left: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+  
