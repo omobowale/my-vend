@@ -41,6 +41,39 @@
                 // object-fit: scale-down;
                 position: relative;
             }
+            .google-map-container{
+                position: absolute;
+                width: 130px;
+                height: 130px;
+                right: 0px;
+                z-index: 1;
+                top: 0px;
+                background: #F05C40;
+                display: flex;
+                align-items: center;
+                padding: 25px;
+                justify-content: center;
+                .google-map-action{
+                    font-weight: 900;
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                }
+                @media #{$tablet-view} {
+                    width: 100px;
+                    height: 100px;.google-map-action{
+                        font-size: 18px;
+                    }
+                    // padding: 20px;
+                }      
+                @media #{$mobile-view} {
+                    width: 100px;
+                    height: 100px;
+                    .google-map-action{
+                        font-size: 15px;
+                    }
+                }      
+            }
             @media screen and (min-width: 990px) {
                 width: 40%;
             }
@@ -66,6 +99,7 @@
             display: flex;
             flex-direction: column;
             padding: 25px 45px;
+            flex: 1;
             @media #{$mobile-view} {
                 padding: 15px;
             }

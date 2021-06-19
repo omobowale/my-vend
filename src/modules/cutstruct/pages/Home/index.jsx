@@ -11,6 +11,7 @@ import banner from '../../../../assets/img/common/Cutstruct-Banner.png'
 import AboutUs from './components/AboutUs';
 import Service from './components/Service';
 import Products from './components/Products';
+import TopHeader from './components/TopHeader';
 
 function Home() {
     const aboutRef = useRef(null);
@@ -25,6 +26,7 @@ function Home() {
             <main className="page cutstruct-page">
                 <div className="home-banner-container">
                     <img className="full-screen" src={banner} />
+                    <TopHeader />
                 </div>
                 <AboutUs  ref={aboutRef}/>
                 <Service ref={serviceRef} />

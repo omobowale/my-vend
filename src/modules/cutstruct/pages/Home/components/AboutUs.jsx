@@ -14,7 +14,8 @@ const AboutUs = forwardRef((props, ref) => {
                 </div>
                 <div className="nav-content-section">
                     <div className="about-image-container">
-                        <img className="img-fluid" src={about1} />
+                        <img className="img-fluid " src={about1} />
+                        <div className="stroke-text">construction</div>
                     </div>
                     {/* <div></div> */}
                     <div className="about-mission-container">

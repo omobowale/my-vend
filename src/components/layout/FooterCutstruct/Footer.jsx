@@ -46,6 +46,11 @@ const Footer = forwardRef((props, ref) =>{
                                 className="img-fluid"
                                 alt="logo"
                             />
+                            <div className="google-map-container" onClick={() => {window.open("https://maps.google.com?q=no 8 providence street lekki phase1 lagos")} } >
+                                <div className="google-map-action">
+                                    Open Map
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="footer-links-container ">
@@ -57,28 +62,22 @@ const Footer = forwardRef((props, ref) =>{
                                 <li className="links-head">FOR CLIENTS</li>
                                 
                                 <li key={shortid.generate()}>
-                                    <p>+ 234 890 456 7890</p>
-                                    <p>client@custruct.com</p>
+                                    <p>+(234) 8092355555</p>
+                                    <p>+1 (713) 474-4127</p>
+                                    <p>livevend@custruct.com</p>
                                 </li>
                             </ul>
                             <ul className="col-6">
                                 <li className="links-head">OFFICE ADDRESS</li>
-                                
                                 <li key={shortid.generate()}>
-                                    <p>16, somewhere in the middle,</p>
-                                    <p>of no where</p>
-                                    <p>Lagos, Nigeria</p>
+                                    <p>8, Providence Street,</p>
+                                    <p>Lekki Phase 1, Lagos, Nigeria</p>
+                                </li>
+                                <li key={shortid.generate()} className="mt-2">
+                                    <p>3611, North East,</p>
+                                    <p>68th Terrace Kansas City, US</p>
                                 </li>
 
-                            </ul>
-                            <ul className="col-6">
-                                <li className="links-head mt-5">FOR CONTRACTORS</li>
-                                
-                                    <li key={shortid.generate()}>
-                                        <p>+ 234 890 456 7890</p>
-                                        <p>client@custruct.com</p>
-                                    </li>
-                                
                             </ul>
                             
                         </div>
