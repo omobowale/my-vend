@@ -34,7 +34,6 @@
             width: 40%;
             position: relative;
             .footer-img-container{
-                min-height: 200px;
                 position: relative;
                 overflow: hidden;
             }
@@ -80,12 +79,14 @@
             }
             
             @media #{$tablet-view} {
+                min-width: 400px;
                 margin-bottom: 15px;
                 .copy{
                     display: hidden;
                 }
             }      
             @media #{$mobile-view} {
+                width: auto;
                 margin-bottom: 15px;
                 .copy{
                     display: hidden;
