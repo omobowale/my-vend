@@ -8,24 +8,24 @@ import background from '../../../../../assets/img/common/product-background.png'
 
 const LiveVendApp = () => {
     return (
-        <div className="livevend-app-section">
+        <div className="cutstruct-app-section">
             
             <div className="background-img">
                 <img className="img-fluid" src={background} />
             </div>
             <div className="clear-shift"></div>
-            <div className="livevend-app-section-content">
+            <div className="cutstruct-app-section-content">
             <div className="container">
                 <div className="img-background">
                     <img
                         src={livevend}
                         alt="a freelancer"
-                        className="livevend-app"
+                        className="cutstruct-app"
                     />
                     <img
                         src={livevendproject}
                         alt="a freelancer"
-                        className="livevend-project-app"
+                        className="cutstruct-project-app"
                     />
                 </div>
                 <div className="right-container">
@@ -47,14 +47,14 @@ const LiveVendApp = () => {
                                 </div>
                             </div>
                             <div className="app-store-container-stores">
-                                <Link className="livevend-app-section-img">
+                                <Link className="cutstruct-app-section-img">
                                     <img
                                         className="img-fluid"
                                         src={googlestore}
                                         alt="a freelancer"
                                     />
                                 </Link>
-                                <Link className="livevend-app-section-img" >
+                                <Link className="cutstruct-app-section-img" >
                                     <img
                                         className="img-fluid"
                                         src={appstore}
