@@ -30,6 +30,9 @@ const TopHeader = (props)  => {
                                 <span className="hero-item-text">Products listed</span>
                             </div>
                         </div>
+                    
+                        {/* <div className="nav-border" /> */}
+                    
                     </div>
                     <div className="text-background-clear"></div>
 

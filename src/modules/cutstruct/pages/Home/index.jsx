@@ -33,9 +33,6 @@ function Home() {
                 <Products ref={productRef} />
             </main>
             <Footer ref={contactRef} />
-            {/* <div className="page-container">
-                <div className="nav-border" />
-            </div> */}
         </>
     );
 }

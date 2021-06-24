@@ -1,4 +1,4 @@
-import React, {forwardRef} from 'react';
+import { useRef, forwardRef } from 'react';
 import { Link, withRouter, useLocation } from 'react-router-dom';
 import shortid from 'shortid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -32,7 +32,7 @@ const Footer = forwardRef((props, ref) =>{
     const location = useLocation();
     const CHAT_PATHNAME = '/peer/chats';
     return (
-        <footer
+        <footer ref={ref}
             className={`footer-cutstruct ${location.pathname === CHAT_PATHNAME ? 'hide' : ''}`}
             >
             <div className="footer-cutstruct-top">
@@ -55,7 +55,7 @@ const Footer = forwardRef((props, ref) =>{
                     </div>
                     <div className="footer-links-container ">
 
-                        <h2 className="footer-header" ref={ref} >Contact Us</h2>
+                        <h2 className="footer-header" >Contact Us</h2>
 
                         <div className="row">
                             <ul className="col-6">
