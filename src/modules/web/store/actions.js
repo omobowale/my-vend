@@ -82,3 +82,25 @@ export const setIntendedRoute = payload => {
         payload
     }
 }
+
+export const setCompare = (payload) => {
+    return {
+        type: actionTypes.SET_COMPARE,
+        payload,
+    }
+}
+
+export const setCompareBody = (payload) => {
+    return {
+        type: actionTypes.COMPARE_BODY,
+        payload,
+    }
+}
+  
+  export const setCompareHeader = (payload) => {
+    return {
+        type: actionTypes.COMPARE_HEADER,
+        payload,
+    }
+}
+  

@@ -4,14 +4,14 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as hollowStar } from '@fortawesome/free-regular-svg-icons';
 import shortid from 'shortid';
 
-export const renderRating = (score, rating=true) => {
+export const renderRating = (score, rating=true, size="sm") => {
     let stars = [];
     for (let i = 0; i < Math.floor(parseInt(score)); i++) {
         stars.push(
             <FontAwesomeIcon
                 key={shortid.generate()}
                 icon={faStar}
-                size="sm"
+                size={size}
                 style={{ color: '#FD8825' }}
             />
         );
@@ -22,7 +22,7 @@ export const renderRating = (score, rating=true) => {
             stars.push(
                 <FontAwesomeIcon
                     icon={hollowStar}
-                    size="sm"
+                    size={size}
                     style={{ color: '#FD8825' }}
                     key={shortid.generate()}
                 />

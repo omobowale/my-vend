@@ -1,40 +1,43 @@
 .top-info-wrapper {
-  position: fixed;
-  top: 0;
-  z-index: 5;
-  display: block;
-  width: 100%;
-
-  .top-info {
+    position: fixed;
+    top: 90;
+    z-index: 100;
+    display: block;
     width: 100%;
-    padding: 0.6rem 1rem;
-    background: lighten(#83bc23, 55%);
-    border: 1px solid #83bc23;
-    border-radius: 5px;
-    margin-bottom: -7vh;
-    margin-top: 4.5rem;
-    color: #83bc23;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
+  
+    .top-info {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        background: lighten(#F05C40, 55%);
+        border: 1px solid #F05C40;
+        border-radius: 5px;
+        margin-bottom: -7vh;
+        margin-top: 4.5rem;
+        color: #F05C40;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8rem;
 
-    a {
-      margin-left: auto;
+        a {
+            margin-left: auto;
+            font-size: 13px;
+            border-radius: 15px;
+        }
+
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                margin-left: 0;
+            }
+        }
     }
-
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      span {
-        margin-bottom: 0.5rem;
-      }
-
-      a {
-        margin-left: 0;
-      }
-    }
-  }
 }
+  

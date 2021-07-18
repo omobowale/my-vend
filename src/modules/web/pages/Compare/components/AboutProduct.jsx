@@ -3,14 +3,14 @@ import moment from 'moment';
 import shortid from 'shortid';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExchangeAlt, faTrashAlt, faBalanceScale } from '@fortawesome/free-solid-svg-icons';
+import { faExchangeAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
 
 import Price from '../../../../../components/common/Price/Price';
 import { renderRating } from '../../../../../utils/rating';
 import { useState } from 'react';
 
-const AboutProduct = ({product={}, selected=false, saveForCompare}) => {
+const AboutProduct = ({product={}}) => {
     const [currentImage, setImage] = useState();
 
     return (
@@ -44,23 +44,12 @@ const AboutProduct = ({product={}, selected=false, saveForCompare}) => {
 
                         <div className="rating-review">
                             <div className="rating">
-                                {renderRating(0)}
+                                {renderRating(4)}
                             </div>
-                            <span className="review">0.0 ({0})</span>
+                            <span className="review">4.0 ({2})</span>
 
                         </div>
                         <div className="desc"> {product.desc} </div>
-
-                        <div className="product-actions">
-                            <ul>
-                                {!selected ?
-                                    <li>
-                                        <Link onClick={e => saveForCompare(e, product)}><FontAwesomeIcon icon={faBalanceScale} className="" /> Compare </Link>
-                                    </li>
-                                    : null
-                                }
-                            </ul>
-                        </div>
                     </div>
                     <div className="product-detail-pricing">
                         <div className="title">

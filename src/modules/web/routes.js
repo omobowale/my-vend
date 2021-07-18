@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 const Home = lazy(() => import('./pages/Home'));
 const Category = lazy(() => import('./pages/Category'));
+const Compare = lazy(() => import('./pages/Compare'));
 const SubCategoryProductList = lazy(() => import('./pages/SubCategoryProductList'));
 const BrandProductList = lazy(() => import('./pages/BrandProductList'));
 const SearchProductList = lazy(() => import('./pages/SearchProductList'));
@@ -42,6 +43,12 @@ export default [
     {
         path: '/product/:name',
         component: ProductDetail,
+        exact: true,
+        auth: false
+    },
+    {
+        path: '/compare/product',
+        component: Compare,
         exact: true,
         auth: false
     },

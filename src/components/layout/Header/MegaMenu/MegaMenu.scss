@@ -112,15 +112,16 @@
                         min-height: 20px !important;
                         max-width: 300px !important;
                         margin: 0;
-                        color: #767A7F;
                         font-size: 12px;
                         font-weight: 700;
                         &.active{
                             color: #1A222A;
                             font-size: 15px;
                             a{
-                                color: #1A222A;
-                                
+                                color: #1A222A !important;
+                                font-size: 15px;
+                                line-height: 20px;
+                                text-transform: capitalize;
                             }
                         }
                         &:hover{ 
@@ -128,12 +129,14 @@
                         }
 
                         a{
-                            color: #1A222A;
+                            color: #767A7F80 !important;
                             background: transparent;
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            font-size: 15px;
+                            font-size: 12px;
+                            line-height: 16px;
+                            text-transform: capitalize;
                             img{
                                 height: 30px;
                                 width: 30px;

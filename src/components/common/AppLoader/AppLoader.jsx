@@ -1,7 +1,6 @@
 import FadeLoader from 'react-spinners/FadeLoader';
 
-/** @jsx jsx */
-import { jsx, css } from '@emotion/core';
+import { jsx, css } from '@emotion/react';
 
 import './AppLoader.scss';
 

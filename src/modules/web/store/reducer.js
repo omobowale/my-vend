@@ -14,6 +14,9 @@ const initialState = {
     intendedRoute: {route: '', params: {}},
     user: {},
     authToken: '',
+    comparable: false,
+    compareHeader: [],
+    compareBody: [],
 };
 
 const reducer = (state = initialState, { type, payload = null }) => {
@@ -41,8 +44,14 @@ const reducer = (state = initialState, { type, payload = null }) => {
         case actionTypes.SHOW_AUTH_PAGE :
             return stores.setAuthPage(state, payload);
         case actionTypes.SET_INTENDED_ROUTE :
-            return stores.setIntendedRoute(state, payload);
-        
+            return stores.setIntendedRoute(state, payload);   
+        case actionTypes.SET_COMPARE:
+            return stores.setComparable(state, payload);
+        case actionTypes.COMPARE_HEADER:
+            return stores.setCompareHeader(state, payload);
+        case actionTypes.COMPARE_BODY:
+            return stores.setCompareBody(state, payload);
+
         default:
             return state;
     }

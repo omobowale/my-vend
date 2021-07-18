@@ -10,17 +10,20 @@ import { getScreenSize } from '../../../../utils/setScreenSIze';
 import _ from 'lodash';
 import AboutProduct from './components/AboutProduct';
 import RelatedProducts from '../../../../components/common/Product/RelatedProducts';
+import { toast } from 'react-toastify';
+import { compare } from '../../../../utils/compare';
+import { setComparableReq } from '../Compare/service';
 
 import ad1 from '../../../../assets/img/common/mega-ad1.png';
 import ad2 from '../../../../assets/img/common/mega-ad2.png';
 import ad3 from '../../../../assets/img/common/mega-ad3.png';
 
-function Page({ dispatch, categories, productName, products }) {
+function Page({ dispatch, categories, productName, comparable }) {
     const [screenSize, setScreen] = useState('');
     const [relatedProducts, setRelatedProducts] = useState([]);
     const [product, setProduct] = useState({name: 'Wheelbarrow'});
     const [loading, setLoading] = useState(true);
-    const [sort, setSort] = useState('rank');
+    const [selected, setSelected] = useState(false);
   
 
     useEffect(() => {
@@ -47,42 +50,39 @@ function Page({ dispatch, categories, productName, products }) {
         }
     };
 
-    const onChange = (e) => {
-        const { value, name } = e.target;
-
-        switch (name) {
-            case 'search':
-                // return setText(value);
-            case 'sort':
-                return handleSort(value);
-            default:
-                return null;
+    const activateCompare = useCallback(() => {
+        if (compare.get().length > 1) {
+            if (!comparable) {
+                dispatch(setComparableReq(true));
+            }
+        
+            const toastId = 0;
+            if (!toast.isActive(toastId)) {
+                toast(
+                () => (
+                    <Link to="/compare/product" className="butn butn--green">Compare Now</Link>
+                ),
+                {
+                    delay: 500,
+                    hideProgressBar: true,
+                    toastId,
+                }
+                );
+            }
+        } else {
+            if (comparable) {
+                dispatch(setComparableReq(false));
+            }
         }
-    };
-
-    const handleSort = (value) => {
-        setSort(value);
-        let query = {};
+    });
     
-        switch (value) {
-        case 'high':
-            query.sort_key = 'local_price';
-            query.sort_order = 'desc';
-            break;
-        case 'low':
-            query.sort_key = 'local_price';
-            query.sort_order = 'asc';
-            break;
-        case 'recent':
-            query.sort_key = 'post_date';
-            query.sort_order = 'desc';
-            break;
-        default:
-            return null;
-        }
+    const saveForCompare = useCallback((e, data) => {
+        e.preventDefault();
     
-    };
-
+        const save = compare.save(data.subcategory.slug, data.slug);
+        setSelected(save);
+        activateCompare();
+    });
         
     return (
         <>
@@ -92,7 +92,7 @@ function Page({ dispatch, categories, productName, products }) {
                 <div className="container detail-container sm-container page-content">
                     <Breadcrumb category={{}} product={product} />
                     
-                    <AboutProduct product={product}/>
+                    <AboutProduct product={product} selected={selected} saveForCompare={saveForCompare}/>
                 </div>
                 <div className="page-desc-section">
 
@@ -130,6 +130,7 @@ const mapStateToProps = (state, router) => {
     return {
         productName: params.name,
         categories: state.web.categories, 
+        comparable: state.web.comparable, 
     };
 };
 

@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useMemo, useState } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { connect } from 'react-redux';
 // import components
@@ -13,16 +13,31 @@ import Footer from '../components/layout/Footer/Footer';
 import ScrollToTop from '../components/util/ScrollToTop/ScrollToTop';
 import ChangeHeader from '../components/util/ScrollToTop/ChangeHeader';
 import TransparentSpinner from '../components/common/Spinner/TransparentSpinner';
+import TopInfo from '../components/common/TopInfo/TopInfo';
+import AppLoader from '../components/common/AppLoader/AppLoader';
+
 import { getCurrencyList } from '../modules/web/service';
+import { setComparableReq } from '../modules/web/pages/Compare/service';
+
+import { compare } from '../utils/compare';
 
 const Routes = React.memo((props) => {
     const [loading, setLoading] = useState(true);
+    const { comparable } = props;
 
 
     useEffect(() => {
         (async function () {
-          const { dispatch } = props;
-          await dispatch(getCurrencyList());
+            try{
+                const { dispatch } = props;
+                dispatch(setComparableReq(compare.get().length > 1));
+
+                await dispatch(getCurrencyList());
+                setLoading(false);
+
+            }catch(e){
+
+            }
         })();
       }, []);
 
@@ -44,6 +59,12 @@ const Routes = React.memo((props) => {
                 fallback={<TransparentSpinner />}
             >
                 <ToastContainer />
+                <TopInfo active={comparable}>
+                    <span>You have selected to compare products</span>{' '}
+                    <Link className="butn butn--green" to="/compare/product">
+                    Compare Now
+                    </Link>
+                </TopInfo>
                 <ScrollToTop />
                 <ChangeHeader/>
                 <ErrorHandler>
@@ -57,9 +78,10 @@ const Routes = React.memo((props) => {
 });
 
 const mapStateToProps = (state) => {
-    const { userDomain, application } = state.web;
+    const { userDomain, application, comparable } = state.web;
     return {
         userDomain,
+        comparable,
         application,
     };
 };

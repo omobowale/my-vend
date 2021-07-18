@@ -154,9 +154,11 @@ const mapStateToProps = (state) => {
     const random = Math.floor(Math.random() * state.web.featuredProducts.length);
     const mainProduct = state.web.featuredProducts[random] || {};
     const categories = state.web.categoryList || [];
-    const brandCategory = _.isString(mainProduct.category) ?  categories.find(cat => cat.id === mainProduct.category) || {} : mainProduct.category || {};
-    const subCategory = categories.find(cat => cat.id === brandCategory.parentId) || {}
-    const mainCategory = categories.find(cat => cat.id === subCategory.parentId) || {}
+    // const brandCategory = _.isString(mainProduct.category) ?  categories.find(cat => cat.id === mainProduct.category) || {} : mainProduct.category || {};
+    const brandCategory = _.isString(mainProduct.subsubcategory) ?  categories.find(cat => cat.id === mainProduct.subsubcategory) || {} : mainProduct.subsubcategory || {};
+    const subCategory = _.isString(mainProduct.subcategory) ? categories.find(cat => cat.id === mainProduct.subcategory) || {} : mainProduct.subcategory || {};
+    const mainCategory = categories.find(cat => cat.id === subCategory.parentId) || {};
+
     return {
         mainProduct: {...mainProduct, brandCategory, subCategory, mainCategory} || {},
         featuredProducts: state.web.featuredProducts.length > 5 ? state.web.featuredProducts.slice(0,6).filter(item => item.id !== mainProduct.id) : [...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts, ...state.web.featuredProducts].slice(0, 5),

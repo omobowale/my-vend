@@ -10,3 +10,6 @@ export const AUTH_LOGOUT = "AUTH_LOGOUT";
 export const AUTH_CHECK = "AUTH_CHECK";
 export const SET_INTENDED_ROUTE = "SET_INTENDED_ROUTE";
 export const SHOW_AUTH_PAGE = "SHOW_AUTH_PAGE";
+export const COMPARE_HEADER = 'COMPARE_HEADER';
+export const COMPARE_BODY = 'COMPARE_BODY';
+export const SET_COMPARE = 'SET_COMPARE';

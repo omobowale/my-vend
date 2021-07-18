@@ -93,3 +93,26 @@ export function setIntendedRoute(state, payload) {
         intendedRoute: payload,
     };
 }
+
+export function setCompareHeader(state, payload) {
+    return {
+        ...state,
+        compareHeader: payload,
+        loading: false,
+    };
+}
+  
+export function setCompareBody(state, payload) {
+    return {
+        ...state,
+        compareBody: payload,
+        loading: false,
+    };
+}
+
+export function setComparable(state, payload) {
+    return {
+        ...state,
+        comparable: payload,
+    };
+}
