@@ -9,15 +9,20 @@ import { renderRating } from '../../../../../utils/rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as hollowHeart } from '@fortawesome/free-regular-svg-icons';
+import { useCallback } from 'react';
 
-function CompareHeaderItem({data}) {
+function CompareHeaderItem({data, removeItem}) {
     const history = useHistory();
+    const remove = useCallback(() => {
+        // e.preventDefault();
+        removeItem(data);
+    })
 
     return (
-        <div className="col-md-3 col-sm-4 col-xs-6 compare-header">
+        <div className="col-md-3 col-sm-4 col-6 compare-header">
             
             <div key={data.slug} className={`stack-item compare`}>
-                <Link className="stack-content" to={`/product/${data.slug}`} >
+                <div className="stack-content" to={`/product/${data.slug}`} >
                     <div className="stack-content-header">
                         <div className="btn-group menu-button">
                             <button
@@ -37,10 +42,13 @@ function CompareHeaderItem({data}) {
 
                             <div className="dropdown-menu top-nav-menu">
                                 <li className="dropdown-item">
-                                    <a href="javascript: false"
+                                    <div onClick={remove}
                                     >
-                                        <span> Construction Consultation </span>
-                                    </a>
+                                        <span> Remove </span>
+                                    </div>
+                                </li>
+                                <li className="dropdown-item">
+                                    <Link to={`/product/${data.slug}`} > <span> View Product </span></Link>
                                 </li>
 
                             </div>
@@ -74,7 +82,7 @@ function CompareHeaderItem({data}) {
                             </div>
                         </div>
                     </div>
-                </Link>
+                </div>
             </div>
             
 
@@ -83,19 +91,20 @@ function CompareHeaderItem({data}) {
     );
 }
 
-function CompareHeader({compareHeader, activeTab}) {
+function CompareHeader({compareHeader, activeTab, removeItem, limit}) {
     return (
-        <div className="container">
+        <div className="container container-sm">
             <div className="row info">
-                <div className="col-md-2  bold"></div>
-                <div className="col-md-10 col-xs-12 compare-header-container">
+                <div className="col-md-2 col-2 bold"></div>
+                <div className="col-md-10 col-10 compare-header-container">
                     <div className="row m-0">
-                    {compareHeader.filter(item => item.subcategory.slug === activeTab).map((item, index) => {
+                    {compareHeader.filter(item => item.subcategory.slug === activeTab).slice(0, limit).map((item, index) => {
                         if (index < compare.limit) {
                             return (
                                 <CompareHeaderItem
                                     data={item}
                                     key={shortid.generate()}
+                                    removeItem={removeItem}
                                 />
                             );
                         }

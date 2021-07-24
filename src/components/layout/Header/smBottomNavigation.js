@@ -8,11 +8,13 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/img/logo/logo.png'
 import MegaMenu from './sidebar/MegaMenu';
 import BottomNavigation from './BottomNavigation';
+import rqs from '../../../assets/img/common/Vector-RQS.png'
 
 function SmBottomNavigator({
     signup,
     user,
     authenticated,
+    openConsultation,
     openAuthPage
 }) {
     const [sidebar, setSidebar] = useState('');
@@ -66,16 +68,16 @@ function SmBottomNavigator({
                             />
                         </a>
                     </li>
-                    { !authenticated && 
-                        <li>
-                            <a href="javascript: false"
-                                onClick={() => openAuthPage('signup')}
-                                className="btn btn-sign-up "
-                            >
-                                Register
-                            </a>
-                        </li>
-                    }
+
+                    <li >
+                        <a href="javascript: false"
+                            onClick={() => openConsultation(true)}
+                            className="btn btn-sign-up "
+                            style={{minWidth: 'max-content'}}
+                        >
+                             <span> Request Consultation </span>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 

@@ -76,13 +76,6 @@ function SmHeader({
                                     {/* <li className="dropdown-item">
                                         <Link to="/"> <span><img src={rqs}/> </span> <span>Request Quantity Survey </span></Link>
                                     </li> */}
-                                    <li className="dropdown-item">
-                                        <a href="javascript: false"
-                                            onClick={() => openConsultation(true)}
-                                        >
-                                            <span><img src={rqs}/> </span> <span> Construction Consultation </span>
-                                        </a>
-                                    </li>
 
                                     { !authenticated &&
                                         <li className="dropdown-item">
@@ -90,6 +83,15 @@ function SmHeader({
                                                 onClick={() => openAuthPage('login')}
                                             >
                                                 Sign in 
+                                            </a>
+                                        </li>
+                                    }
+                                    { !authenticated && 
+                                        <li className="dropdown-item">
+                                            <a href="javascript: false" className="sign-in-nav" 
+                                                onClick={() => openAuthPage('signup')}
+                                            >
+                                                Register
                                             </a>
                                         </li>
                                     }
@@ -129,7 +131,7 @@ function SmHeader({
                 </div>
                 <div className="header-bottom">
                     <div className="container sm-container clearfix">
-                        <SmBottomNavigation user={user} authenticated={authenticated} openAuthPage={openAuthPage} />
+                        <SmBottomNavigation user={user} authenticated={authenticated} openConsultation={openConsultation} />
                     </div>
 
                 </div>

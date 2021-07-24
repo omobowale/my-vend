@@ -205,9 +205,7 @@ function Page({ onHide, show, authenticated, user, dispatch, }) {
                                     name="day"
                                     showLabel={false}
                                     list={[ 
-                                            {name: 'Monday'}, 
                                             {name: 'Tuesday'}, 
-                                            {name: 'Wednesday'}, 
                                             {name: 'Thursday'},
                                             {name: 'Friday'}
                                         ]}
@@ -225,26 +223,9 @@ function Page({ onHide, show, authenticated, user, dispatch, }) {
                                     label="time"
                                     name="time"
                                     showLabel={false}
-                                    list={[ 
-                                            {name: '08:00am'}, 
-                                            {name: '08:30am'}, 
-                                            {name: '09:00am'}, 
-                                            {name: '09:30am'}, 
-                                            {name: '10:00am'}, 
-                                            {name: '10:30am'}, 
-                                            {name: '11:00am'}, 
-                                            {name: '11:30am'}, 
+                                    list={[  
                                             {name: '12:00pm'},
-                                            {name: '12:30pm'},
-                                            {name: '01:00pm'},
-                                            {name: '01:30pm'},
-                                            {name: '02:00pm'},
-                                            {name: '02:30pm'},
-                                            {name: '03:00pm'},
-                                            {name: '03:30pm'},
-                                            {name: '04:00pm'},
-                                            {name: '04:30pm'},
-                                            {name: '05:00pm'}
+                                            {name: '03:00pm'}
                                         ]}
                                     value={requestForm.time}
                                     displayField='name'

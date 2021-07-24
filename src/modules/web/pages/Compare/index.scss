@@ -571,6 +571,10 @@
         border-left: 1px solid #dadada;
         // border-right: 1px solid #dadada;
         border-bottom: 1px solid #dadada;
+        overflow: hidden;
+        @media screen and (min-width: 220px) and (max-width: 800px) {
+            font-size: 12px !important;
+        }
     }
   
     &-body {
@@ -599,6 +603,17 @@
         font-size: 14px;
         line-height: 20px;
         font-weight: 400;
+        overflow: hidden;
+
+        @media screen and (min-width: 220px) and (max-width: 550px) {
+            min-width: 50%;
+            font-size: 11px !important;
+        }
+        @media screen and (min-width: 550px) and (max-width: 800px) {
+            max-width: 33.3%;
+            font-size: 12px !important;
+            min-width: 33.3%;
+        }
     }
 }
 .compare-header-container {
@@ -616,6 +631,13 @@
 
 .compare-header {
     padding: 0;
+    @media screen and (min-width: 550px) and (max-width: 800px) {
+        max-width: 33.3%;
+    }
+
+    @media screen and (min-width: 220px) and (max-width: 550px) {
+        min-width: 50%;
+    }
     .name-remove {
         display: flex;
         justify-content: space-between;
@@ -655,8 +677,14 @@
 
 .compare-container{
     display: flex;
+    @media screen and (min-width: 220px) and (max-width: 800px) {
+        flex-direction: column-reverse;
+    }
     &-products{
         display: inline-block;
+        @media screen and (min-width: 220px) and (max-width: 800px) {
+            min-width: 100%;
+        }
         .container {
             height: auto;
         }
@@ -664,7 +692,11 @@
     &-search{
         position: relative;
         display: inline-block;
-        padding: 0;
+        padding: 0 0 0 10px;
+        @media screen and (min-width: 220px) and (max-width: 800px) {
+            min-width: 100%;
+            padding: 15px;
+        }
         .form{
             border: 1px solid #dadada;
             border-radius: 5px;
@@ -674,10 +706,14 @@
             
             ul{
                 margin-top: 25px;
-
                 display: flex;
                 flex-direction: column;
                 flex: 1;
+                overflow: auto;
+                @media screen and (min-width: 220px) and (max-width: 800px) {
+                    max-height: 300px !important;
+                    overflow: auto;
+                }
                 li{
                     padding: 5px 0px;
                     justify-content: flex-start !important;

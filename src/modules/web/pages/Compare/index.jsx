@@ -6,7 +6,7 @@ import {getProductDetails, getProducts, getProductSearch } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
-import { getScreenSize } from '../../../../utils/setScreenSIze';
+import { getCompareScreenSize } from '../../../../utils/setScreenSIze';
 import _ from 'lodash';
 import { setComparableReq, handleCompare } from './service';
 import { compare } from '../../../../utils/compare';
@@ -34,7 +34,7 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
         dispatch(handleCompare());
     
         return () => {
-            dispatch(setComparableReq(compare.get().length > 1));
+            dispatch(setComparableReq(compare.get().length > 0));
         }
     }, []);
 
@@ -60,9 +60,11 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
     });
 
     const updateScreenWidth = () => {
-        const newScreenSize = getScreenSize();
+        const newScreenSize = getCompareScreenSize();
+        compare.setLimit();
+
         if (newScreenSize !== screenSize) {
-        setScreen(newScreenSize);
+            setScreen(newScreenSize);
         }
     };
 
@@ -71,6 +73,12 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
         setActiveCategory(tab);
         setProductList([]);
     }
+
+    const removeItem = (cat) => {
+        console.log(cat)
+        compare.removeItem(cat.subcategory.slug, cat.slug);
+        dispatch(handleCompare());
+    } 
 
     const clearCompare = () => {
         compare.clearAll();
@@ -138,19 +146,22 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
                 </div>
                 <div className="page-compare-section ">
                     <div className="container detail-container sm-container">
-                        <div className="compare-container">
-                            <div className="compare-container-products col-md-10">
+                        <div className="compare-container row">
+                            <div className="compare-container-products col-md-10 col-sm-12 ">
                                 <CompareHeader
                                     compareHeader={compareHeader}
+                                    limit={compare.limit}
                                     activeTab={activeCat}
+                                    removeItem={removeItem}
                                 />
                                 {/* <hr className="m-0" /> */}
                                 <CompareBody
                                     compareBody={compareBody}
+                                    limit={compare.limit}
                                     activeTab={activeCat}
                                 />
                             </div>
-                            <div className="compare-container-search col-md-2">
+                            <div className="compare-container-search col-md-2 col-sm-12">
                                 <Search handleSearch={searchByName} saveForCompare={saveForCompare} products={products} />
                             </div>
                         </div>

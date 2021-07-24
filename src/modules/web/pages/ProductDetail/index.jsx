@@ -51,7 +51,7 @@ function Page({ dispatch, categories, productName, comparable }) {
     };
 
     const activateCompare = useCallback(() => {
-        if (compare.get().length > 1) {
+        if (compare.get().length > 0) {
             if (!comparable) {
                 dispatch(setComparableReq(true));
             }

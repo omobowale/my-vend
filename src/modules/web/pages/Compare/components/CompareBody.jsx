@@ -5,11 +5,12 @@ import { Link } from 'react-router-dom';
 
 function CompareInfo({ title, children }) {
     return (
-        <div className="container">
+        <div className="container container-sm">
             <div className="row info">
-                <div className="col-md-2 info-title bold">{title}</div>
-                <div className="col-md-10 info-body">
+                <div className="col-md-2 col-2 info-title bold">{title}</div>
+                <div className="col-md-10 col-10 info-body">
                     <div className="row info-row">{children}</div>
+                    
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@ function CompareInfo({ title, children }) {
 
 function CompareHeaderInfo({ title, }) {
     return (
-        <div className="container">
+        <div className="container container-sm">
             <div className="row info-header">
                 <div className="col-md-2 info-title bold">{title}</div>
                 <div className="col-md-10 info-body">
@@ -43,16 +44,16 @@ const itemsToCompare = [
     { item: 'location', title: 'Location' },
 ];
 
-function CompareBody({ compareBody, activeTab }) {
+function CompareBody({ compareBody, activeTab, limit }) {
     return (
         <>
             {itemsToCompare.map(({ item, title, header }) => (
                 header ? <CompareHeaderInfo title={title} key={shortid.generate()} /> :
                 <CompareInfo title={title} key={shortid.generate()}>
-                {compareBody.filter(item => item.subcategory.slug === activeTab).map((data, index) => {
+                {compareBody.filter(item => item.subcategory.slug === activeTab).slice(0, limit).map((data, index) => {
                     return index < compare.limit ? (
                     <div
-                        className="col-md-3 col-sm-4 col-xs-6 info-item"
+                        className="col-md-3 col-sm-4 col-6 info-item"
                         key={shortid.generate()}
                     >
                         {data[item]}
