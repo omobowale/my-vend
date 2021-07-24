@@ -41,6 +41,7 @@ const Search = (props) => {
 
     return (
         <div className="">
+            <div className="section-form-title">Add Product</div>
             <form className="form" onSubmit={submitForm} autoComplete="off">
                 <div className="compare-search-field">
                     <input
