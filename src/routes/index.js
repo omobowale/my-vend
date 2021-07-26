@@ -30,7 +30,7 @@ const Routes = React.memo((props) => {
         (async function () {
             try{
                 const { dispatch } = props;
-                dispatch(setComparableReq(compare.get().length > 1));
+                dispatch(setComparableReq(compare.get().length > 0));
 
                 await dispatch(getCurrencyList());
                 setLoading(false);
@@ -59,12 +59,12 @@ const Routes = React.memo((props) => {
                 fallback={<TransparentSpinner />}
             >
                 <ToastContainer />
-                <TopInfo active={comparable}>
+                {/* <TopInfo active={comparable}>
                     <span>You have selected to compare products</span>{' '}
                     <Link className="butn butn--green" to="/compare/product">
                     Compare Now
                     </Link>
-                </TopInfo>
+                </TopInfo> */}
                 <ScrollToTop />
                 <ChangeHeader/>
                 <ErrorHandler>

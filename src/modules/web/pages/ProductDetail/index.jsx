@@ -4,7 +4,7 @@ import PageSeo from './components/PageSeo';
 import Breadcrumb from './components/BreadCrumb';
 import {getProductDetails, getProducts } from '../../service'
 import './index.scss'
-import { Link, withRouter } from 'react-router-dom';
+import { Link, Redirect, useHistory, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
 import { getScreenSize } from '../../../../utils/setScreenSIze';
 import _ from 'lodash';
@@ -24,7 +24,7 @@ function Page({ dispatch, categories, productName, comparable }) {
     const [product, setProduct] = useState({name: 'Wheelbarrow'});
     const [loading, setLoading] = useState(true);
     const [selected, setSelected] = useState(false);
-  
+    const history = useHistory();
 
     useEffect(() => {
         dispatch(getProductDetails({name: productName})).then(data => setProduct(data)).catch(err => err);
@@ -55,20 +55,9 @@ function Page({ dispatch, categories, productName, comparable }) {
             if (!comparable) {
                 dispatch(setComparableReq(true));
             }
-        
-            const toastId = 0;
-            if (!toast.isActive(toastId)) {
-                toast(
-                () => (
-                    <Link to="/compare/product" className="butn butn--green">Compare Now</Link>
-                ),
-                {
-                    delay: 500,
-                    hideProgressBar: true,
-                    toastId,
-                }
-                );
-            }
+
+            history.push('/compare/product');
+            
         } else {
             if (comparable) {
                 dispatch(setComparableReq(false));

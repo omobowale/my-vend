@@ -45,7 +45,7 @@ export const compare = {
         const catItems = this.getCatInfo(cat);
 
         if(savedCatCompare.length >= this.catLimit){
-            Notify.error('Maximum number of product category reached');
+            // Notify.error('Maximum number of product category reached');
             return false;
         }
         if (!savedCatCompare.includes(cat) && savedCatCompare.length < this.catLimit) {
@@ -54,13 +54,13 @@ export const compare = {
         if (!savedCompare.includes(name) && catItems.length < this.limit) {
             localStorage.setItem(compareItemStorageKey + (savedCompare.length + 1), name);
             this.saveCatInfo(cat, [...catItems, name]);
-            Notify.success(`${catItems.length + 1} of ${this.limit} selected!`);
+            // Notify.success(`${catItems.length + 1} of ${this.limit} selected!`);
             return true;
         } else if (savedCompare.includes(name)) {
-            Notify.error('Product already selected');
+            // Notify.error('Product already selected');
             return false;
         } else {
-            Notify.error('Maximum number reached');
+            // Notify.error('Maximum number reached');
             return false;
         }
 

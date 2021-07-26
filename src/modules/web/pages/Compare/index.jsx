@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import PageSeo from './components/PageSeo';
 import Breadcrumb from './components/BreadCrumb';
-import {getProductDetails, getProducts, getProductSearch } from '../../service'
+import { getProductSearch, getSubCategoryList } from '../../service'
 import './index.scss'
 import { Link, withRouter } from 'react-router-dom';
 import SubscriptionSection from '../../../../components/layout/SubscriptionSection';
@@ -39,6 +39,12 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
     }, []);
 
     useEffect(() => {
+        if(activeCat){
+            getData();
+        }
+    }, [activeCat]);
+
+    useEffect(() => {
 
         //Remove the compare notifier at the top bar
         const cats = compare.getCat();
@@ -49,6 +55,12 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
         setActiveCategory(cats.length > 0 && cats[0])
     }, [categories]);
 
+    const getData = useCallback(() => {
+        dispatch(getSubCategoryList({subCategoryName: activeCat})).then(data => {
+            setProductList(_.isArray(data) ? data : []);
+        }).catch(err => err);
+
+    })
 
     useEffect(() => {
         updateScreenWidth();
@@ -75,7 +87,6 @@ function Page({ dispatch, categories, comparable, compareBody, compareHeader }) 
     }
 
     const removeItem = (cat) => {
-        console.log(cat)
         compare.removeItem(cat.subcategory.slug, cat.slug);
         dispatch(handleCompare());
     } 

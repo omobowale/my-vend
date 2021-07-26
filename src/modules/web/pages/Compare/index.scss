@@ -11,6 +11,8 @@
 }
 
 .detail-container {
+    overflow: hidden;
+    position: relative;
     @media (min-width: 1500px){
         max-width: 1500px;
     }
@@ -572,6 +574,7 @@
         // border-right: 1px solid #dadada;
         border-bottom: 1px solid #dadada;
         overflow: hidden;
+        // min-width: 100px;
         @media screen and (min-width: 550px) and (max-width: 800px) {
             font-size: 12px !important;
         }
@@ -685,6 +688,9 @@
 }
 .compare-container{
     display: flex;
+    overflow-x: auto;
+    // min-width: 900px;
+    position: relative;
     @media screen and (min-width: 220px) and (max-width: 800px) {
         flex-direction: column-reverse;
     }
@@ -704,6 +710,7 @@
         @media screen and (min-width: 220px) and (max-width: 800px) {
             min-width: 100%;
             padding: 15px;
+            display: none;
         }
         .form{
             border: 1px solid #dadada;
