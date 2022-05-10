@@ -19,11 +19,9 @@ import SignUp from '../SignUp';
 
 function Page({ onHide, show, authPage='', openAuthPage, dispatch, authenticated=false }) {
 
-
     if (authenticated) {
         return <Redirect to="/" />;
     }
-
 
     return (
         <Modal
